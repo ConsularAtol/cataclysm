@@ -193,6 +193,14 @@ public class ModItems {
 
     public static final Item BAT_BOOTS = registerItem("bat_boots", new ModArmorItem(ModArmorMaterials.BAT, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
 
+    public static final Item SHULK_HELMET = registerItem("shulk_helmet", new ModArmorItem(ModArmorMaterials.SHULK, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+
+    public static final Item SHULK_CHESTPLATE = registerItem("shulk_chestplate", new ModArmorItem(ModArmorMaterials.SHULK, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+
+    public static final Item SHULK_LEGGINGS = registerItem("shulk_leggings", new ModArmorItem(ModArmorMaterials.SHULK, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+
+    public static final Item SHULK_BOOTS = registerItem("shulk_boots", new ModArmorItem(ModArmorMaterials.SHULK, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, new Identifier(Cataclysm.MODID, name), item);
     }

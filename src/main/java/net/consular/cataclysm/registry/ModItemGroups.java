@@ -136,6 +136,10 @@ public class ModItemGroups {
             content.add(ModItems.BAT_CHESTPLATE);
             content.add(ModItems.BAT_LEGGINGS);
             content.add(ModItems.BAT_BOOTS);
+            content.add(ModItems.SHULK_HELMET);
+            content.add(ModItems.SHULK_CHESTPLATE);
+            content.add(ModItems.SHULK_LEGGINGS);
+            content.add(ModItems.SHULK_BOOTS);
         });
         ItemGroupEvents.modifyEntriesEvent(MONK).register(content -> {
             content.add(ModItems.LEATHER_GLOVE);

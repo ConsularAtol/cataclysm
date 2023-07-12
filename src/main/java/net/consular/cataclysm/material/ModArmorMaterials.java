@@ -34,10 +34,10 @@ public enum ModArmorMaterials implements ModArmorMaterial {
     }),
     BAT("bat", 13, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
         map.put(ArmorItem.Type.BOOTS, 2);
-        map.put(ArmorItem.Type.LEGGINGS, 5);
+        map.put(ArmorItem.Type.LEGGINGS, 4);
         map.put(ArmorItem.Type.CHESTPLATE, 4);
         map.put(ArmorItem.Type.HELMET, 2);
-    }), 12, SoundEvents.ENTITY_BAT_TAKEOFF, 0F, 0F, 0.375F, 0F, () -> {
+    }), 9, SoundEvents.ENTITY_BAT_TAKEOFF, 0F, 0F, 0.375F, 0F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{ModItems.BAT_WING});
     }),
     STUDDED_LEATHER("studded_leather", 11, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
@@ -47,6 +47,14 @@ public enum ModArmorMaterials implements ModArmorMaterial {
         map.put(ArmorItem.Type.HELMET, 1);
     }), 13, ModSounds.STUDDED_LEATHER_EQUIP, 0F, 0F, 0.25F, 0F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{Items.IRON_NUGGET});
+    }),
+    SHULK("shulk", 33, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+        map.put(ArmorItem.Type.BOOTS, 3);
+        map.put(ArmorItem.Type.LEGGINGS, 5);
+        map.put(ArmorItem.Type.CHESTPLATE, 7);
+        map.put(ArmorItem.Type.HELMET, 3);
+    }), 15, SoundEvents.ENTITY_SHULKER_CLOSE, 1F, 0.1F, 0.75F, 0F, () -> {
+        return Ingredient.ofItems(new ItemConvertible[]{Items.SHULKER_SHELL});
     }),
     ENDERITE("enderite", 41, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
         map.put(ArmorItem.Type.BOOTS, 3);
