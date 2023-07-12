@@ -185,6 +185,14 @@ public class ModItems {
 
     public static final Item BAT_WING = registerItem("bat_wing", new Item(new Item.Settings()));
 
+    public static final Item BAT_HELMET = registerItem("bat_helmet", new ModArmorItem(ModArmorMaterials.BAT, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+
+    public static final Item BAT_CHESTPLATE = registerItem("bat_chestplate", new ModArmorItem(ModArmorMaterials.BAT, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+
+    public static final Item BAT_LEGGINGS = registerItem("bat_leggings", new ModArmorItem(ModArmorMaterials.BAT, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+
+    public static final Item BAT_BOOTS = registerItem("bat_boots", new ModArmorItem(ModArmorMaterials.BAT, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, new Identifier(Cataclysm.MODID, name), item);
     }
