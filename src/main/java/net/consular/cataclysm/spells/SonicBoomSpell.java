@@ -15,7 +15,7 @@ public class SonicBoomSpell implements Spell {
 
     @Override
     public void cast(World world, PlayerEntity player, Hand hand) {
-        MagicProjectileEntity boom = new MagicProjectileEntity(player, world, 2.1f, ParticleTypes.SONIC_BOOM);
+        MagicProjectileEntity boom = new MagicProjectileEntity(player, world, 4.1f, ParticleTypes.SONIC_BOOM);
 		boom.setVelocity(player, player.getPitch(), player.getYaw(), player.getRoll(), 4.5F, 0F);
 		world.spawnEntity(boom);
         if (!world.isClient){

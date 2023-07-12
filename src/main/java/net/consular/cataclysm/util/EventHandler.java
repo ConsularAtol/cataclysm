@@ -48,7 +48,7 @@ public class EventHandler {
 
                     DrawContext context = new DrawContext(client, client.getBufferBuilders().getEntityVertexConsumers());
 
-                    for (int i = 0; i < 10; i++)
+                    for (int i = 0; i < user.getMaxMana() / 2; i++)
                         context.drawTexture(HUD_ELEMENTS, x - (i * 8), y, 0, 15, 9, 9);
 
                     for (int i = 0; i < mana / 2; i++)

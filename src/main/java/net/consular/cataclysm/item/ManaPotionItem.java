@@ -1,8 +1,15 @@
 package net.consular.cataclysm.item;
 
+import java.util.List;
+
+import org.jetbrains.annotations.Nullable;
+
+import net.consular.cataclysm.registry.ModEffects;
 import net.consular.cataclysm.util.MagicUser;
 import net.minecraft.advancement.criterion.Criteria;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -10,6 +17,8 @@ import net.minecraft.item.ItemUsage;
 import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.stat.Stats;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
@@ -40,6 +49,9 @@ public class ManaPotionItem extends Item{
         if (stack.isEmpty()) {
             return new ItemStack(Items.GLASS_BOTTLE);
         }
+        if (Math.random() < (revoveryAmount / 100)){
+            user.addStatusEffect(new StatusEffectInstance(ModEffects.DRAINED, 20 * 5, 0), user);
+        }
         return stack;
     }
 
@@ -57,5 +69,10 @@ public class ManaPotionItem extends Item{
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         return ItemUsage.consumeHeldItem(world, user, hand);
     }
+
+    @Override
+	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+		tooltip.add(Text.literal("Recovers " + revoveryAmount + " mana").formatted(Formatting.DARK_AQUA));
+	}
     
 }
