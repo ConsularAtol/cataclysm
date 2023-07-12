@@ -89,6 +89,7 @@ public class ModItemGroups {
             content.add(ModItems.ENDERITE_SHOVEL);
             content.add(ModItems.ENDERITE_HOE);
             content.add(ModBlocks.BEWITCHING_TABLE);
+            content.add(ModItems.BAT_WING);
         });
         ItemGroupEvents.modifyEntriesEvent(ACCESSORIES).register(content -> {
             content.add(ModItems.HEART_NECKLACE);

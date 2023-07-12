@@ -20,6 +20,9 @@ public class LootTableModifiers {
     private static final Identifier WARDEN_LOOT_ID
             = new Identifier("minecraft", "entities/warden");
 
+    private static final Identifier BAT_LOOT_ID
+            = new Identifier("minecraft", "entities/bat");
+
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             if(DUNGEON_CHEST_ID.equals(id)) {
@@ -58,6 +61,14 @@ public class LootTableModifiers {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(UniformLootNumberProvider.create(1, 1))
                         .conditionally(RandomChanceLootCondition.builder(1f)) // Drops 100% of the time
+                        .with(ItemEntry.builder(ModItems.SCULK_HEART))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(BAT_LOOT_ID.equals(id)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(UniformLootNumberProvider.create(1, 2))
+                        .conditionally(RandomChanceLootCondition.builder(0.1f)) // Drops 10% of the time
                         .with(ItemEntry.builder(ModItems.SCULK_HEART))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                 tableBuilder.pool(poolBuilder.build());

@@ -183,6 +183,8 @@ public class ModItems {
 
     public static final Item SONIC_BOOM_SCROLL = registerItem("sonic_boom_scroll", new ScrollItem(new Item.Settings().maxCount(1), new SonicBoomSpell()));
 
+    public static final Item BAT_WING = registerItem("bat_wing", new Item(new Item.Settings()));
+
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, new Identifier(Cataclysm.MODID, name), item);
     }
