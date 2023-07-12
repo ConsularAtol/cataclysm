@@ -53,4 +53,9 @@ public class SpellTomeItem extends Item{
 		        tooltip.add(Text.literal("Costs " + spell.getManaCost() + " mana to use").formatted(Formatting.DARK_AQUA));
         }
     }
+
+    @Override
+    public String getTranslationKey() {
+        return "item.cataclysm.spell_tome";
+    }
 }
