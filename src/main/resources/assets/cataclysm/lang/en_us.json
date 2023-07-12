@@ -12,6 +12,7 @@
     "item.cataclysm.bezoar": "Bezoar",
     "item.cataclysm.stinger": "Stinger",
     "item.cataclysm.monocle": "Monocle",
+    "item.cataclysm.bat_wing": "Bat Wing",
     "item.cataclysm.lucky_horseshoe": "Lucky Horseshoe",
     "item.cataclysm.brass_knuckles": "Brass Knuckles",
 
@@ -99,7 +100,6 @@
     "block.cataclysm.deepslate_ruby_ore": "Deepslate Ruby Ore",
     "block.cataclysm.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
     "block.cataclysm.bewitching_table": "Bewitching Table",
-    "block.cataclysm.bat_wing": "Bat Wing",
 
     "trinkets.slot.offhand.accessory": "Accessory",
 

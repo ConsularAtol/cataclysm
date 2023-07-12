@@ -68,7 +68,7 @@ public class LootTableModifiers {
             if(BAT_LOOT_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(UniformLootNumberProvider.create(1, 2))
-                        .conditionally(RandomChanceLootCondition.builder(0.1f)) // Drops 10% of the time
+                        .conditionally(RandomChanceLootCondition.builder(0.40f)) // Drops 40% of the time
                         .with(ItemEntry.builder(ModItems.BAT_WING))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
