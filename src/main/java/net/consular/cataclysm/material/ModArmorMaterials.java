@@ -32,6 +32,14 @@ public enum ModArmorMaterials implements ModArmorMaterial {
     }), 12, SoundEvents.BLOCK_VINE_STEP, 0F, 0F, 0.5F, 0.5F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{Items.VINE});
     }),
+    BAT("bat", 13, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+        map.put(ArmorItem.Type.BOOTS, 2);
+        map.put(ArmorItem.Type.LEGGINGS, 5);
+        map.put(ArmorItem.Type.CHESTPLATE, 4);
+        map.put(ArmorItem.Type.HELMET, 2);
+    }), 12, SoundEvents.ENTITY_BAT_TAKEOFF, 0F, 0F, 0.375F, 0F, () -> {
+        return Ingredient.ofItems(new ItemConvertible[]{ModItems.BAT_WING});
+    }),
     STUDDED_LEATHER("studded_leather", 11, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
         map.put(ArmorItem.Type.BOOTS, 1);
         map.put(ArmorItem.Type.LEGGINGS, 3);
