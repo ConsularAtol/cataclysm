@@ -1,0 +1,12 @@
+{
+    "type": "cataclysm:bewitching",
+    "addition": {
+      "item": "cataclysm:sonic_boom_scroll"
+    },
+    "base": {
+      "item": "cataclysm:blank_spell_tome"
+    },
+    "result": {
+      "item": "cataclysm:sonic_boom_tome"
+    }
+  }

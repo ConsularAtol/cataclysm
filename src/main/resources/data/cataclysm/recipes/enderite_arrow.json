@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:fletching",
+    "addition": {
+      "item": "cataclysm:enderite_ingot"
+    },
+    "base": {
+      "item": "cataclysm:netherite_arrow"
+    },
+    "result": {
+      "item": "cataclysm:enderite_arrow"
+    }
+  }

@@ -1,0 +1,12 @@
+{
+    "type": "minecraftfletching",
+    "addition": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "base": {
+      "item": "cataclysm:diamond_bow"
+    },
+    "result": {
+      "item": "cataclysm:netherite_bow"
+    }
+  }

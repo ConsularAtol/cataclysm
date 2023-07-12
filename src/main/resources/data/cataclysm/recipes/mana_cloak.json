@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "XSX",
+      "X#X",
+      "XSX"
+    ],
+    "key": {
+      "#": {
+        "item": "cataclysm:ruby"
+      },
+      "S": {
+        "item": "cataclysm:sapphire"
+      },
+      "X": {
+        "tag": "minecraft:wool"
+      }
+    },
+    "result": {
+      "item": "cataclysm:mana_cloak"
+    }
+  }
+  

@@ -1,0 +1,5 @@
+{
+    "amount": 5,
+    "icon": "cataclysm:gui/slots/accessory",
+    "drop_rule": "keep"
+}

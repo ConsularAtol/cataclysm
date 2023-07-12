@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:fletching",
+    "addition": {
+      "item": "minecraft:iron_ingot"
+    },
+    "base": {
+      "item": "minecraft:arrow"
+    },
+    "result": {
+      "item": "cataclysm:iron_arrow"
+    }
+  }

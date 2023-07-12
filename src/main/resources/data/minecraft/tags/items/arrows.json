@@ -1,0 +1,14 @@
+{
+    "values": [
+        "cataclysm:iron_arrow",
+        "cataclysm:diamond_arrow",
+        "cataclysm:netherite_arrow",
+        "cataclysm:enderite_arrow",
+        "cataclysm:sculk_arrow",
+        "cataclysm:tipped_iron_arrow",
+        "cataclysm:tipped_diamond_arrow",
+        "cataclysm:tipped_netherite_arrow",
+        "cataclysm:tipped_enderite_arrow",
+        "cataclysm:tipped_sculk_arrow"
+    ]
+}

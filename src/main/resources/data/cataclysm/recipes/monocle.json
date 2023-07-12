@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "P#G",
+    " GX",
+    "  G"
+  ],
+  "key": {
+    "#": {
+      "item": "cataclysm:ruby"
+    },
+    "X": {
+      "item": "minecraft:chain"
+    },
+    "P": {
+      "item": "minecraft:glass_pane"
+    }
+    ,
+    "G": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "cataclysm:monocle"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:smelting",
+    "group": "ruby",
+    "ingredient": {
+      "item": "cataclysm:ruby_ore"
+    },
+    "result": "cataclysm:ruby",
+    "experience": 1,
+    "cookingtime": 200
+  }

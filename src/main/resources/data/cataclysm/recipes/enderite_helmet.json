@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "cataclysm:enderite_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_helmet"
+  },
+  "result": {
+    "item": "cataclysm:enderite_helmet"
+  },
+  "template": {
+    "item": "cataclysm:enderite_upgrade_smithing_template"
+  }
+}

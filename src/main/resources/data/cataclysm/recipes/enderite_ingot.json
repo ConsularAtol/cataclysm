@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cataclysm:enderite_scrap"
+    },
+    {
+      "item": "cataclysm:enderite_scrap"
+    },
+    {
+      "item": "cataclysm:enderite_scrap"
+    },
+    {
+      "item": "cataclysm:enderite_scrap"
+    },
+    {
+      "item": "minecraft:popped_chorus_fruit"
+    },
+    {
+      "item": "minecraft:popped_chorus_fruit"
+    },
+    {
+      "item": "minecraft:popped_chorus_fruit"
+    },
+    {
+      "item": "minecraft:popped_chorus_fruit"
+    }
+  ],
+  "result": {
+    "item": "cataclysm:enderite_ingot"
+  }
+}

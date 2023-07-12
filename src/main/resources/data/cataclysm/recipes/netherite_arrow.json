@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:fletching",
+    "addition": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "base": {
+      "item": "cataclysm:diamond_arrow"
+    },
+    "result": {
+      "item": "cataclysm:netherite_arrow"
+    }
+  }

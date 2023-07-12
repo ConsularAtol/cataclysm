@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "cataclysm:ruby"
+    }
+  },
+  "result": {
+    "item": "cataclysm:ruby_block"
+  }
+}

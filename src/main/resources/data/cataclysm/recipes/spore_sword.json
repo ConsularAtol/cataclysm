@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "X",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "minecraft:spore_blossom"
+    },
+    "S": {
+      "item": "cataclysm:stinger"
+    }
+  },
+  "result": {
+    "item": "cataclysm:spore_sword"
+  }
+}

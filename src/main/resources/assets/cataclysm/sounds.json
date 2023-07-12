@@ -1,0 +1,19 @@
+{
+    "magic_mirror.use":{
+        "subtitle": "subtitle.cataclysm.magic_mirror.use",
+        "sounds":[
+            "cataclysm:magic_mirror_use"
+        ]
+    },
+    "armor.equip.studded_leather":{
+        "subtitle": "subtitle.cataclysm.armor.equip.studded_leather",
+        "sounds":[
+            "cataclysm:armor/equip_studded_leather1",
+            "cataclysm:armor/equip_studded_leather2",
+            "cataclysm:armor/equip_studded_leather3",
+            "cataclysm:armor/equip_studded_leather4",
+            "cataclysm:armor/equip_studded_leather5",
+            "cataclysm:armor/equip_studded_leather6"
+        ]
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:fletching",
+    "addition": {
+      "item": "minecraft:diamond"
+    },
+    "base": {
+      "item": "cataclysm:iron_bow"
+    },
+    "result": {
+      "item": "cataclysm:diamond_bow"
+    }
+  }

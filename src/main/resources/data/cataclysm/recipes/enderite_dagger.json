@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:smithing",
+    "base": {
+      "item": "cataclysm:netherite_dagger"
+    },
+    "addition": {
+      "item": "cataclysm:enderite_ingot"
+    },
+    "result": {
+      "item": "cataclysm:enderite_dagger"
+    }
+  }
+  

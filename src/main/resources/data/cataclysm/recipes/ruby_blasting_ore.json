@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:blasting",
+    "group": "ruby",
+    "ingredient": {
+      "item": "cataclysm:ruby_ore"
+    },
+    "result": "cataclysm:ruby",
+    "experience": 1,
+    "cookingtime": 100
+  }

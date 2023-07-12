@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:fletching",
+    "addition": {
+      "item": "cataclysm:sculk_heart"
+    },
+    "base": {
+      "item": "cataclysm:enderite_arrow"
+    },
+    "result": {
+      "item": "cataclysm:sculk_arrow"
+    }
+  }

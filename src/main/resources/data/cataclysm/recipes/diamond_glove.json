@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "  X",
+    "III"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:leather"
+    },
+    "I": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "cataclysm:diamond_glove"
+  }
+}
