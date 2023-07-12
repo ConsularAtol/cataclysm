@@ -154,15 +154,10 @@ public class ModItemGroups {
             content.add(ModItems.NETHERITE_BOW);
             content.add(ModItems.ENDERITE_BOW);
             content.add(ModItems.IRON_ARROW);
-            content.add(ModItems.TIPPED_IRON_ARROW);
             content.add(ModItems.DIAMOND_ARROW);
-            content.add(ModItems.TIPPED_DIAMOND_ARROW);
             content.add(ModItems.NETHERITE_ARROW);
-            content.add(ModItems.TIPPED_NETHERITE_ARROW);
             content.add(ModItems.ENDERITE_ARROW);
-            content.add(ModItems.TIPPED_ENDERITE_ARROW);
             content.add(ModItems.SCULK_ARROW);
-            content.add(ModItems.TIPPED_SCULK_ARROW);
         });
     }
 }
