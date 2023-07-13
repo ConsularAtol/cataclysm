@@ -2,7 +2,7 @@ package net.consular.cataclysm.item;
 
 import java.util.List;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 import net.consular.cataclysm.util.MagicUser;
 import net.minecraft.client.item.TooltipContext;

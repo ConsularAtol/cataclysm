@@ -17,6 +17,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
+import net.minecraft.item.DyeableItem;
 import net.minecraft.item.Item;
 import net.minecraft.potion.PotionUtil;
 
@@ -28,6 +29,8 @@ public class CataclysmClient implements ClientModInitializer {
         ModModelPredicateProvider.registerModModels();
         HandledScreens.register(ModScreenHandlers.FLETCHING_SCREEN_HANDLER, FletchingScreen::new);
         HandledScreens.register(ModScreenHandlers.BEWITCHING_SCREEN_HANDLER, BewitchingScreen::new);
+
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0x3495eb, ModItems.SHULK_CHESTPLATE);
 
         registerTippedArrow(ModItems.TIPPED_IRON_ARROW);
         registerTippedArrow(ModItems.TIPPED_DIAMOND_ARROW);
