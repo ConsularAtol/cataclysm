@@ -47,6 +47,7 @@ public class ModArmorItem extends ArmorItem {
     protected final float knockbackResistance;
     protected final float daggerBoost;
     protected final float unarmedBoost;
+    protected final float maxMana;
     protected final ModArmorMaterial material;
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
 
@@ -60,6 +61,7 @@ public class ModArmorItem extends ArmorItem {
         this.knockbackResistance = material.getKnockbackResistance();
         this.daggerBoost = material.getDaggerBoost();
         this.unarmedBoost = material.getUnarmedDamage();
+        this.maxMana = material.getMaxMana();
         DispenserBlock.registerBehavior(this, DISPENSER_BEHAVIOR);
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
         UUID uUID = MODIFIERS.get((Object)type);
@@ -70,6 +72,9 @@ public class ModArmorItem extends ArmorItem {
         }
         if (unarmedBoost > 0){
             builder.put(Cataclysm.EntityAttributes.UNARMED_DAMAGE, new EntityAttributeModifier(uUID, "Armor unarmed boost", (double)this.unarmedBoost, EntityAttributeModifier.Operation.ADDITION));
+        }
+        if (maxMana > 0){
+            builder.put(Cataclysm.EntityAttributes.MANA_MAX, new EntityAttributeModifier(uUID, "Armor max mana", (double)this.maxMana, EntityAttributeModifier.Operation.MULTIPLY_BASE));
         }
         this.attributeModifiers = builder.build();
     }

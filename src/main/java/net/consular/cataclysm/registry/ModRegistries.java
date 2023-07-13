@@ -35,6 +35,7 @@ public class ModRegistries {
 
     private static void registerAttributes(){
         Registry.register(Registries.ATTRIBUTE, new Identifier(Cataclysm.MODID, "mana_regen"), net.consular.cataclysm.Cataclysm.EntityAttributes.MANA_REGEN);
+        Registry.register(Registries.ATTRIBUTE, new Identifier(Cataclysm.MODID, "max_mana"), net.consular.cataclysm.Cataclysm.EntityAttributes.MANA_MAX);
         Registry.register(Registries.ATTRIBUTE, new Identifier(Cataclysm.MODID, "dagger_damage_boost"), net.consular.cataclysm.Cataclysm.EntityAttributes.DAGGER_DAMAGE_BOOST);
         Registry.register(Registries.ATTRIBUTE, new Identifier(Cataclysm.MODID, "unarmed_damage"), net.consular.cataclysm.Cataclysm.EntityAttributes.UNARMED_DAMAGE);
         Registry.register(Registries.ATTRIBUTE, new Identifier(Cataclysm.MODID, "mana_lock"), net.consular.cataclysm.Cataclysm.EntityAttributes.MANA_LOCK);

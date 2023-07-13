@@ -16,7 +16,11 @@ public abstract class InGameHudMixin {
 
 	@Inject(method = "getHeartRows", at = @At("RETURN"), cancellable = true)
 	public void getHeartRows(int heartCount, CallbackInfoReturnable<Integer> info) {
-		if(client.player instanceof MagicUser user && user.isManaVisible())
-			info.setReturnValue(info.getReturnValueI() + 1);
+		if(client.player instanceof MagicUser user && user.isManaVisible()){
+			if (user.getMaxMana() <= 20)
+				info.setReturnValue(info.getReturnValueI() + 1);
+			if (user.getMaxMana() > 20)
+				info.setReturnValue(info.getReturnValueI() + 2);
+		}
 	}
 }

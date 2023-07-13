@@ -24,20 +24,20 @@ public class WandOfSparkingEntity extends PersistentProjectileEntity {
 	public WandOfSparkingEntity(LivingEntity owner, World world) {
 		super(ModEntities.WAND_OF_SPARKING, owner, world);
 		setNoGravity(true);
-		setDamage(1.5D);
+		setDamage(0.5D);
 	}
 
 	public WandOfSparkingEntity(World world, double x, double y, double z) {
 		super(ModEntities.WAND_OF_SPARKING, x, y, z, world);
 		setNoGravity(true);
-		setDamage(1.5D);
+		setDamage(0.5D);
 	}
 
 	@SuppressWarnings("all")
 	public WandOfSparkingEntity(EntityType type, World world) {
 		super(type, world);
 		setNoGravity(true);
-		setDamage(1.5D);
+		setDamage(0.5D);
 	}
 
 	@Override

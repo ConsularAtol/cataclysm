@@ -94,7 +94,6 @@ public class ModItemGroups {
         ItemGroupEvents.modifyEntriesEvent(ACCESSORIES).register(content -> {
             content.add(ModItems.HEART_NECKLACE);
             content.add(ModItems.BRASS_KNUCKLES);
-            content.add(ModItems.MANA_CLOAK);
             content.add(ModItems.MONOCLE);
             content.add(ModItems.LUCKY_HORSESHOE);
             content.add(ModItems.BEZOAR);

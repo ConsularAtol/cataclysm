@@ -5,6 +5,7 @@ import net.consular.cataclysm.registry.ModSounds;
 import net.consular.cataclysm.util.ModArmorMaterial;
 import net.minecraft.item.*;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -21,7 +22,7 @@ public enum ModArmorMaterials implements ModArmorMaterial {
         map.put(ArmorItem.Type.LEGGINGS, 2);
         map.put(ArmorItem.Type.CHESTPLATE, 2);
         map.put(ArmorItem.Type.HELMET, 1);
-    }), 2, SoundEvents.BLOCK_WOOD_PLACE, 0F, 0F, 0F, 0.25F, () -> {
+    }), 2, SoundEvents.BLOCK_WOOD_PLACE, 0F, 0F, 0F, 0.25F, 0F, () -> {
         return Ingredient.fromTag(ItemTags.LOGS);
     }),
     LUSH("lush", 15, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
@@ -29,7 +30,7 @@ public enum ModArmorMaterials implements ModArmorMaterial {
         map.put(ArmorItem.Type.LEGGINGS, 5);
         map.put(ArmorItem.Type.CHESTPLATE, 4);
         map.put(ArmorItem.Type.HELMET, 2);
-    }), 12, SoundEvents.BLOCK_VINE_STEP, 0F, 0F, 0.5F, 0.5F, () -> {
+    }), 12, SoundEvents.BLOCK_VINE_STEP, 0F, 0F, 0.5F, 0.5F, 0F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{Items.VINE});
     }),
     BAT("bat", 13, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
@@ -37,7 +38,7 @@ public enum ModArmorMaterials implements ModArmorMaterial {
         map.put(ArmorItem.Type.LEGGINGS, 4);
         map.put(ArmorItem.Type.CHESTPLATE, 4);
         map.put(ArmorItem.Type.HELMET, 2);
-    }), 9, SoundEvents.ENTITY_BAT_TAKEOFF, 0F, 0F, 0.375F, 0F, () -> {
+    }), 9, SoundEvents.ENTITY_BAT_TAKEOFF, 0F, 0F, 0.375F, 0F, 0F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{ModItems.BAT_WING});
     }),
     STUDDED_LEATHER("studded_leather", 11, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
@@ -45,7 +46,7 @@ public enum ModArmorMaterials implements ModArmorMaterial {
         map.put(ArmorItem.Type.LEGGINGS, 3);
         map.put(ArmorItem.Type.CHESTPLATE, 4);
         map.put(ArmorItem.Type.HELMET, 1);
-    }), 13, ModSounds.STUDDED_LEATHER_EQUIP, 0F, 0F, 0.25F, 0F, () -> {
+    }), 13, ModSounds.STUDDED_LEATHER_EQUIP, 0F, 0F, 0.25F, 0F, 0F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{Items.IRON_NUGGET});
     }),
     SHULK("shulk", 33, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
@@ -53,15 +54,23 @@ public enum ModArmorMaterials implements ModArmorMaterial {
         map.put(ArmorItem.Type.LEGGINGS, 5);
         map.put(ArmorItem.Type.CHESTPLATE, 7);
         map.put(ArmorItem.Type.HELMET, 3);
-    }), 15, SoundEvents.ENTITY_SHULKER_CLOSE, 1F, 0.1F, 0.75F, 0F, () -> {
+    }), 15, SoundEvents.ENTITY_SHULKER_CLOSE, 1F, 0.1F, 0.75F, 0F, 0F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{Items.SHULKER_SHELL});
+    }),
+    CLOAK("cloak", 5, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+        map.put(ArmorItem.Type.BOOTS, 0);
+        map.put(ArmorItem.Type.LEGGINGS, 0);
+        map.put(ArmorItem.Type.CHESTPLATE, 2);
+        map.put(ArmorItem.Type.HELMET, 0);
+    }), 15, SoundEvents.BLOCK_WOOL_PLACE, 0F, 0F, 0F, 0F, 0.4F, () -> {
+        return Ingredient.fromTag(ItemTags.WOOL);
     }),
     ENDERITE("enderite", 41, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
         map.put(ArmorItem.Type.BOOTS, 3);
         map.put(ArmorItem.Type.LEGGINGS, 7);
         map.put(ArmorItem.Type.CHESTPLATE, 9);
         map.put(ArmorItem.Type.HELMET, 3);
-    }), 19, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 4.0F, 0.2F, 0F, 0F, () -> {
+    }), 19, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 4.0F, 0.2F, 0F, 0F, 0F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{ModItems.ENDERITE_INGOT});
     });
 
@@ -81,9 +90,10 @@ public enum ModArmorMaterials implements ModArmorMaterial {
     private final float knockbackResistance;
     private final float daggerBoost;
     private final float unarmedDamage;
+    private final float maxMana;
     private final Lazy<Ingredient> repairIngredientSupplier;
 
-    private ModArmorMaterials(String name, int durabilityMultiplier, EnumMap protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, float daggerBoost, float unarmedDamage, Supplier repairIngredientSupplier) {
+    private ModArmorMaterials(String name, int durabilityMultiplier, EnumMap protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, float daggerBoost, float unarmedDamage, float maxMana, Supplier repairIngredientSupplier) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionAmounts = protectionAmounts;
@@ -93,6 +103,7 @@ public enum ModArmorMaterials implements ModArmorMaterial {
         this.knockbackResistance = knockbackResistance;
         this.daggerBoost = daggerBoost;
         this.unarmedDamage = unarmedDamage;
+        this.maxMana = maxMana;
         this.repairIngredientSupplier = new Lazy(repairIngredientSupplier);
     }
 
@@ -140,5 +151,10 @@ public enum ModArmorMaterials implements ModArmorMaterial {
     @Override
     public float getUnarmedDamage() {
         return this.unarmedDamage;
+    }
+
+    @Override
+    public float getMaxMana() {
+        return this.maxMana;
     }
 }

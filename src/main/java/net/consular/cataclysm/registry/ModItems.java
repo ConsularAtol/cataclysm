@@ -59,8 +59,6 @@ public class ModItems {
 
     public static final Item LUCKY_HORSESHOE = registerItem("lucky_horseshoe", new LuckyHorseshoeItem(new Item.Settings().maxCount(1)));
 
-    public static final Item MANA_CLOAK = registerItem("mana_cloak", new ManaCloakItem(new Item.Settings().maxCount(1)));
-
     public static final Item WOODEN_DAGGER = registerItem("wooden_dagger", new DaggerItem(ToolMaterials.WOOD, 2, -1.5f, new Item.Settings().maxCount(1)));
 
     public static final Item STONE_DAGGER = registerItem("stone_dagger", new DaggerItem(ToolMaterials.STONE, 2, -1.5f, new Item.Settings().maxCount(1)));
@@ -200,6 +198,8 @@ public class ModItems {
     public static final Item SHULK_LEGGINGS = registerItem("shulk_leggings", new ModArmorItem(ModArmorMaterials.SHULK, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
 
     public static final Item SHULK_BOOTS = registerItem("shulk_boots", new ModArmorItem(ModArmorMaterials.SHULK, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+
+    public static final Item SAPPHIRE_CLOAK = registerItem("sapphire_cloak", new ModArmorItem(ModArmorMaterials.CLOAK, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, new Identifier(Cataclysm.MODID, name), item);

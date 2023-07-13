@@ -44,7 +44,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements MagicUse
 
 	@Inject(method = "createPlayerAttributes", at = @At("RETURN"))
 	private static void createPlayerAttributes(CallbackInfoReturnable<DefaultAttributeContainer.Builder> info) {
-		info.getReturnValue().add(MANA_REGEN).add(MANA_LOCK).add(DAGGER_DAMAGE_BOOST).add(UNARMED_DAMAGE).add(Cataclysm.EntityAttributes.MAX_MANA);
+		info.getReturnValue().add(MANA_REGEN).add(MANA_LOCK).add(DAGGER_DAMAGE_BOOST).add(UNARMED_DAMAGE).add(MANA_MAX);
 	}
 
 	@Inject(method = "attack", at = @At("HEAD"))
@@ -98,6 +98,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements MagicUse
 
 	@Override
 	public int getMaxMana() {
+		MAX_MANA = (int)this.getAttributeValue(Cataclysm.EntityAttributes.MANA_MAX);
 		return MAX_MANA;
 	}
 

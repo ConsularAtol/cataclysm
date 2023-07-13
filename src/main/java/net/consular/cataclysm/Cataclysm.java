@@ -32,7 +32,7 @@ public class Cataclysm implements ModInitializer {
 
 	public static class EntityAttributes {
 		public static final EntityAttribute MANA_REGEN = new ClampedEntityAttribute("attribute.name.generic." + Cataclysm.MODID + ".mana_regen", 1D, 0D, 1024D).setTracked(true);
-		public static final EntityAttribute MAX_MANA = new ClampedEntityAttribute("attribute.name.generic." + Cataclysm.MODID + ".max_mana", 20D, 0D, 1024D).setTracked(true);
+		public static final EntityAttribute MANA_MAX = new ClampedEntityAttribute("attribute.name.generic." + Cataclysm.MODID + ".max_mana", 10D, 0D, 1024D).setTracked(true);
 		public static final EntityAttribute DAGGER_DAMAGE_BOOST = new ClampedEntityAttribute("attribute.name.generic." + Cataclysm.MODID + ".dagger_damage_boost", 0D, 0D, 20D).setTracked(true);
 		public static final EntityAttribute UNARMED_DAMAGE = new ClampedEntityAttribute("attribute.name.generic." + Cataclysm.MODID + ".unarmed_damage", 1D, 0D, 20D).setTracked(true);
 		public static final EntityAttribute MANA_LOCK = new ClampedEntityAttribute("attribute.name.generic." + Cataclysm.MODID + ".mana_lock", 0D, 0D, 20D).setTracked(true);

@@ -6,4 +6,6 @@ public interface ModArmorMaterial extends ArmorMaterial{
     public float getDaggerBoost();
 
     public float getUnarmedDamage();
+
+    public float getMaxMana();
 }
