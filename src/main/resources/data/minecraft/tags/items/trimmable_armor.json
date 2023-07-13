@@ -19,6 +19,10 @@
         "cataclysm:bat_helmet",
         "cataclysm:bat_chestplate",
         "cataclysm:bat_leggings",
-        "cataclysm:bat_boots"
+        "cataclysm:bat_boots",
+        "cataclysm:wooden_helmet",
+        "cataclysm:wooden_chestplate",
+        "cataclysm:wooden_leggings",
+        "cataclysm:wooden_boots"
     ]
 }
