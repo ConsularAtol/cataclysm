@@ -7,6 +7,18 @@
         "cataclysm:enderite_helmet",
         "cataclysm:enderite_chestplate",
         "cataclysm:enderite_leggings",
-        "cataclysm:enderite_boots"
+        "cataclysm:enderite_boots",
+        "cataclysm:shulk_helmet",
+        "cataclysm:shulk_chestplate",
+        "cataclysm:shulk_leggings",
+        "cataclysm:shulk_boots",
+        "cataclysm:lush_helmet",
+        "cataclysm:lush_chestplate",
+        "cataclysm:lush_leggings",
+        "cataclysm:lush_boots",
+        "cataclysm:bat_helmet",
+        "cataclysm:bat_chestplate",
+        "cataclysm:bat_leggings",
+        "cataclysm:bat_boots"
     ]
 }

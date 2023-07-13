@@ -19,6 +19,9 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.item.DyeableItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
 import net.minecraft.potion.PotionUtil;
 
 public class CataclysmClient implements ClientModInitializer {
@@ -30,14 +33,19 @@ public class CataclysmClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.FLETCHING_SCREEN_HANDLER, FletchingScreen::new);
         HandledScreens.register(ModScreenHandlers.BEWITCHING_SCREEN_HANDLER, BewitchingScreen::new);
 
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0x3495eb, ModItems.SHULK_CHESTPLATE);
 
         registerTippedArrow(ModItems.TIPPED_IRON_ARROW);
         registerTippedArrow(ModItems.TIPPED_DIAMOND_ARROW);
         registerTippedArrow(ModItems.TIPPED_NETHERITE_ARROW);
         registerTippedArrow(ModItems.TIPPED_ENDERITE_ARROW);
         registerTippedArrow(ModItems.TIPPED_SCULK_ARROW);
-        
+
+        registerDyeable(ModItems.SHULK_HELMET);
+        registerDyeable(ModItems.SHULK_CHESTPLATE);
+        registerDyeable(ModItems.SHULK_LEGGINGS);
+        registerDyeable(ModItems.SHULK_BOOTS);
+
+
         entityRenderers();
     }
 
@@ -49,6 +57,17 @@ public class CataclysmClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.STINGER, StingerRenderer::new);
         EntityRendererRegistry.register(ModEntities.HORNET, HornetRenderer::new);
     }
+
+    public static int getColor(ItemStack itemStack) {
+		    NbtCompound displayTag = itemStack.getSubNbt("display");
+		    if (displayTag != null && displayTag.contains("color", NbtElement.NUMBER_TYPE))
+		    	return displayTag.getInt("color");
+		    return 0x976797;
+	  }
+
+	public static void registerDyeable(Item item) {
+		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> tintIndex > 0 ? -1 : getColor(stack), item);
+	}
 
     private void registerTippedArrow(Item item){
       ColorProviderRegistry.ITEM.register((stack, layer) -> {
