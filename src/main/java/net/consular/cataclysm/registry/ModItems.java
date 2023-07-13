@@ -25,6 +25,7 @@ import net.consular.cataclysm.item.WandOfSparkingItem;
 import net.consular.cataclysm.material.ModArmorMaterials;
 import net.consular.cataclysm.material.ModToolMaterials;
 import net.consular.cataclysm.spells.BlankSpell;
+import net.consular.cataclysm.spells.GeyserSpell;
 import net.consular.cataclysm.spells.SonicBoomSpell;
 import net.consular.cataclysm.util.ArrowType;
 import net.minecraft.entity.effect.StatusEffects;
@@ -178,6 +179,8 @@ public class ModItems {
     public static final Item BLANK_SPELL_TOME = registerItem("blank_spell_tome", new SpellTomeItem(new Item.Settings(), new BlankSpell()));
 
     public static final Item SONIC_BOOM_TOME = registerItem("sonic_boom_tome", new SpellTomeItem(new Item.Settings().maxCount(1), new SonicBoomSpell()));
+
+    public static final Item GEYSER_TOME = registerItem("geyser_tome", new SpellTomeItem(new Item.Settings(), new GeyserSpell()));
 
     public static final Item SONIC_BOOM_SCROLL = registerItem("sonic_boom_scroll", new ScrollItem(new Item.Settings().maxCount(1), new SonicBoomSpell()));
 
