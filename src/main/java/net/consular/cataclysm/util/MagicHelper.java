@@ -1,10 +1,10 @@
 package net.consular.cataclysm.util;
 
-import javax.annotation.Nullable;
-
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import static net.consular.cataclysm.Cataclysm.EntityAttributes.*;
+
+import org.jetbrains.annotations.Nullable;
 
 public class MagicHelper {
 	public static double getManaRegen(PlayerEntity player) {

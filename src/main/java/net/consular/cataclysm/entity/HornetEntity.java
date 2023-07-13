@@ -2,7 +2,7 @@ package net.consular.cataclysm.entity;
 
 import java.util.EnumSet;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 import net.consular.cataclysm.util.EffectImmuneEntity;
 import net.minecraft.entity.EntityGroup;

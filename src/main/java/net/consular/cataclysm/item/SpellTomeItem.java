@@ -2,7 +2,7 @@ package net.consular.cataclysm.item;
 
 import java.util.List;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 import net.consular.cataclysm.spells.BlankSpell;
 import net.consular.cataclysm.spells.Spell;

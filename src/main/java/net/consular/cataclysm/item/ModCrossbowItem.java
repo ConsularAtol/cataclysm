@@ -4,15 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-import javax.annotation.Nullable;
-
+import org.jetbrains.annotations.Nullable;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
 import com.google.common.collect.Lists;
 
 import net.minecraft.advancement.criterion.Criteria;
-//import net.consular.cataclysm.registry.ModItems;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;

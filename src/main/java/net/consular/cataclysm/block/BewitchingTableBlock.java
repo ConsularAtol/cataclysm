@@ -1,10 +1,9 @@
 package net.consular.cataclysm.block;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 import net.consular.cataclysm.block.entity.BewitchingTableBlockEntity;
 import net.consular.cataclysm.registry.ModBlockEntities;
-import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;

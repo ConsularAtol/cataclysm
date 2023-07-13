@@ -31,5 +31,17 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem)ModItems.STUDDED_LEATHER_CHESTPLATE);
         itemModelGenerator.registerArmor((ArmorItem)ModItems.STUDDED_LEATHER_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem)ModItems.STUDDED_LEATHER_BOOTS);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.SHULK_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.SHULK_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.SHULK_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.SHULK_BOOTS);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.BAT_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.BAT_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.BAT_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.BAT_BOOTS);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.LUSH_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.LUSH_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.LUSH_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.LUSH_BOOTS);
     }
 }
