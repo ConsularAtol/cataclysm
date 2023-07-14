@@ -49,7 +49,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements MagicUse
 
 	@Inject(method = "attack", at = @At("HEAD"))
 	private void attack(Entity target, CallbackInfo info){
-		if(this.getMainHandStack().getItem() == Items.AIR || this.getMainHandStack().getItem() instanceof GloveItem){
+		if(this.getMainHandStack().getItem() == Items.AIR || this.getMainHandStack().getItem() instanceof GloveItem && target instanceof LivingEntity){
 			Float f = (float)this.getAttributeValue(Cataclysm.EntityAttributes.UNARMED_DAMAGE);
 			boolean bl3 = this.fallDistance > 0.0f && !this.isOnGround() && !this.isClimbing() && !this.isTouchingWater() && !this.hasStatusEffect(StatusEffects.BLINDNESS) && !this.hasVehicle() && target instanceof LivingEntity;
 			Vec3d vec3d = target.getVelocity();
