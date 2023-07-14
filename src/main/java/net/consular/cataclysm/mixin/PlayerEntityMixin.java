@@ -49,24 +49,26 @@ public abstract class PlayerEntityMixin extends LivingEntity implements MagicUse
 
 	@Inject(method = "attack", at = @At("HEAD"))
 	private void attack(Entity target, CallbackInfo info){
-		if(this.getMainHandStack().getItem() == Items.AIR || this.getMainHandStack().getItem() instanceof GloveItem && target instanceof LivingEntity){
-			Float f = (float)this.getAttributeValue(Cataclysm.EntityAttributes.UNARMED_DAMAGE);
-			boolean bl3 = this.fallDistance > 0.0f && !this.isOnGround() && !this.isClimbing() && !this.isTouchingWater() && !this.hasStatusEffect(StatusEffects.BLINDNESS) && !this.hasVehicle() && target instanceof LivingEntity;
-			Vec3d vec3d = target.getVelocity();
-			int bludgeoning = EnchantmentHelper.getEquipmentLevel(ModEnchantments.BLUDGEONING, this);
-			if (bl3) {
-                f *= 1.5f;
-            }
-			if (bl3) {
-				this.getWorld().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_CRIT, this.getSoundCategory(), 1.0f, 1.0f);
-				this.addCritParticles(target);
-			}
-			target.setVelocity(vec3d);
-			((LivingEntity)target).takeKnockback(0.4f, MathHelper.sin(this.getYaw() * ((float)Math.PI / 180)), -MathHelper.cos(this.getYaw() * ((float)Math.PI / 180)));
-			target.damage(this.getDamageSources().generic(), f + bludgeoning);
-			if (this.getMainHandStack().getItem() instanceof GloveItem){
-				ItemStack stack = this.getMainHandStack();
-				stack.damage(1, this, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+		if(this.getMainHandStack().getItem() == Items.AIR || this.getMainHandStack().getItem() instanceof GloveItem){
+			if (target instanceof LivingEntity){
+				Float f = (float)this.getAttributeValue(Cataclysm.EntityAttributes.UNARMED_DAMAGE);
+				boolean bl3 = this.fallDistance > 0.0f && !this.isOnGround() && !this.isClimbing() && !this.isTouchingWater() && !this.hasStatusEffect(StatusEffects.BLINDNESS) && !this.hasVehicle() && target instanceof LivingEntity;
+				Vec3d vec3d = target.getVelocity();
+				int bludgeoning = EnchantmentHelper.getEquipmentLevel(ModEnchantments.BLUDGEONING, this);
+				if (bl3) {
+            	    f *= 1.5f;
+            	}
+				if (bl3) {
+					this.getWorld().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ENTITY_PLAYER_ATTACK_CRIT, this.getSoundCategory(), 1.0f, 1.0f);
+					this.addCritParticles(target);
+				}
+				target.setVelocity(vec3d);
+				((LivingEntity)target).takeKnockback(0.4f, MathHelper.sin(this.getYaw() * ((float)Math.PI / 180)), -MathHelper.cos(this.getYaw() * ((float)Math.PI / 180)));
+				target.damage(this.getDamageSources().generic(), f + bludgeoning);
+				if (this.getMainHandStack().getItem() instanceof GloveItem){
+					ItemStack stack = this.getMainHandStack();
+					stack.damage(1, this, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+				}
 			}
 		}
 	}
