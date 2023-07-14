@@ -1,5 +1,5 @@
 {
-    "type": "minecraftfletching",
+    "type": "cataclysm:fletching",
     "addition": {
       "item": "minecraft:netherite_ingot"
     },

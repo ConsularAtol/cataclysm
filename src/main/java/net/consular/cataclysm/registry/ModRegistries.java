@@ -27,7 +27,6 @@ public class ModRegistries {
         ModEnchantmentTargets.registerEnchantmentTargets();
         ModEnchantments.registerModEnchantments();
         ModItemGroups.registerItemGroups();
-        ModBlockEntities.registerBlockEntities();
 
         registerAttributes();
         registerMobAttributes();

@@ -1,16 +1,27 @@
 package net.consular.cataclysm.recipe;
 
 import com.google.gson.JsonObject;
-import net.minecraft.inventory.SimpleInventory;
+import java.util.stream.Stream;
+
+import net.consular.cataclysm.registry.ModBlocks;
+import net.consular.cataclysm.registry.ModRecipeSerializer;
+import net.consular.cataclysm.registry.ModRecipeTypes;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.*;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.recipe.RecipeSerializer;
+import net.minecraft.recipe.RecipeType;
+import net.minecraft.recipe.ShapedRecipe;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.world.World;
 
-public class BewitchingRecipe implements Recipe<SimpleInventory> {
+public class BewitchingRecipe
+implements Recipe<Inventory> {
     final Ingredient base;
     final Ingredient addition;
     final ItemStack result;
@@ -24,7 +35,7 @@ public class BewitchingRecipe implements Recipe<SimpleInventory> {
     }
 
     @Override
-    public boolean matches(SimpleInventory inventory, World world) {
+    public boolean matches(Inventory inventory, World world) {
         if(world.isClient()) {
             return false;
         }
@@ -33,46 +44,60 @@ public class BewitchingRecipe implements Recipe<SimpleInventory> {
     }
 
     @Override
-    public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager var2) {
-        return result;
+    public ItemStack craft(Inventory inventory, DynamicRegistryManager var2) {
+        ItemStack itemStack = this.result.copy();
+        NbtCompound nbtCompound = inventory.getStack(0).getNbt();
+        if (nbtCompound != null) {
+            itemStack.setNbt(nbtCompound.copy());
+        }
+        return itemStack;
     }
 
     @Override
     public boolean fits(int width, int height) {
-        return true;
+        return width * height >= 2;
     }
 
     @Override
     public ItemStack getOutput(DynamicRegistryManager var2) {
-        return result.copy();
+        return this.result;
+    }
+
+    public boolean testAddition(ItemStack stack) {
+        return this.addition.test(stack);
+    }
+
+    public boolean testBase(ItemStack stack){
+        return this.base.test(stack);
+    }
+
+    @Override
+    public ItemStack createIcon() {
+        return new ItemStack(ModBlocks.BEWITCHING_TABLE);
     }
 
     @Override
     public Identifier getId() {
-        return id;
+        return this.id;
     }
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return Serializer.INSTANCE;
+        return ModRecipeSerializer.BEWITCHING;
     }
 
     @Override
     public RecipeType<?> getType() {
-        return Type.INSTANCE;
+        return ModRecipeTypes.BEWITCHING;
     }
 
-    public static class Type implements RecipeType<BewitchingRecipe> {
-        private Type() { }
-        public static final Type INSTANCE = new Type();
-        public static final String ID = "bewitching";
+    @Override
+    public boolean isEmpty() {
+        return Stream.of(this.base, this.addition).anyMatch(ingredient -> ingredient.getMatchingStacks().length == 0);
     }
 
-    public static class Serializer implements RecipeSerializer<BewitchingRecipe> {
-        public static final Serializer INSTANCE = new Serializer();
-        public static final String ID = "bewitching";
-        // this is the name given in the json file
-
+    public static class Serializer
+    implements RecipeSerializer<BewitchingRecipe> {
         @Override
         public BewitchingRecipe read(Identifier identifier, JsonObject jsonObject) {
             Ingredient ingredient = Ingredient.fromJson(JsonHelper.getObject(jsonObject, "base"));
