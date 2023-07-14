@@ -25,9 +25,7 @@ import net.consular.cataclysm.item.SpellTomeItem;
 import net.consular.cataclysm.item.WandOfSparkingItem;
 import net.consular.cataclysm.material.ModArmorMaterials;
 import net.consular.cataclysm.material.ModToolMaterials;
-import net.consular.cataclysm.spells.BlankSpell;
-import net.consular.cataclysm.spells.GeyserSpell;
-import net.consular.cataclysm.spells.SonicBoomSpell;
+import net.consular.cataclysm.spells.*;
 import net.consular.cataclysm.util.ArrowType;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ArmorItem;
@@ -183,9 +181,13 @@ public class ModItems {
 
     public static final Item GEYSER_TOME = registerItem("geyser_tome", new SpellTomeItem(new Item.Settings().maxCount(1), new GeyserSpell()));
 
+    public static final Item WIND_GUST_TOME = registerItem("wind_gust_tome", new SpellTomeItem(new Item.Settings().maxCount(1), new WindGustSpell()));
+
     public static final Item SONIC_BOOM_SCROLL = registerItem("sonic_boom_scroll", new ScrollItem(new Item.Settings().maxCount(1), new SonicBoomSpell()));
 
     public static final Item GEYSER_SCROLL = registerItem("geyser_scroll", new ScrollItem(new Item.Settings().maxCount(1), new GeyserSpell()));
+
+    public static final Item WIND_GUST_SCROLL = registerItem("wind_gust_scroll", new ScrollItem(new Item.Settings().maxCount(1), new WindGustSpell()));
 
     public static final Item BAT_WING = registerItem("bat_wing", new Item(new Item.Settings()));
 
