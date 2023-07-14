@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier;
 
 public class BewitchingScreen extends HandledScreen<BewitchingScreenHandler> {
     private static final Identifier TEXTURE =
-            new Identifier(Cataclysm.MODID, "textures/gui/bewitching_table.png");
+            new Identifier(Cataclysm.MODID, "textures/gui/bewitching_table_gui.png");
 
     public BewitchingScreen(BewitchingScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
