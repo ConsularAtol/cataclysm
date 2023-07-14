@@ -1,16 +1,11 @@
 package net.consular.cataclysm.data;
 
-import net.consular.cataclysm.item.ModArmorItem;
-import net.consular.cataclysm.material.ModArmorMaterials;
 import net.consular.cataclysm.registry.ModItems;
-import net.consular.cataclysm.util.ModArmorMaterial;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.item.ArmorItem;
-import software.bernie.geckolib.event.GeoRenderEvent.Armor;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {

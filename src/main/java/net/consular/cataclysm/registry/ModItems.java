@@ -10,7 +10,6 @@ import net.consular.cataclysm.item.GloveItem;
 import net.consular.cataclysm.item.HeartNecklaceItem;
 import net.consular.cataclysm.item.LuckyHorseshoeItem;
 import net.consular.cataclysm.item.MagicMirrorItem;
-import net.consular.cataclysm.item.ManaCloakItem;
 import net.consular.cataclysm.item.ManaPotionItem;
 import net.consular.cataclysm.item.ModArmorItem;
 import net.consular.cataclysm.item.ModArrowItem;

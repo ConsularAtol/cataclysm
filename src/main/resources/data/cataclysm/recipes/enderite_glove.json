@@ -1,12 +1,15 @@
 {
-    "type": "minecraft:smithing",
-    "addition": {
-      "item": "cataclysm:enderite_ingot"
-    },
-    "base": {
-      "item": "cataclysm:netherite_glove"
-    },
-    "result": {
-      "item": "cataclysm:enderite_glove"
-    }
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "cataclysm:enderite_ingot"
+  },
+  "base": {
+    "item": "cataclysm:netherite_glove"
+  },
+  "result": {
+    "item": "cataclysm:enderite_glove"
+  },
+  "template": {
+    "item": "cataclysm:enderite_upgrade_smithing_template"
   }
+}
