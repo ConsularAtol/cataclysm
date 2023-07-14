@@ -106,8 +106,10 @@ public class ModItemGroups {
             content.add(ModItems.BLANK_SPELL_TOME);
             content.add(ModItems.SONIC_BOOM_TOME);
             content.add(ModItems.GEYSER_TOME);
+            content.add(ModItems.WIND_GUST_TOME);
             content.add(ModItems.SONIC_BOOM_SCROLL);
             content.add(ModItems.GEYSER_SCROLL);
+            content.add(ModItems.WIND_GUST_SCROLL);
         });
         ItemGroupEvents.modifyEntriesEvent(MELEE).register(content -> {
             content.add(ModItems.ENDERITE_SWORD);
