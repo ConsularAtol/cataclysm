@@ -72,15 +72,27 @@ public class ModItems {
 
     public static final Item ENDERITE_DAGGER = registerItem("enderite_dagger", new DaggerItem(ModToolMaterials.ENDERITE, 2, -1.5f, new Item.Settings().maxCount(1)));
 
+    public static final Item SCULK_DAGGER = registerItem("sculk_dagger", new DaggerItem(ModToolMaterials.SCULK, 2, -1.5f, new Item.Settings().maxCount(1)));
+
     public static final Item ENDERITE_SWORD = registerItem("enderite_sword", new SwordItem(ModToolMaterials.ENDERITE, 3, -2.4f, new Item.Settings().maxCount(1)));
+
+    public static final Item SCULK_SWORD = registerItem("sculk_sword", new SwordItem(ModToolMaterials.SCULK, 3, -2.4f, new Item.Settings().maxCount(1)));
 
     public static final Item ENDERITE_PICKAXE = registerItem("enderite_pickaxe", new PickaxeItem(ModToolMaterials.ENDERITE, 1, -2.8f, new Item.Settings().maxCount(1)));
     
+    public static final Item SCULK_PICKAXE = registerItem("sculk_pickaxe", new PickaxeItem(ModToolMaterials.SCULK, 1, -2.8f, new Item.Settings().maxCount(1)));
+
     public static final Item ENDERITE_AXE = registerItem("enderite_axe", new AxeItem(ModToolMaterials.ENDERITE, 5, -3f, new Item.Settings().maxCount(1)));
+
+    public static final Item SCULK_AXE = registerItem("sculk_axe", new AxeItem(ModToolMaterials.SCULK, 5, -3f, new Item.Settings().maxCount(1)));
 
     public static final Item ENDERITE_SHOVEL = registerItem("enderite_shovel", new ShovelItem(ModToolMaterials.ENDERITE, 1.5f, -3f, new Item.Settings().maxCount(1)));
 
+    public static final Item SCULK_SHOVEL = registerItem("sculk_shovel", new ShovelItem(ModToolMaterials.SCULK, 1.5f, -3f, new Item.Settings().maxCount(1)));
+
     public static final Item ENDERITE_HOE = registerItem("enderite_hoe", new ModHoeItem(ModToolMaterials.ENDERITE, -5, 0f, new Item.Settings().maxCount(1)));
+
+    public static final Item SCULK_HOE = registerItem("sculk_hoe", new ModHoeItem(ModToolMaterials.SCULK, -5, 0f, new Item.Settings().maxCount(1)));
 
     public static final Item ENDERITE_HELMET = registerItem("enderite_helmet", new ArmorItem(ModArmorMaterials.ENDERITE, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
 
@@ -90,11 +102,21 @@ public class ModItems {
 
     public static final Item ENDERITE_BOOTS = registerItem("enderite_boots", new ArmorItem(ModArmorMaterials.ENDERITE, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
 
+    public static final Item SCULK_HELMET = registerItem("sculk_helmet", new ArmorItem(ModArmorMaterials.SCULK, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+
+    public static final Item SCULK_CHESTPLATE = registerItem("sculk_chestplate", new ArmorItem(ModArmorMaterials.SCULK, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+
+    public static final Item SCULK_LEGGINGS = registerItem("sculk_leggings", new ArmorItem(ModArmorMaterials.SCULK, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+
+    public static final Item SCULK_BOOTS = registerItem("sculk_boots", new ArmorItem(ModArmorMaterials.SCULK, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+
     public static final Item ENDERITE_SCRAP = registerItem("enderite_scrap", new Item(new Item.Settings()));
 
     public static final Item ENDERITE_INGOT = registerItem("enderite_ingot", new Item(new Item.Settings()));
 
     public static final Item ENDERITE_UPGRADE_SMITHING_TEMPLATE = registerItem("enderite_upgrade_smithing_template", (Item)ModSmithingTemplateItem.createEnderiteUpgrade());
+
+    public static final Item SCULK_UPGRADE_SMITHING_TEMPLATE = registerItem("sculk_upgrade_smithing_template", (Item)ModSmithingTemplateItem.createEnderiteUpgrade());
 
     public static final Item MAGIC_MIRROR = registerItem("magic_mirror", new MagicMirrorItem(new Item.Settings().maxCount(1)));
 
@@ -105,6 +127,8 @@ public class ModItems {
     public static final Item NETHERITE_BOW = registerItem("netherite_bow", new ModBowItem(new Item.Settings().maxCount(1).fireproof().maxDamage(384 * 4), 0.7f, 3.7f));
 
     public static final Item ENDERITE_BOW = registerItem("enderite_bow", new ModBowItem(new Item.Settings().maxCount(1).maxDamage(384 * 5), 0.6f, 3.8f));
+
+    public static final Item SCULK_BOW = registerItem("sculk_bow", new ModBowItem(new Item.Settings().maxCount(1).maxDamage(384 * 5), 0.6f, 3.8f));
 
     public static final Item IRON_CROSSBOW = registerItem("iron_crossbow", new ModCrossbowItem(new Item.Settings().maxCount(1).maxDamage(0), 0.9f, 3.5f));
     
@@ -189,6 +213,8 @@ public class ModItems {
     public static final Item NETHERITE_GLOVE = registerItem("netherite_glove", new GloveItem(ToolMaterials.NETHERITE, new Item.Settings().maxCount(1)));
 
     public static final Item ENDERITE_GLOVE = registerItem("enderite_glove", new GloveItem(ModToolMaterials.ENDERITE, new Item.Settings().maxCount(1)));
+
+    public static final Item SCULK_GLOVE = registerItem("sculk_glove", new GloveItem(ModToolMaterials.SCULK, new Item.Settings().maxCount(1)));
 
     public static final Item BLANK_SPELL_TOME = registerItem("blank_spell_tome", new SpellTomeItem(new Item.Settings(), new BlankSpell()));
 

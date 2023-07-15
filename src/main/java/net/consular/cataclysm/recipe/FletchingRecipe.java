@@ -88,7 +88,7 @@ implements Recipe<Inventory> {
     }
 
     public boolean testBase(ItemStack stack){
-        return this.base.test(stack);
+        return this.base.test(stack) || stack.isIn(ItemTags.ARROWS);
     }
 
     @Override

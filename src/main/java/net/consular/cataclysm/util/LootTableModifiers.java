@@ -53,6 +53,14 @@ public class LootTableModifiers {
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }
+                if(ANCIENT_CITY_CHEST_ID.equals(id)) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(UniformLootNumberProvider.create(1, 1))
+                            .conditionally(RandomChanceLootCondition.builder(0.1f)) // Drops 5% of the time
+                            .with(ItemEntry.builder(ModItems.SCULK_UPGRADE_SMITHING_TEMPLATE))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
                 if(ANCIENT_CITY_CHEST_ID.equals(id) || DUNGEON_CHEST_ID.equals(id) || END_CITY_ID.equals(id)) {
                     LootPool.Builder poolBuilder = LootPool.builder()
                             .rolls(UniformLootNumberProvider.create(1, 1))

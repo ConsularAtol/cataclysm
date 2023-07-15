@@ -11,6 +11,7 @@ import net.minecraft.util.Lazy;
 public enum ModToolMaterials implements ToolMaterial {
 
     ENDERITE(5, 2501, 10.0f, 5.0f, 18, () -> Ingredient.ofItems(ModItems.ENDERITE_INGOT)),
+    SCULK(6, 2812, 11.0f, 6.0f, 23, () -> Ingredient.ofItems(Items.ECHO_SHARD)),
     SPORE(2, 250, 6.0f, 2.0f, 14, () -> Ingredient.ofItems(ModItems.STINGER)),
     LEATHER(0, 59, 2.0f, 0.0f, 14, () -> Ingredient.ofItems(Items.LEATHER));
 

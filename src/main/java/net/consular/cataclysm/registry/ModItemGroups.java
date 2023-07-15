@@ -74,6 +74,7 @@ public class ModItemGroups {
             content.add(ModItems.ENDERITE_SCRAP);
             content.add(ModItems.ENDERITE_INGOT);
             content.add(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE);
+            content.add(ModItems.SCULK_UPGRADE_SMITHING_TEMPLATE);
             content.add(ModItems.MAGIC_MIRROR);
             content.add(ModItems.SCULK_HEART);
             content.add(ModItems.STINGER);
@@ -89,6 +90,10 @@ public class ModItemGroups {
             content.add(ModItems.ENDERITE_AXE);
             content.add(ModItems.ENDERITE_SHOVEL);
             content.add(ModItems.ENDERITE_HOE);
+            content.add(ModItems.ENDERITE_PICKAXE);
+            content.add(ModItems.SCULK_AXE);
+            content.add(ModItems.SCULK_SHOVEL);
+            content.add(ModItems.SCULK_HOE);
             content.add(ModBlocks.BEWITCHING_TABLE);
             content.add(ModItems.BAT_WING);
         });
@@ -130,11 +135,16 @@ public class ModItemGroups {
         });
         ItemGroupEvents.modifyEntriesEvent(MELEE).register(content -> {
             content.add(ModItems.ENDERITE_SWORD);
+            content.add(ModItems.SCULK_SWORD);
             content.add(ModItems.SPORE_SWORD);
             content.add(ModItems.ENDERITE_HELMET);
             content.add(ModItems.ENDERITE_CHESTPLATE);
             content.add(ModItems.ENDERITE_LEGGINGS);
             content.add(ModItems.ENDERITE_BOOTS);
+            content.add(ModItems.SCULK_HELMET);
+            content.add(ModItems.SCULK_CHESTPLATE);
+            content.add(ModItems.SCULK_LEGGINGS);
+            content.add(ModItems.SCULK_BOOTS);
         });
         ItemGroupEvents.modifyEntriesEvent(ROGUE).register(content -> {
             content.add(ModItems.WOODEN_DAGGER);
@@ -144,6 +154,7 @@ public class ModItemGroups {
             content.add(ModItems.DIAMOND_DAGGER);
             content.add(ModItems.NETHERITE_DAGGER);
             content.add(ModItems.ENDERITE_DAGGER);
+            content.add(ModItems.SCULK_DAGGER);
             content.add(ModItems.STUDDED_LEATHER_HELMET);
             content.add(ModItems.STUDDED_LEATHER_CHESTPLATE);
             content.add(ModItems.STUDDED_LEATHER_LEGGINGS);
@@ -172,6 +183,7 @@ public class ModItemGroups {
             content.add(ModItems.DIAMOND_GLOVE);
             content.add(ModItems.NETHERITE_GLOVE);
             content.add(ModItems.ENDERITE_GLOVE);
+            content.add(ModItems.SCULK_GLOVE);
             content.add(ModItems.WOODEN_HELMET);
             content.add(ModItems.WOODEN_CHESTPLATE);
             content.add(ModItems.WOODEN_LEGGINGS);
@@ -194,6 +206,7 @@ public class ModItemGroups {
             content.add(ModItems.DIAMOND_BOW);
             content.add(ModItems.NETHERITE_BOW);
             content.add(ModItems.ENDERITE_BOW);
+            content.add(ModItems.SCULK_DAGGER);
             content.add(ModItems.IRON_ARROW);
             content.add(ModItems.DIAMOND_ARROW);
             content.add(ModItems.NETHERITE_ARROW);

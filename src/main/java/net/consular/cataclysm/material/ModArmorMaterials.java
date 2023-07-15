@@ -144,6 +144,14 @@ public enum ModArmorMaterials implements ModArmorMaterial {
         map.put(ArmorItem.Type.HELMET, 3);
     }), 19, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 4.0F, 0.2F, 0F, 0F, 0F, 0F, 0F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{ModItems.ENDERITE_INGOT});
+    }),
+    SCULK("sculk", 49, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+        map.put(ArmorItem.Type.BOOTS, 4);
+        map.put(ArmorItem.Type.LEGGINGS, 8);
+        map.put(ArmorItem.Type.CHESTPLATE, 9);
+        map.put(ArmorItem.Type.HELMET, 4);
+    }), 24, SoundEvents.BLOCK_SCULK_SENSOR_CLICKING, 4.0F, 0.3F, 0F, 0F, 0F, 0F, 0F, () -> {
+        return Ingredient.ofItems(new ItemConvertible[]{Items.ECHO_SHARD});
     });
 
     public static final StringIdentifiable.Codec<ArmorMaterials> CODEC = StringIdentifiable.createCodec(ArmorMaterials::values);
