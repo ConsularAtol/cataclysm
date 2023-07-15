@@ -57,20 +57,23 @@ public class DaggerItem extends ToolItem implements Vanishable{
         return state.isIn(BlockTags.SWORD_EFFICIENT) ? 1.5f : 1.0f;
     }
 
-    private Double getDamageBonus(PlayerEntity attacker){
+    private Double getDamageBonus(LivingEntity attacker){
         return attacker.getAttributeValue(Cataclysm.EntityAttributes.DAGGER_DAMAGE_BOOST) + 1D;
     }
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         stack.damage(1, attacker, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
-        target.damage(attacker.getDamageSources().generic(), (float) (getDamageBonus((PlayerEntity) attacker) + attackDamage));
         int quickStab = EnchantmentHelper.getEquipmentLevel(ModEnchantments.QUICK_STAB, attacker);
         int cunning = EnchantmentHelper.getEquipmentLevel(ModEnchantments.CUNNING, attacker);
         if (cunning > 0) {
             attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20, cunning - 1));
             attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 20));
         }
+        if (!target.canSee(attacker))
+            target.damage(attacker.getDamageSources().generic(), (float) (getDamageBonus(attacker) + attackDamage + attacker.getAttributeValue(Cataclysm.EntityAttributes.SNEAK_ATTACK_DAMAGE)));
+        else
+            target.damage(attacker.getDamageSources().generic(), (float) (getDamageBonus(attacker) + attackDamage));
         target.timeUntilRegen = 18 - quickStab;
         return true;
     }

@@ -1,9 +1,13 @@
 package net.consular.cataclysm.mixin;
 
+import java.util.List;
 import java.util.function.Predicate;
 
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 
+import net.consular.cataclysm.Cataclysm;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
@@ -17,6 +21,8 @@ import net.minecraft.item.RangedWeaponItem;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
 @Mixin(BowItem.class)
@@ -56,7 +62,7 @@ public class BowItemMixin extends RangedWeaponItem{
                 persistentProjectileEntity.setCritical(true);
             }
             if ((j = EnchantmentHelper.getLevel(Enchantments.POWER, stack)) > 0) {
-                persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + (double)j * 0.5 + 0.5);
+                persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + (double)j * 0.5 + 0.5 + playerEntity.getAttributeValue(Cataclysm.EntityAttributes.ARROW_DAMAGE));
             }
             if ((k = EnchantmentHelper.getLevel(Enchantments.PUNCH, stack)) > 0) {
                 persistentProjectileEntity.setPunch(k);
@@ -90,4 +96,14 @@ public class BowItemMixin extends RangedWeaponItem{
         return 15;
     }
     
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        if(stack.getItem() == Items.BOW){
+            tooltip.add(Text.literal((1.0f) + " Arrow Divergence").formatted(Formatting.BLUE));
+            tooltip.add(Text.literal((3.0f) + " Arrow Speed").formatted(Formatting.BLUE));
+        }
+        
+        super.appendTooltip(stack, world, tooltip, context);
+    }
+
 }

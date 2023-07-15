@@ -9,7 +9,9 @@
     "EnchantmentTargetMixin",
     "DamageEnchantmentMixin",
     "BowItemMixin",
-    "WardenEntityMixin"
+    "WardenEntityMixin",
+    "ArmorItemMixin",
+    "LivingEntityMixin"
   ],
   "client": [
     "InGameHudMixin"

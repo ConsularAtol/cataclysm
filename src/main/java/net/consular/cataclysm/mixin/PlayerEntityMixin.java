@@ -44,7 +44,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements MagicUse
 
 	@Inject(method = "createPlayerAttributes", at = @At("RETURN"))
 	private static void createPlayerAttributes(CallbackInfoReturnable<DefaultAttributeContainer.Builder> info) {
-		info.getReturnValue().add(MANA_REGEN).add(MANA_LOCK).add(DAGGER_DAMAGE_BOOST).add(UNARMED_DAMAGE).add(MANA_MAX);
+		info.getReturnValue().add(MANA_REGEN).add(MANA_LOCK).add(DAGGER_DAMAGE_BOOST).add(UNARMED_DAMAGE).add(MANA_MAX).add(ARROW_DAMAGE).add(SNEAK_ATTACK_DAMAGE);
 	}
 
 	@Inject(method = "attack", at = @At("HEAD"))

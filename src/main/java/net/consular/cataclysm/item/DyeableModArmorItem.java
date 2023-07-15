@@ -50,8 +50,10 @@ public class DyeableModArmorItem extends DyeableArmorItem{
     private final float toughness;
     protected final float knockbackResistance;
     protected final float daggerBoost;
+    protected final float sneakAttackDamage;
     protected final float unarmedBoost;
     protected final float maxMana;
+    protected final float arrowDamage;
     protected final ModArmorMaterial material;
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
 
@@ -64,21 +66,32 @@ public class DyeableModArmorItem extends DyeableArmorItem{
         this.toughness = material.getToughness();
         this.knockbackResistance = material.getKnockbackResistance();
         this.daggerBoost = material.getDaggerBoost();
+        this.sneakAttackDamage = material.getSneakAttackDamage();
         this.unarmedBoost = material.getUnarmedDamage();
         this.maxMana = material.getMaxMana();
+        this.arrowDamage = material.getArrowDamage();
         DispenserBlock.registerBehavior(this, DISPENSER_BEHAVIOR);
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
         UUID uUID = MODIFIERS.get((Object)type);
         builder.put(EntityAttributes.GENERIC_ARMOR, new EntityAttributeModifier(uUID, "Armor modifier", (double)this.protection, EntityAttributeModifier.Operation.ADDITION));
         builder.put(EntityAttributes.GENERIC_ARMOR_TOUGHNESS, new EntityAttributeModifier(uUID, "Armor toughness", (double)this.toughness, EntityAttributeModifier.Operation.ADDITION));
+        if (knockbackResistance > 0) {
+            builder.put(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, new EntityAttributeModifier(UUID.randomUUID(), "Armor knockback resist", (double)this.knockbackResistance, EntityAttributeModifier.Operation.ADDITION));
+        }
         if (daggerBoost > 0) {
-            builder.put(Cataclysm.EntityAttributes.DAGGER_DAMAGE_BOOST, new EntityAttributeModifier(uUID, "Armor dagger boost", (double)this.daggerBoost, EntityAttributeModifier.Operation.ADDITION));
+            builder.put(Cataclysm.EntityAttributes.DAGGER_DAMAGE_BOOST, new EntityAttributeModifier(UUID.randomUUID(), "Armor dagger boost", (double)this.daggerBoost, EntityAttributeModifier.Operation.ADDITION));
+        }
+        if (sneakAttackDamage > 0) {
+            builder.put(Cataclysm.EntityAttributes.SNEAK_ATTACK_DAMAGE, new EntityAttributeModifier(UUID.randomUUID(), "Armor sneak attack", (double)this.sneakAttackDamage, EntityAttributeModifier.Operation.ADDITION));
+        }
+        if (arrowDamage > 0) {
+            builder.put(Cataclysm.EntityAttributes.ARROW_DAMAGE, new EntityAttributeModifier(UUID.randomUUID(), "Armor arrow damage", (double)this.arrowDamage, EntityAttributeModifier.Operation.ADDITION));
         }
         if (unarmedBoost > 0){
-            builder.put(Cataclysm.EntityAttributes.UNARMED_DAMAGE, new EntityAttributeModifier(uUID, "Armor unarmed boost", (double)this.unarmedBoost, EntityAttributeModifier.Operation.ADDITION));
+            builder.put(Cataclysm.EntityAttributes.UNARMED_DAMAGE, new EntityAttributeModifier(UUID.randomUUID(), "Armor unarmed boost", (double)this.unarmedBoost, EntityAttributeModifier.Operation.ADDITION));
         }
         if (maxMana > 0){
-            builder.put(Cataclysm.EntityAttributes.MANA_MAX, new EntityAttributeModifier(uUID, "Armor max mana", (double)this.maxMana, EntityAttributeModifier.Operation.MULTIPLY_BASE));
+            builder.put(Cataclysm.EntityAttributes.MANA_MAX, new EntityAttributeModifier(UUID.randomUUID(), "Armor max mana", (double)this.maxMana, EntityAttributeModifier.Operation.MULTIPLY_BASE));
         }
         this.attributeModifiers = builder.build();
     }

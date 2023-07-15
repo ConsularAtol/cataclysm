@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -110,6 +111,22 @@ public class ModItemGroups {
             content.add(ModItems.SONIC_BOOM_SCROLL);
             content.add(ModItems.GEYSER_SCROLL);
             content.add(ModItems.WIND_GUST_SCROLL);
+            content.add(ModItems.SAPPHIRE_HOOD);
+            content.add(ModItems.SAPPHIRE_CLOAK);
+            content.add(ModItems.SAPPHIRE_PANTS);
+            content.add(ModItems.SAPPHIRE_SHOES);
+            content.add(ModItems.QUARTZ_HOOD);
+            content.add(ModItems.QUARTZ_CLOAK);
+            content.add(ModItems.QUARTZ_PANTS);
+            content.add(ModItems.QUARTZ_SHOES);
+            content.add(ModItems.AMETHYST_HOOD);
+            content.add(ModItems.AMETHYST_CLOAK);
+            content.add(ModItems.AMETHYST_PANTS);
+            content.add(ModItems.AMETHYST_SHOES);
+            content.add(ModItems.ECHO_HOOD);
+            content.add(ModItems.ECHO_CLOAK);
+            content.add(ModItems.ECHO_PANTS);
+            content.add(ModItems.ECHO_SHOES);
         });
         ItemGroupEvents.modifyEntriesEvent(MELEE).register(content -> {
             content.add(ModItems.ENDERITE_SWORD);
@@ -139,6 +156,10 @@ public class ModItemGroups {
             content.add(ModItems.BAT_CHESTPLATE);
             content.add(ModItems.BAT_LEGGINGS);
             content.add(ModItems.BAT_BOOTS);
+            content.add(ModItems.WARPED_HELMET);
+            content.add(ModItems.WARPED_CHESTPLATE);
+            content.add(ModItems.WARPED_LEGGINGS);
+            content.add(ModItems.WARPED_BOOTS);
             content.add(ModItems.SHULK_HELMET);
             content.add(ModItems.SHULK_CHESTPLATE);
             content.add(ModItems.SHULK_LEGGINGS);
@@ -159,6 +180,14 @@ public class ModItemGroups {
             content.add(ModItems.LUSH_CHESTPLATE);
             content.add(ModItems.LUSH_LEGGINGS);
             content.add(ModItems.LUSH_BOOTS);
+            content.add(ModItems.CRIMSON_HELMET);
+            content.add(ModItems.CRIMSON_CHESTPLATE);
+            content.add(ModItems.CRIMSON_LEGGINGS);
+            content.add(ModItems.CRIMSON_BOOTS);
+            content.add(ModItems.CHORUS_HELMET);
+            content.add(ModItems.CHORUS_CHESTPLATE);
+            content.add(ModItems.CHORUS_LEGGINGS);
+            content.add(ModItems.CHORUS_BOOTS);
         });
         ItemGroupEvents.modifyEntriesEvent(RANGED).register(content -> {
             content.add(ModItems.IRON_BOW);
@@ -170,6 +199,22 @@ public class ModItemGroups {
             content.add(ModItems.NETHERITE_ARROW);
             content.add(ModItems.ENDERITE_ARROW);
             content.add(ModItems.SCULK_ARROW);
+            content.add(ModItems.HIDE_HELMET);
+            content.add(ModItems.HIDE_CHESTPLATE);
+            content.add(ModItems.HIDE_LEGGINGS);
+            content.add(ModItems.HIDE_BOOTS);
+            content.add(Items.CHAINMAIL_HELMET);
+            content.add(Items.CHAINMAIL_CHESTPLATE);
+            content.add(Items.CHAINMAIL_LEGGINGS);
+            content.add(Items.CHAINMAIL_BOOTS);
+            content.add(ModItems.GILDED_BLACKSTONE_HELMET);
+            content.add(ModItems.GILDED_BLACKSTONE_CHESTPLATE);
+            content.add(ModItems.GILDED_BLACKSTONE_LEGGINGS);
+            content.add(ModItems.GILDED_BLACKSTONE_BOOTS);
+            content.add(ModItems.PHASE_HELMET);
+            content.add(ModItems.PHASE_CHESTPLATE);
+            content.add(ModItems.PHASE_LEGGINGS);
+            content.add(ModItems.PHASE_BOOTS);
         });
     }
 }

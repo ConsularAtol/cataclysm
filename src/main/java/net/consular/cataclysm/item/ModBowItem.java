@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.jetbrains.annotations.Nullable;
 
+import net.consular.cataclysm.Cataclysm;
 import net.consular.cataclysm.registry.ModItems;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -69,7 +70,7 @@ public class ModBowItem extends BowItem
                 persistentProjectileEntity.setNoGravity(true);
             }
             if ((j = EnchantmentHelper.getLevel(Enchantments.POWER, stack)) > 0) {
-                persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + (double)j * 0.5 + 0.5);
+                persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + (double)j * 0.5 + 0.5 + playerEntity.getAttributeValue(Cataclysm.EntityAttributes.ARROW_DAMAGE));
             }
             if ((k = EnchantmentHelper.getLevel(Enchantments.PUNCH, stack)) > 0) {
                 persistentProjectileEntity.setPunch(k);
@@ -95,15 +96,8 @@ public class ModBowItem extends BowItem
     
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if(divergence <= 1.0f)
-            tooltip.add(Text.literal((divergence - 1.0f) + " Arrow Divergence").formatted(Formatting.BLUE));
-        else
-            tooltip.add(Text.literal("+" + (divergence - 1.0f) + " Arrow Divergence").formatted(Formatting.RED));
-        
-        if(speed >= 3.0f)
-            tooltip.add(Text.literal("+" + (speed - 3.0f) + " Arrow Speed").formatted(Formatting.BLUE));
-        else
-            tooltip.add(Text.literal((speed - 3.0f) + " Arrow Speed").formatted(Formatting.RED));
+        tooltip.add(Text.literal((divergence) + " Arrow Divergence").formatted(Formatting.BLUE));
+        tooltip.add(Text.literal((speed) + " Arrow Speed").formatted(Formatting.BLUE));
 
         if(stack.getItem() == ModItems.NETHERITE_BOW)
             tooltip.add(Text.literal("Fired arrows will have Flame").formatted(Formatting.GREEN));

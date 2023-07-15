@@ -13,15 +13,15 @@ public enum ArrowType {
     public static double getDamage(ArrowType type){
         switch(type){
             case IRON:
-                return 3.0;
+                return 2.5;
             case DIAMOND:
-                return 4.0;
+                return 3.0;
             case NETHERITE:
-                return 5.0;
+                return 3.5;
             case ENDERITE:
-                return 6.0;
+                return 4.0;
             case SCULK:
-                return 7.0;
+                return 4.5;
             default:
                 return 0;
         }

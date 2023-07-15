@@ -19,6 +19,7 @@
     "spell.blank": "Blank",
     "spell.sonic_boom": "Sonic Boom",
     "spell.geyser": "Geyser",
+    "spell.wind_gust": "Wind Gust",
 
     "item.cataclysm.wooden_dagger": "Wooden Dagger",
     "item.cataclysm.stone_dagger": "Stone Dagger",
@@ -99,7 +100,10 @@
 
     "attribute.name.generic.cataclysm.mana_regen": "Mana Regen",
     "attribute.name.generic.cataclysm.dagger_damage_boost": "Dagger Damage",
+    "attribute.name.generic.cataclysm.sneak_attack_damage": "Sneak Attack Damage",
     "attribute.name.generic.cataclysm.unarmed_damage": "Unarmed Damage",
+    "attribute.name.generic.cataclysm.max_mana": "Max Mana",
+    "attribute.name.generic.cataclysm.arrow_damage": "Arrow Damage",
 
     "block.cataclysm.enderite_ore": "Enderite Ore",
     "block.cataclysm.ruby_ore": "Ruby Ore",

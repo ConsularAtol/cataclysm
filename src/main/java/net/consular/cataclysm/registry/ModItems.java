@@ -98,15 +98,15 @@ public class ModItems {
 
     public static final Item MAGIC_MIRROR = registerItem("magic_mirror", new MagicMirrorItem(new Item.Settings().maxCount(1)));
 
-    public static final Item IRON_BOW = registerItem("iron_bow", new ModBowItem(new Item.Settings().maxCount(1).maxDamage(384 * 2), 0.5f, 4.0f));
+    public static final Item IRON_BOW = registerItem("iron_bow", new ModBowItem(new Item.Settings().maxCount(1).maxDamage(384 * 2), 0.9f, 3.5f));
 
-    public static final Item DIAMOND_BOW = registerItem("diamond_bow", new ModBowItem(new Item.Settings().maxCount(1).maxDamage(384 * 3), 0.4f, 5.0f));
+    public static final Item DIAMOND_BOW = registerItem("diamond_bow", new ModBowItem(new Item.Settings().maxCount(1).maxDamage(384 * 3), 0.8f, 3.6f));
 
-    public static final Item NETHERITE_BOW = registerItem("netherite_bow", new ModBowItem(new Item.Settings().maxCount(1).fireproof().maxDamage(384 * 4), 0.3f, 5.0f));
+    public static final Item NETHERITE_BOW = registerItem("netherite_bow", new ModBowItem(new Item.Settings().maxCount(1).fireproof().maxDamage(384 * 4), 0.7f, 3.7f));
 
-    public static final Item ENDERITE_BOW = registerItem("enderite_bow", new ModBowItem(new Item.Settings().maxCount(1).maxDamage(384 * 5), 0.2f, 5.0f));
+    public static final Item ENDERITE_BOW = registerItem("enderite_bow", new ModBowItem(new Item.Settings().maxCount(1).maxDamage(384 * 5), 0.6f, 3.8f));
 
-    public static final Item IRON_CROSSBOW = registerItem("iron_crossbow", new ModCrossbowItem(new Item.Settings().maxCount(1).maxDamage(0), 0.5f, 4.0f));
+    public static final Item IRON_CROSSBOW = registerItem("iron_crossbow", new ModCrossbowItem(new Item.Settings().maxCount(1).maxDamage(0), 0.9f, 3.5f));
     
     public static final Item IRON_ARROW = registerItem("iron_arrow", new ModArrowItem(new Item.Settings(), ArrowType.IRON));
 
@@ -153,6 +153,22 @@ public class ModItems {
     public static final Item LUSH_LEGGINGS = registerItem("lush_leggings", new ModArmorItem(ModArmorMaterials.LUSH, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
 
     public static final Item LUSH_BOOTS = registerItem("lush_boots", new ModArmorItem(ModArmorMaterials.LUSH, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+
+    public static final Item CRIMSON_HELMET = registerItem("crimson_helmet", new DyeableModArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+
+    public static final Item CRIMSON_CHESTPLATE = registerItem("crimson_chestplate", new DyeableModArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+
+    public static final Item CRIMSON_LEGGINGS = registerItem("crimson_leggings", new DyeableModArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+
+    public static final Item CRIMSON_BOOTS = registerItem("crimson_boots", new DyeableModArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+
+    public static final Item CHORUS_HELMET = registerItem("chorus_helmet", new DyeableModArmorItem(ModArmorMaterials.CHORUS, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+
+    public static final Item CHORUS_CHESTPLATE = registerItem("chorus_chestplate", new DyeableModArmorItem(ModArmorMaterials.CHORUS, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+
+    public static final Item CHORUS_LEGGINGS = registerItem("chorus_leggings", new DyeableModArmorItem(ModArmorMaterials.CHORUS, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+
+    public static final Item CHORUS_BOOTS = registerItem("chorus_boots", new DyeableModArmorItem(ModArmorMaterials.CHORUS, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
 
     public static final Item STINGER = registerItem("stinger", new Item(new Item.Settings()));
 
@@ -206,8 +222,70 @@ public class ModItems {
 
     public static final Item SHULK_BOOTS = registerItem("shulk_boots", new DyeableModArmorItem(ModArmorMaterials.SHULK, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
 
-    public static final Item SAPPHIRE_CLOAK = registerItem("sapphire_cloak", new DyeableModArmorItem(ModArmorMaterials.CLOAK, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+    public static final Item WARPED_HELMET = registerItem("warped_helmet", new ModArmorItem(ModArmorMaterials.WARPED, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
 
+    public static final Item WARPED_CHESTPLATE = registerItem("warped_chestplate", new ModArmorItem(ModArmorMaterials.WARPED, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+
+    public static final Item WARPED_LEGGINGS = registerItem("warped_leggings", new ModArmorItem(ModArmorMaterials.WARPED, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+
+    public static final Item WARPED_BOOTS = registerItem("warped_boots", new ModArmorItem(ModArmorMaterials.WARPED, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+
+    public static final Item SAPPHIRE_HOOD = registerItem("sapphire_hood", new ModArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+
+    public static final Item SAPPHIRE_CLOAK = registerItem("sapphire_cloak", new ModArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+
+    public static final Item SAPPHIRE_PANTS = registerItem("sapphire_pants", new ModArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+
+    public static final Item SAPPHIRE_SHOES = registerItem("sapphire_shoes", new ModArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+
+    public static final Item QUARTZ_HOOD = registerItem("quartz_hood", new ModArmorItem(ModArmorMaterials.QUARTZ, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+
+    public static final Item QUARTZ_CLOAK = registerItem("quartz_cloak", new ModArmorItem(ModArmorMaterials.QUARTZ, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+
+    public static final Item QUARTZ_PANTS = registerItem("quartz_pants", new ModArmorItem(ModArmorMaterials.QUARTZ, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+
+    public static final Item QUARTZ_SHOES = registerItem("quartz_shoes", new ModArmorItem(ModArmorMaterials.QUARTZ, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+
+    public static final Item AMETHYST_HOOD = registerItem("amethyst_hood", new ModArmorItem(ModArmorMaterials.AMETHYST, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+
+    public static final Item AMETHYST_CLOAK = registerItem("amethyst_cloak", new ModArmorItem(ModArmorMaterials.AMETHYST, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+
+    public static final Item AMETHYST_PANTS = registerItem("amethyst_pants", new ModArmorItem(ModArmorMaterials.AMETHYST, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+
+    public static final Item AMETHYST_SHOES = registerItem("amethyst_shoes", new ModArmorItem(ModArmorMaterials.AMETHYST, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+
+    public static final Item ECHO_HOOD = registerItem("echo_hood", new ModArmorItem(ModArmorMaterials.ECHO, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+
+    public static final Item ECHO_CLOAK = registerItem("echo_cloak", new ModArmorItem(ModArmorMaterials.ECHO, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+
+    public static final Item ECHO_PANTS = registerItem("echo_pants", new ModArmorItem(ModArmorMaterials.ECHO, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+
+    public static final Item ECHO_SHOES = registerItem("echo_shoes", new ModArmorItem(ModArmorMaterials.ECHO, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+
+    public static final Item HIDE_HELMET = registerItem("hide_helmet", new ModArmorItem(ModArmorMaterials.HIDE, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+
+    public static final Item HIDE_CHESTPLATE = registerItem("hide_chestplate", new ModArmorItem(ModArmorMaterials.HIDE, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+
+    public static final Item HIDE_LEGGINGS = registerItem("hide_leggings", new ModArmorItem(ModArmorMaterials.HIDE, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+
+    public static final Item HIDE_BOOTS = registerItem("hide_boots", new ModArmorItem(ModArmorMaterials.HIDE, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+
+    public static final Item GILDED_BLACKSTONE_HELMET = registerItem("gilded_blackstone_helmet", new ModArmorItem(ModArmorMaterials.GILDED_BLACKSTONE, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+
+    public static final Item GILDED_BLACKSTONE_CHESTPLATE = registerItem("gilded_blackstone_chestplate", new ModArmorItem(ModArmorMaterials.GILDED_BLACKSTONE, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+
+    public static final Item GILDED_BLACKSTONE_LEGGINGS = registerItem("gilded_blackstone_leggings", new ModArmorItem(ModArmorMaterials.GILDED_BLACKSTONE, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+
+    public static final Item GILDED_BLACKSTONE_BOOTS = registerItem("gilded_blackstone_boots", new ModArmorItem(ModArmorMaterials.GILDED_BLACKSTONE, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+
+    public static final Item PHASE_HELMET = registerItem("phase_helmet", new ModArmorItem(ModArmorMaterials.PHASE, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+
+    public static final Item PHASE_CHESTPLATE = registerItem("phase_chestplate", new ModArmorItem(ModArmorMaterials.PHASE, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+
+    public static final Item PHASE_LEGGINGS = registerItem("phase_leggings", new ModArmorItem(ModArmorMaterials.PHASE, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+
+    public static final Item PHASE_BOOTS = registerItem("phase_boots", new ModArmorItem(ModArmorMaterials.PHASE, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+    
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, new Identifier(Cataclysm.MODID, name), item);
     }

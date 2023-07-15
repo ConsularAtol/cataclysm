@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "cataclysm:item/geyser_tome"
+    "layer0": "cataclysm:item/wind_gust_tome"
   }
 }

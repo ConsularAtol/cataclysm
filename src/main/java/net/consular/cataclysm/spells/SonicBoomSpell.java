@@ -27,7 +27,7 @@ public class SonicBoomSpell implements Spell {
 
     @Override
     public int getManaCost() {
-        return 6;
+        return 10;
     }
 
     @Override

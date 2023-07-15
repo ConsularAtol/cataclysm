@@ -8,4 +8,8 @@ public interface ModArmorMaterial extends ArmorMaterial{
     public float getUnarmedDamage();
 
     public float getMaxMana();
+
+    public float getArrowDamage();
+    
+    public float getSneakAttackDamage();
 }

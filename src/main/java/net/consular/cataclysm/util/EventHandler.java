@@ -48,22 +48,39 @@ public class EventHandler {
 
                     DrawContext context = new DrawContext(client, client.getBufferBuilders().getEntityVertexConsumers());
 
-                    for (int i = 0; i < user.getMaxMana() / 2; i++)
+                    int r = user.getMaxMana() % 2;
+                    int m = user.getMaxMana();
+                    int p = mana;
+                    int o = 0;
+                    if (m > 20)
+                        m = 20;
+                    if (p > 20){
+                        o = p -20;
+                        p = 20;
+                    }
+                    for (int i = 0; i < (m / 2) + r; i++){
                         context.drawTexture(HUD_ELEMENTS, x - (i * 8), y, 0, 15, 9, 9);
+                    }
 
-                    for (int i = 0; i < mana / 2; i++)
+                    for (int i = 0; i < p / 2; i++)
                         context.drawTexture(HUD_ELEMENTS, x - (i * 8), y, 0, 0, 8, 8);
 
-                    if (mana % 2 == 1)
-                        context.drawTexture(HUD_ELEMENTS, x - ((mana / 2) * 8), y, 8, 0, 8, 8);
+                    if (p % 2 == 1)
+                        context.drawTexture(HUD_ELEMENTS, x - ((p / 2) * 8), y, 8, 0, 8, 8);
+
+                    for (int i = 0; i < o / 2; i++)
+                        context.drawTexture(HUD_ELEMENTS, x - (i * 8), y, 32, 0, 8, 8);
+
+                    if (o % 2 == 1)
+                        context.drawTexture(HUD_ELEMENTS, x - ((o / 2) * 8), y, 40, 0, 8, 8);
 
                     if (player.hasStatusEffect(ModEffects.DRAINED)){
-                        for (int i = 0; i < mana / 2; i++)
+                        for (int i = 0; i < p / 2; i++)
                             context.drawTexture(HUD_ELEMENTS, x - (i * 8), y, 16, 0, 8, 8);
                     }
 
-                    if (mana % 2 == 1 && player.hasStatusEffect(ModEffects.DRAINED))
-                        context.drawTexture(HUD_ELEMENTS, x - ((mana / 2) * 8), y, 24, 0, 8, 8);
+                    if (p % 2 == 1 && player.hasStatusEffect(ModEffects.DRAINED))
+                        context.drawTexture(HUD_ELEMENTS, x - ((p / 2) * 8), y, 24, 0, 8, 8);
 
                     int adjustedManaLock = (manaLock / 2) * 8;
                     x -= 72;

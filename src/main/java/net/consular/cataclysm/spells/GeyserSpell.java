@@ -56,5 +56,4 @@ public class GeyserSpell implements Spell{
     public String getId() {
         return "geyser";
     }
-    //This spell will launch entitys into the air by having water shoot up from beneath it. If the player does not right click on a mob with the spell it will launch themselves. man I love tf2 rocket jumping.
 }

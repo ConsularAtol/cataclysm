@@ -6,6 +6,7 @@ import java.util.Set;
 
 import com.google.common.collect.Sets;
 
+import net.consular.cataclysm.Cataclysm;
 import net.consular.cataclysm.item.ModArrowItem;
 import net.consular.cataclysm.item.ModTippedArrowItem;
 import net.consular.cataclysm.registry.ModEntities;
@@ -250,7 +251,7 @@ public class ModArrowEntity extends PersistentProjectileEntity{
         super.onEntityHit(entityHitResult);
         Entity entity = entityHitResult.getEntity();
         float f = (float)this.getVelocity().length();
-        int i = MathHelper.ceil(MathHelper.clamp((double)f * ArrowType.getDamage(ArrowType.getTypeFromString(getArrowType())), 0.0, 2.147483647E9));
+        int i = MathHelper.ceil(MathHelper.clamp((double)f * ArrowType.getDamage(ArrowType.getTypeFromString(getArrowType())), 0.0, 2.147483647E9) + ((PlayerEntity)this.getOwner()).getAttributeValue(Cataclysm.EntityAttributes.ARROW_DAMAGE));
         if (this.isCritical()) {
             long l = this.random.nextInt(i / 2 + 2);
             i = (int)Math.min(l + (long)i, Integer.MAX_VALUE);
