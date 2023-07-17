@@ -2,6 +2,7 @@ package net.consular.cataclysm.registry;
 
 import net.consular.cataclysm.Cataclysm;
 import net.consular.cataclysm.entity.HornetEntity;
+import net.consular.cataclysm.event.SneakAttackHandler;
 import net.consular.cataclysm.util.LootTableModifiers;
 import net.consular.cataclysm.world.gen.ModEntitySpawn;
 import net.consular.cataclysm.world.gen.ModWorldGeneration;
@@ -27,6 +28,7 @@ public class ModRegistries {
         ModEnchantmentTargets.registerEnchantmentTargets();
         ModEnchantments.registerModEnchantments();
         ModItemGroups.registerItemGroups();
+        SneakAttackHandler.initialize();
 
         registerAttributes();
         registerMobAttributes();

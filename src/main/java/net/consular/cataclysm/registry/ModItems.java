@@ -128,7 +128,7 @@ public class ModItems {
 
     public static final Item ENDERITE_BOW = registerItem("enderite_bow", new ModBowItem(new Item.Settings().maxCount(1).maxDamage(384 * 5), 0.6f, 3.8f));
 
-    public static final Item SCULK_BOW = registerItem("sculk_bow", new ModBowItem(new Item.Settings().maxCount(1).maxDamage(384 * 5), 0.6f, 3.8f));
+    public static final Item SCULK_BOW = registerItem("sculk_bow", new ModBowItem(new Item.Settings().maxCount(1).maxDamage(384 * 5), 0.5f, 3.9f));
 
     public static final Item IRON_CROSSBOW = registerItem("iron_crossbow", new ModCrossbowItem(new Item.Settings().maxCount(1).maxDamage(0), 0.9f, 3.5f));
     

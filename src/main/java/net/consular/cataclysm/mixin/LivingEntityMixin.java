@@ -1,18 +1,24 @@
 package net.consular.cataclysm.mixin;
 
+import java.util.Collection;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import net.consular.cataclysm.registry.ModEffects;
 import net.consular.cataclysm.registry.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.potion.PotionUtil;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -83,7 +89,14 @@ public class LivingEntityMixin {
         return result.getType() == HitResult.Type.MISS;
     }
 
-    private boolean wearingPhase(LivingEntity entity){
+    @Inject(method = "tick", at = @At("HEAD"))
+    public void greaterInvisibility(CallbackInfo ci) {
+        if (((LivingEntity)(Object)this).hasStatusEffect(ModEffects.GREATER_INVISIBILITY)){
+            ((LivingEntity)(Object)this).setInvisible(true);
+        }
+    }
+
+    public boolean wearingPhase(LivingEntity entity){
         return entity.getEquippedStack(EquipmentSlot.HEAD).isOf(ModItems.PHASE_HELMET) && 
         entity.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.PHASE_CHESTPLATE) &&
         entity.getEquippedStack(EquipmentSlot.LEGS).isOf(ModItems.PHASE_LEGGINGS) &&

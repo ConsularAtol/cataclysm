@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
 import net.consular.cataclysm.Cataclysm;
+import net.consular.cataclysm.registry.ModEffects;
 import net.consular.cataclysm.registry.ModEnchantments;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -68,7 +69,7 @@ public class DaggerItem extends ToolItem implements Vanishable{
         int cunning = EnchantmentHelper.getEquipmentLevel(ModEnchantments.CUNNING, attacker);
         if (cunning > 0) {
             attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20, cunning - 1));
-            attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 20));
+            attacker.addStatusEffect(new StatusEffectInstance(ModEffects.GREATER_INVISIBILITY, 20));
         }
         if (!target.canSee(attacker))
             target.damage(attacker.getDamageSources().generic(), (float) (getDamageBonus(attacker) + attackDamage + attacker.getAttributeValue(Cataclysm.EntityAttributes.SNEAK_ATTACK_DAMAGE)));

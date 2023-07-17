@@ -4,14 +4,21 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
 import java.util.EnumMap;
+import java.util.List;
 import java.util.UUID;
 
+import org.jetbrains.annotations.Nullable;
+
 import net.consular.cataclysm.Cataclysm;
+import net.consular.cataclysm.material.ModArmorMaterials;
+import net.consular.cataclysm.mixin.LivingEntityMixin;
 import net.consular.cataclysm.util.ModArmorMaterial;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.DispenserBehavior;
 import net.minecraft.block.dispenser.ItemDispenserBehavior;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -21,6 +28,9 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.text.MutableText;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.Util;
@@ -140,4 +150,12 @@ public class ModArmorItem extends ArmorItem {
     public SoundEvent getEquipSound() {
         return this.getMaterial().getEquipSound();
     }
+
+    @Override
+	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        if (this.material == ModArmorMaterials.PHASE){
+            tooltip.add(Text.literal("Set Bonus:").formatted(Formatting.GRAY));
+            tooltip.add(Text.literal("Randomly teleport after taking damage").formatted(Formatting.BLUE));
+        }
+	}
 }

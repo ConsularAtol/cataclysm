@@ -5,6 +5,7 @@ import java.util.List;
 import org.jetbrains.annotations.Nullable;
 
 import net.consular.cataclysm.Cataclysm;
+import net.consular.cataclysm.entity.ModArrowEntity;
 import net.consular.cataclysm.registry.ModItems;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -69,6 +70,9 @@ public class ModBowItem extends BowItem
             if (stack.getItem() == ModItems.ENDERITE_BOW) {
                 persistentProjectileEntity.setNoGravity(true);
             }
+            if (stack.getItem() == ModItems.SCULK_BOW) {
+                ((ModArrowEntity)persistentProjectileEntity).setGravitation(0.5f);
+            }
             if ((j = EnchantmentHelper.getLevel(Enchantments.POWER, stack)) > 0) {
                 persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + (double)j * 0.5 + 0.5 + playerEntity.getAttributeValue(Cataclysm.EntityAttributes.ARROW_DAMAGE));
             }
@@ -103,7 +107,9 @@ public class ModBowItem extends BowItem
             tooltip.add(Text.literal("Fired arrows will have Flame").formatted(Formatting.GREEN));
         if(stack.getItem() == ModItems.ENDERITE_BOW)
             tooltip.add(Text.literal("Fired arrows will have no gravity").formatted(Formatting.GREEN));
-        
+        if(stack.getItem() == ModItems.SCULK_BOW)
+            tooltip.add(Text.literal("Fired arrows will gravitate towards nearby entites").formatted(Formatting.GREEN));       
+
         super.appendTooltip(stack, world, tooltip, context);
     }
 }

@@ -206,7 +206,7 @@ public class ModItemGroups {
             content.add(ModItems.DIAMOND_BOW);
             content.add(ModItems.NETHERITE_BOW);
             content.add(ModItems.ENDERITE_BOW);
-            content.add(ModItems.SCULK_DAGGER);
+            content.add(ModItems.SCULK_BOW);
             content.add(ModItems.IRON_ARROW);
             content.add(ModItems.DIAMOND_ARROW);
             content.add(ModItems.NETHERITE_ARROW);

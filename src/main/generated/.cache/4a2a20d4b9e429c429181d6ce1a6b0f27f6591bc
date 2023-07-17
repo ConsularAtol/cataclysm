@@ -1,7 +1,7 @@
-// 1.20.1	2023-07-15T08:15:24.4844212	Cataclysm/cataclysm
+// 1.20.1	2023-07-17T18:19:51.2889995	Cataclysm/cataclysm
 bae84032db19b29d5cb04d3a11105420ed30c834 data\cataclysm\worldgen\placed_feature\enderite_ore_placed.json
 19ba20f2c3bf95839c6e26419d0226387429fecf data\cataclysm\worldgen\configured_feature\sapphire_ore.json
 d11eeda6bb905496109873b765851f507c43100a data\cataclysm\worldgen\configured_feature\ruby_ore.json
-1c28e106be9b78f312920a86ab5f7ce4f28ed2d5 data\cataclysm\worldgen\configured_feature\enderite_ore.json
 4f526963eac155b0db065e1b8a266cc4af23d241 data\cataclysm\worldgen\placed_feature\ruby_ore_placed.json
+1c28e106be9b78f312920a86ab5f7ce4f28ed2d5 data\cataclysm\worldgen\configured_feature\enderite_ore.json
 80354b1a0dcfc5008ef76c35d4d684cb821c8756 data\cataclysm\worldgen\placed_feature\sapphire_ore_placed.json

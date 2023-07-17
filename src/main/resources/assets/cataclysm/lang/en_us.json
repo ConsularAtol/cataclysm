@@ -63,6 +63,7 @@
     "item.cataclysm.diamond_bow": "Diamond Bow",
     "item.cataclysm.netherite_bow": "Netherite Bow",
     "item.cataclysm.enderite_bow": "Enderite Bow",
+    "item.cataclysm.sculk_bow": "Sculk Bow",
     "item.cataclysm.iron_arrow": "Iron Arrow",
     "item.cataclysm.diamond_arrow": "Diamond Arrow",
     "item.cataclysm.netherite_arrow": "Netherite Arrow",
@@ -76,6 +77,7 @@
     "item.cataclysm.tipped_netherite_arrow.effect": "Netherite Tipped Arrow of %s",
     "item.cataclysm.tipped_enderite_arrow": "Enderite Tipped Arrow",
     "item.cataclysm.tipped_enderite_arrow.effect": "Enderite Tipped Arrow of %s",
+    "item.cataclysm.tipped_sculk_arrow": "Sculk Tipped Arrow",
     "item.cataclysm.tipped_sculk_arrow.effect": "Sculk Tipped Arrow of %s",
 
     "item.cataclysm.leather_glove": "Leather Glove",

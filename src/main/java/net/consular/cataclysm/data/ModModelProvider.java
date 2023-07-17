@@ -46,6 +46,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem)ModItems.CRIMSON_CHESTPLATE);
         itemModelGenerator.registerArmor((ArmorItem)ModItems.CRIMSON_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem)ModItems.CRIMSON_BOOTS);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.CHORUS_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.CHORUS_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.CHORUS_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.CHORUS_BOOTS);
         itemModelGenerator.registerArmor((ArmorItem)ModItems.WARPED_HELMET);
         itemModelGenerator.registerArmor((ArmorItem)ModItems.WARPED_CHESTPLATE);
         itemModelGenerator.registerArmor((ArmorItem)ModItems.WARPED_LEGGINGS);

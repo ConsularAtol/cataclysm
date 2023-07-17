@@ -10,13 +10,15 @@ import net.minecraft.registry.Registry;
 
 public class ModEffects {
     public static StatusEffect DRAINED;
+    public static StatusEffect GREATER_INVISIBILITY;
 
-    public static StatusEffect registerStatusEffect(String name) {
+    public static StatusEffect registerStatusEffect(String name, StatusEffectCategory category, int color) {
         return Registry.register(Registries.STATUS_EFFECT, new Identifier(Cataclysm.MODID, name),
-                new DrainedEffect(StatusEffectCategory.HARMFUL, 000752));
+                new DrainedEffect(category, color));
     }
 
     public static void registerEffects() {
-        DRAINED = registerStatusEffect("drained");
+        DRAINED = registerStatusEffect("drained", StatusEffectCategory.HARMFUL, 000752);
+        GREATER_INVISIBILITY = registerStatusEffect("greater_invisibility", StatusEffectCategory.BENEFICIAL, 0xffffff);
     }
 }

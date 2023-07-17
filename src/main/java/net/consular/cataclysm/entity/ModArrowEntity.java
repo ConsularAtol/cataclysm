@@ -2,7 +2,11 @@ package net.consular.cataclysm.entity;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
+import java.util.UUID;
+
+import org.jetbrains.annotations.Nullable;
 
 import com.google.common.collect.Sets;
 
@@ -37,6 +41,7 @@ import net.minecraft.potion.Potions;
 import net.minecraft.registry.Registries;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -45,6 +50,8 @@ public class ModArrowEntity extends PersistentProjectileEntity{
 
     private static final TrackedData<String> ARROW_TYPE = DataTracker.registerData(ModArrowEntity.class, TrackedDataHandlerRegistry.STRING);
     private static final TrackedData<Integer> COLOR = DataTracker.registerData(ModArrowEntity.class, TrackedDataHandlerRegistry.INTEGER);
+    private static final TrackedData<Float> GRAVITATION = DataTracker.registerData(ModArrowEntity.class, TrackedDataHandlerRegistry.FLOAT);
+
     private Potion potion = Potions.EMPTY;
     private final Set<StatusEffectInstance> effects = Sets.newHashSet();
     private boolean colorSet;
@@ -56,10 +63,19 @@ public class ModArrowEntity extends PersistentProjectileEntity{
     public ModArrowEntity(World world, LivingEntity owner, ArrowType type) {
         super(ModEntities.MOD_ARROW, owner, world);
         this.dataTracker.set(ARROW_TYPE, type.toString());
+        this.dataTracker.set(GRAVITATION, getGravitation());
     }
 
     public ModArrowEntity(World world, double x, double y, double z) {
         super(ModEntities.MOD_ARROW, x, y, z, world);
+    }
+
+    public void setGravitation(Float amount){
+        this.dataTracker.set(GRAVITATION, amount);
+    }
+
+    public Float getGravitation(){
+        return this.dataTracker.get(GRAVITATION);
     }
 
     public void initFromStack(ItemStack stack) {
@@ -110,6 +126,7 @@ public class ModArrowEntity extends PersistentProjectileEntity{
     protected void initDataTracker() {
         super.initDataTracker();
         this.dataTracker.startTracking(ARROW_TYPE, "IRON");
+        this.dataTracker.startTracking(GRAVITATION, 0f);
         this.dataTracker.startTracking(COLOR, -1);
     }
 
@@ -130,6 +147,54 @@ public class ModArrowEntity extends PersistentProjectileEntity{
             this.effects.clear();
             this.dataTracker.set(COLOR, -1);
         }
+        if (this.isAlive() && !this.getWorld().isClient) {
+            // Find the closest entity (other than its owner)
+            Entity closestEntity = this.findClosestEntity();
+    
+            if (closestEntity != null) {
+                double dx = closestEntity.getX() - this.getX();
+                double dy = closestEntity.getY() - this.getY();
+                double dz = closestEntity.getZ() - this.getZ();
+    
+                double distanceSq = dx * dx + dy * dy + dz * dz;
+                double distance = Math.sqrt(distanceSq);
+    
+                if (distance < getGravitation() * 10) {
+                    double strength = getGravitation(); // Set the desired strength
+    
+                    // Calculate the force vector
+                    double forceX = (dx / distance) * strength;
+                    double forceY = (dy / distance) * strength;
+                    double forceZ = (dz / distance) * strength;
+    
+                    // Apply the force to the entity's motion
+                    this.setVelocity(this.getVelocity().add(forceX, forceY, forceZ));
+                }
+            }
+        }
+    }
+
+    @Nullable
+    private Entity findClosestEntity() {
+        // Exclude the owner of the entity
+        UUID ownerId;
+
+        double closestDistanceSq = Double.MAX_VALUE;
+        Entity closestEntity = null;
+
+        if (this.getOwner() != null) {
+            ownerId = this.getOwner().getUuid();
+
+            for (Entity entity : this.getWorld().getEntitiesByClass(Entity.class, this.getBoundingBox().expand(8.0), (entity) -> entity instanceof LivingEntity && !Objects.equals(entity.getUuid(), ownerId))) {
+                double distanceSq = this.squaredDistanceTo(entity);
+                if (distanceSq < closestDistanceSq) {
+                    closestDistanceSq = distanceSq;
+                    closestEntity = entity;
+                }
+            }
+        }
+
+        return closestEntity;
     }
 
     private void spawnParticles(int amount) {
