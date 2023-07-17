@@ -9,14 +9,11 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 
 public class WindGustSpell implements Spell {
 
-    private static final double PUSH_DISTANCE = 5.0;
     private static final double BOX_WIDTH = 15.0;
 
     @Override
