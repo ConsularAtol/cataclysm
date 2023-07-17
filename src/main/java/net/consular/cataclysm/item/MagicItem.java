@@ -28,7 +28,8 @@ public class MagicItem extends Item {
         MagicUser user = (MagicUser) player;
         if (user.getMana() >= getManaCost()){
             player.getItemCooldownManager().set(this, 10);
-            user.addMana(-getManaCost());
+            if (!player.isCreative())
+                user.addMana(-getManaCost());
             cast(world, player, hand);
             player.setCurrentHand(hand);
             player.incrementStat(Stats.USED.getOrCreateStat(this));

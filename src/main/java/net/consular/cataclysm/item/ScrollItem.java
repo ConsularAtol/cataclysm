@@ -37,7 +37,8 @@ public class ScrollItem extends Item{
         MagicUser user = (MagicUser) player;
         if (user.getMana() >= spell.getManaCost()){
             player.getItemCooldownManager().set(this, 10);
-            user.addMana(-spell.getManaCost());
+            if (!player.isCreative())
+                user.addMana(-spell.getManaCost());
             spell.cast(world, player, hand);
             player.setCurrentHand(hand);
             player.incrementStat(Stats.USED.getOrCreateStat(this));
