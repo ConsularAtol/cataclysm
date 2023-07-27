@@ -30,6 +30,7 @@ repositories {
     name = "ModMaven"
     url = "https://modmaven.dev"
   }
+  maven { url "https://maven.shedaniel.me/" }
 }
 
 
@@ -47,8 +48,15 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
+	// REI
+	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:$rei_version"
+	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:$rei_version"
+  	modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:$rei_version"
+
+	// Trinkets
 	modImplementation "dev.emi:trinkets:${trinkets_version}" 
 
+	// Geckolib
 	modImplementation "software.bernie.geckolib:geckolib-fabric-${geckolib_version}"
 
 	// Dev Runtime
@@ -67,6 +75,16 @@ loom {
             vmArg "-Dfabric-api.datagen.modid=cataclysm"
  
             runDir "build/datagen"
+        }
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs += [
+                    'src/main/generated'
+            ]
         }
     }
 }

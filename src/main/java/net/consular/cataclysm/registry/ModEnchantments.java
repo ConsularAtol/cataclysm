@@ -2,6 +2,7 @@ package net.consular.cataclysm.registry;
 
 import net.consular.cataclysm.Cataclysm;
 import net.consular.cataclysm.enchantment.CunningEnchantment;
+import net.consular.cataclysm.enchantment.CuttingEdgeEnchantment;
 import net.consular.cataclysm.enchantment.BludgeoningEnchantment;
 import net.consular.cataclysm.enchantment.QuickStabEnchantment;
 import net.minecraft.enchantment.Enchantment;
@@ -16,6 +17,9 @@ public final class ModEnchantments {
 
     public static Enchantment CUNNING = register("cunning",
             new CunningEnchantment());
+
+    public static Enchantment CUTTING_EDGE = register("cutting_edge",
+            new CuttingEdgeEnchantment());
 
     public static Enchantment BLUDGEONING = register("bludgeoning",
             new BludgeoningEnchantment());

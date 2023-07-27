@@ -1,5 +1,7 @@
 {
     "effect.cataclysm.drained": "Drained",
+    "effect.cataclysm.greater_invisibility": "Greater Invisibility",
+    "effect.cataclysm.bleeding": "Bleeding",
     "item.cataclysm.wand_of_sparking": "Wand of Sparking",
     "item.cataclysm.spell_tome": "Spell Tome",
     "item.cataclysm.scroll": "Scroll",
@@ -131,6 +133,7 @@
 
     "enchantment.cataclysm.quick_stab": "Quick Stab",
     "enchantment.cataclysm.cunning": "Cunning",
+    "enchantment.cataclysm.cutting_edge": "Cutting Edge",
     "enchantment.cataclysm.bludgeoning": "Bludgeoning",
 
     "subtitle.cataclysm.magic_mirror.use": "Magic Mirror used",

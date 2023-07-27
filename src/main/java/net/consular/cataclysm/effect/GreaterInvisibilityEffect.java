@@ -5,7 +5,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class GreaterInvisibilityEffect extends StatusEffect{
 
-    protected GreaterInvisibilityEffect(StatusEffectCategory category, int color) {
+    public GreaterInvisibilityEffect(StatusEffectCategory category, int color) {
         super(category, color);
     }
 

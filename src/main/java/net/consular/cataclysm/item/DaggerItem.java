@@ -67,6 +67,7 @@ public class DaggerItem extends ToolItem implements Vanishable{
         stack.damage(1, attacker, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
         int quickStab = EnchantmentHelper.getEquipmentLevel(ModEnchantments.QUICK_STAB, attacker);
         int cunning = EnchantmentHelper.getEquipmentLevel(ModEnchantments.CUNNING, attacker);
+        int cutting = EnchantmentHelper.getEquipmentLevel(ModEnchantments.CUTTING_EDGE, attacker);
         if (cunning > 0) {
             attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20, cunning - 1));
             attacker.addStatusEffect(new StatusEffectInstance(ModEffects.GREATER_INVISIBILITY, 20));
@@ -75,6 +76,12 @@ public class DaggerItem extends ToolItem implements Vanishable{
             target.damage(attacker.getDamageSources().generic(), (float) (getDamageBonus(attacker) + attackDamage + attacker.getAttributeValue(Cataclysm.EntityAttributes.SNEAK_ATTACK_DAMAGE)));
         else
             target.damage(attacker.getDamageSources().generic(), (float) (getDamageBonus(attacker) + attackDamage));
+        if (cutting > 0){
+            if (target.hasStatusEffect(ModEffects.BLEEDING))
+                target.addStatusEffect(new StatusEffectInstance(ModEffects.BLEEDING, 200 - (cutting * 20), target.getStatusEffect(ModEffects.BLEEDING).getAmplifier() + 1));
+            else
+                target.addStatusEffect(new StatusEffectInstance(ModEffects.BLEEDING, 200 - (cutting * 20), 0));
+        }
         target.timeUntilRegen = 18 - quickStab;
         return true;
     }
