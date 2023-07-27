@@ -96,6 +96,16 @@ public class ModItemGroups {
             content.add(ModItems.SCULK_HOE);
             content.add(ModBlocks.BEWITCHING_TABLE);
             content.add(ModItems.BAT_WING);
+            content.add(ModBlocks.GREEN_MUSHROOM);
+            content.add(ModBlocks.PURPLE_MUSHROOM);
+            content.add(ModBlocks.GREEN_MUSHROOM_BLOCK);
+            content.add(ModBlocks.PURPLE_MUSHROOM_BLOCK);
+            content.add(ModBlocks.MYCELIUM_PATH);
+            content.add(ModBlocks.MUSHROOM_LOG);
+            content.add(ModBlocks.STRIPPED_MUSHROOM_LOG);
+            content.add(ModBlocks.MUSHROOM_WOOD);
+            content.add(ModBlocks.STRIPPED_MUSHROOM_WOOD);
+            content.add(ModBlocks.MUSHROOM_PLANKS);
         });
         ItemGroupEvents.modifyEntriesEvent(ACCESSORIES).register(content -> {
             content.add(ModItems.HEART_NECKLACE);

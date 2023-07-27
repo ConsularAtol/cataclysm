@@ -7,7 +7,9 @@ import net.consular.cataclysm.util.LootTableModifiers;
 import net.consular.cataclysm.world.gen.ModEntitySpawn;
 import net.consular.cataclysm.world.gen.ModWorldGeneration;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.registry.FlattenableBlockRegistry;
 import net.minecraft.util.Identifier;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 
@@ -32,6 +34,7 @@ public class ModRegistries {
 
         registerAttributes();
         registerMobAttributes();
+        registerFlattenables();
     }
 
     private static void registerAttributes(){
@@ -46,5 +49,9 @@ public class ModRegistries {
 
     private static void registerMobAttributes(){
         FabricDefaultAttributeRegistry.register(ModEntities.HORNET, HornetEntity.setAttributes());
+    }
+
+    private static void registerFlattenables(){
+        FlattenableBlockRegistry.register(Blocks.MYCELIUM, ModBlocks.MYCELIUM_PATH.getDefaultState());
     }
 }

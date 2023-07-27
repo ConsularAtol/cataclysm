@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cross",
+    "textures": {
+      "cross": "cataclysm:block/purple_mushroom"
+    }
+  }
