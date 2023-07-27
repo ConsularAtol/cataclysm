@@ -82,5 +82,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem)ModItems.ECHO_CLOAK);
         itemModelGenerator.registerArmor((ArmorItem)ModItems.ECHO_PANTS);
         itemModelGenerator.registerArmor((ArmorItem)ModItems.ECHO_SHOES);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.ANCIENT_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.ANCIENT_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.ANCIENT_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem)ModItems.ANCIENT_BOOTS);
     }
 }
