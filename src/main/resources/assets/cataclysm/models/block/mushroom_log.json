@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "cataclysm:block/mushroom_log_top",
+    "side": "cataclysm:block/mushroom_log"
+  }
+}

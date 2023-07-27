@@ -3,11 +3,18 @@ package net.consular.cataclysm.registry;
 import net.consular.cataclysm.Cataclysm;
 import net.consular.cataclysm.block.BewitchingTableBlock;
 import net.consular.cataclysm.block.MoltenMagmaBlock;
+import net.consular.cataclysm.world.feature.ModConfiguredFeatures;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.DirtPathBlock;
 import net.minecraft.block.ExperienceDroppingBlock;
+import net.minecraft.block.FlowerPotBlock;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.MushroomBlock;
+import net.minecraft.block.MushroomPlantBlock;
+import net.minecraft.block.PillarBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -44,6 +51,42 @@ public class ModBlocks {
 
     public static final Block BEWITCHING_TABLE = registerBlock("bewitching_table", 
     new BewitchingTableBlock(FabricBlockSettings.create().strength(2.5f).sounds(BlockSoundGroup.WOOD)));
+
+        public static final Block GREEN_MUSHROOM_BLOCK = registerBlock("green_mushroom_block", 
+    new MushroomBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+
+    public static final Block PURPLE_MUSHROOM_BLOCK = registerBlock("purple_mushroom_block", 
+    new MushroomBlock(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+
+    public static final Block GREEN_MUSHROOM = registerBlock("green_mushroom",
+    new MushroomPlantBlock(FabricBlockSettings.create().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(state -> 1), ModConfiguredFeatures.HUGE_GREEN_MUSHROOM));
+
+    public static final Block PURPLE_MUSHROOM = registerBlock("purple_mushroom",
+    new MushroomPlantBlock(FabricBlockSettings.create().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(state -> 1), ModConfiguredFeatures.HUGE_PURPLE_MUSHROOM));
+
+    public static final Block POTTED_GREEN_MUSHROOM = registerBlock("potted_green_mushroom", 
+    new FlowerPotBlock(GREEN_MUSHROOM, FabricBlockSettings.create().breakInstantly().nonOpaque()));
+
+    public static final Block POTTED_PURPLE_MUSHROOM = registerBlock("potted_purple_mushroom", 
+    new FlowerPotBlock(PURPLE_MUSHROOM, FabricBlockSettings.create().breakInstantly().nonOpaque()));
+
+    public static final Block MYCELIUM_PATH = registerBlock("mycelium_path",
+    new DirtPathBlock(FabricBlockSettings.copyOf(Blocks.DIRT_PATH)));
+
+    public static final Block MUSHROOM_LOG = registerBlock("mushroom_log",
+    new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+
+    public static final Block MUSHROOM_WOOD = registerBlock("mushroom_wood",
+    new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
+
+    public static final Block STRIPPED_MUSHROOM_LOG = registerBlock("stripped_mushroom_log",
+    new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
+
+    public static final Block STRIPPED_MUSHROOM_WOOD = registerBlock("stripped_mushroom_wood",
+    new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block MUSHROOM_PLANKS = registerBlock("mushroom_planks",
+    new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);

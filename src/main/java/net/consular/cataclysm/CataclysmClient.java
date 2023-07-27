@@ -7,6 +7,7 @@ import net.consular.cataclysm.entity.render.ModArrowEntityRenderer;
 import net.consular.cataclysm.entity.render.ModFallingBlockEntityRenderer;
 import net.consular.cataclysm.entity.render.StingerRenderer;
 import net.consular.cataclysm.entity.render.WandOfSparkingEntityRenderer;
+import net.consular.cataclysm.registry.ModBlocks;
 import net.consular.cataclysm.registry.ModEntities;
 import net.consular.cataclysm.registry.ModItems;
 import net.consular.cataclysm.registry.ModScreenHandlers;
@@ -15,9 +16,11 @@ import net.consular.cataclysm.screen.FletchingScreen;
 import net.consular.cataclysm.util.EventHandler;
 import net.consular.cataclysm.util.ModModelPredicateProvider;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -28,6 +31,11 @@ public class CataclysmClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GREEN_MUSHROOM, RenderLayer.getCutout());
+		    BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PURPLE_MUSHROOM, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_GREEN_MUSHROOM, RenderLayer.getCutout());
+		    BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_PURPLE_MUSHROOM, RenderLayer.getCutout());
+
         EventHandler.clientEvents();
         ModModelPredicateProvider.registerModModels();
         HandledScreens.register(ModScreenHandlers.FLETCHING_SCREEN_HANDLER, FletchingScreen::new);

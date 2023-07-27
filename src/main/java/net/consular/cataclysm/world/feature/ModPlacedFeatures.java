@@ -1,12 +1,12 @@
 package net.consular.cataclysm.world.feature;
 
 import net.consular.cataclysm.Cataclysm;
+import net.consular.cataclysm.registry.ModBlocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.gen.feature.*;
@@ -18,7 +18,8 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> RUBY_ORE_PLACED = registerKey("ruby_ore_placed");
     public static final RegistryKey<PlacedFeature> SAPPHIRE_ORE_PLACED = registerKey("sapphire_ore_placed");
     public static final RegistryKey<PlacedFeature> ENDERITE_ORE_PLACED = registerKey("enderite_ore_placed");
-
+    public static final RegistryKey<PlacedFeature> HUGE_GREEN_MUSHROOM_PLACED_KEY = registerKey("huge_green_mushroom_placed");
+    public static final RegistryKey<PlacedFeature> HUGE_PURPLE_MUSHROOM_PLACED_KEY = registerKey("huge_purple_mushroom_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -34,6 +35,11 @@ public class ModPlacedFeatures {
         register(context, ENDERITE_ORE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ENDERITE_ORE),
                 ModOrePlacement.modifiersWithCount(16, // Veins per chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
+        register(context, HUGE_GREEN_MUSHROOM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.HUGE_GREEN_MUSHROOM),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.01f, 0), ModBlocks.GREEN_MUSHROOM));
+        
+        register(context, HUGE_PURPLE_MUSHROOM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.HUGE_PURPLE_MUSHROOM),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.01f, 0), ModBlocks.PURPLE_MUSHROOM));
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

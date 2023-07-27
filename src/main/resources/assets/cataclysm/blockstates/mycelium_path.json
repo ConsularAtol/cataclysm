@@ -1,0 +1,21 @@
+{
+    "variants": {
+      "": [
+        {
+          "model": "cataclysm:block/mycelium_path"
+        },
+        {
+          "model": "cataclysm:block/mycelium_path",
+          "y": 90
+        },
+        {
+          "model": "cataclysm:block/mycelium_path",
+          "y": 180
+        },
+        {
+          "model": "cataclysm:block/mycelium_path",
+          "y": 270
+        }
+      ]
+    }
+  }
