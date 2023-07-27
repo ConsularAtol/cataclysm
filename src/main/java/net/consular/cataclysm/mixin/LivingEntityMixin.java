@@ -8,8 +8,13 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import net.consular.cataclysm.enchantment.MagmaWalkerEnchantment;
 import net.consular.cataclysm.registry.ModEffects;
+import net.consular.cataclysm.registry.ModEnchantments;
 import net.consular.cataclysm.registry.ModItems;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.enchantment.FrostWalkerEnchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -23,6 +28,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.RaycastContext;
@@ -59,13 +65,19 @@ public class LivingEntityMixin {
         }
     }
 
+    @Inject(method = "applyMovementEffects", at = @At("HEAD"))
+    protected void applyMovementEffects(BlockPos pos, CallbackInfo ci) {
+        int i = EnchantmentHelper.getEquipmentLevel(ModEnchantments.MAGMA_WALKER, (LivingEntity) (Object) this);
+        if (i > 0) {
+            MagmaWalkerEnchantment.solidifyLava((LivingEntity) (Object) this, ((LivingEntity) (Object) this).getWorld(), pos, i);
+        }
+    }
+
     @Overwrite
     public boolean canSee(Entity entity) {
         if (entity == null){
             return false;
         }
-
-        System.out.println(entity);
         
         if (entity.getWorld() != ((LivingEntity)(Object)this).getWorld()) {
             return false;

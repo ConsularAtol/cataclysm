@@ -1,10 +1,7 @@
 package net.consular.cataclysm.registry;
 
 import net.consular.cataclysm.Cataclysm;
-import net.consular.cataclysm.enchantment.CunningEnchantment;
-import net.consular.cataclysm.enchantment.CuttingEdgeEnchantment;
-import net.consular.cataclysm.enchantment.BludgeoningEnchantment;
-import net.consular.cataclysm.enchantment.QuickStabEnchantment;
+import net.consular.cataclysm.enchantment.*;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registries;
@@ -20,6 +17,9 @@ public final class ModEnchantments {
 
     public static Enchantment CUTTING_EDGE = register("cutting_edge",
             new CuttingEdgeEnchantment());
+
+    public static Enchantment MAGMA_WALKER = register("magma_walker",
+            new MagmaWalkerEnchantment());
 
     public static Enchantment BLUDGEONING = register("bludgeoning",
             new BludgeoningEnchantment());
