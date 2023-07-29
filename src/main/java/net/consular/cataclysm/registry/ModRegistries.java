@@ -31,6 +31,7 @@ public class ModRegistries {
         ModEnchantments.registerModEnchantments();
         ModItemGroups.registerItemGroups();
         SneakAttackHandler.initialize();
+        ModGamerules.registerGamerules();
 
         registerAttributes();
         registerMobAttributes();

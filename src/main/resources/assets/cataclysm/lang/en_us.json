@@ -1,4 +1,7 @@
 {
+    "death.attack.bleeding": "%1$s bled out",
+    "death.attack.bleeding.player": "%1$s had their blood spilled by %2$s",
+
     "effect.cataclysm.drained": "Drained",
     "effect.cataclysm.greater_invisibility": "Greater Invisibility",
     "effect.cataclysm.bleeding": "Bleeding",
@@ -44,6 +47,10 @@
     "item.cataclysm.studded_leather_chestplate": "Studded Leather Chestplate",
     "item.cataclysm.studded_leather_leggings": "Studded Leather Leggings",
     "item.cataclysm.studded_leather_boots": "Studded Leather Boots",
+    "item.cataclysm.warped_helmet": "Warped Helmet",
+    "item.cataclysm.warped_chestplate": "Warped Chestplate",
+    "item.cataclysm.warped_leggings": "Warped Leggings",
+    "item.cataclysm.warped_boots": "Warped Boots",
     "item.cataclysm.bat_helmet": "Bat Helmet",
     "item.cataclysm.bat_chestplate": "Bat Chestplate",
     "item.cataclysm.bat_leggings": "Bat Leggings",

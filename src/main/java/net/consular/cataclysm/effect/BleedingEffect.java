@@ -1,5 +1,6 @@
 package net.consular.cataclysm.effect;
 
+import net.consular.cataclysm.registry.ModDamageSources;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffect;
@@ -19,6 +20,6 @@ public class BleedingEffect extends StatusEffect{
 
     @Override
     public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        entity.damage(entity.getDamageSources().generic(), amplifier + 1);
+        entity.damage(ModDamageSources.getSource(entity.getDamageSources(), ModDamageSources.BLEEDING), amplifier + 1);
     }
 }

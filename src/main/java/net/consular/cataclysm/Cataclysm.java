@@ -2,15 +2,19 @@ package net.consular.cataclysm;
 
 import net.consular.cataclysm.registry.ModRegistries;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.attribute.ClampedEntityAttribute;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.Difficulty;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.chocohead.mm.api.ClassTinkerers;
 
 public class Cataclysm implements ModInitializer {
 	
@@ -39,5 +43,4 @@ public class Cataclysm implements ModInitializer {
 		public static final EntityAttribute MANA_LOCK = new ClampedEntityAttribute("attribute.name.generic." + Cataclysm.MODID + ".mana_lock", 0D, 0D, 20D).setTracked(true);
 		public static final EntityAttribute ARROW_DAMAGE = new ClampedEntityAttribute("attribute.name.generic." + Cataclysm.MODID + ".arrow_damage", 0D, 0D, 1024D).setTracked(true);
 	}
-
 }
