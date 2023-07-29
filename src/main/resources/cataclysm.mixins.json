@@ -11,7 +11,10 @@
     "BowItemMixin",
     "WardenEntityMixin",
     "ArmorItemMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "ZombieEntityMixin",
+    "MobEntityMixin",
+    "BleedingHandler"
   ],
   "client": [
     "InGameHudMixin",

@@ -88,6 +88,9 @@ public class ModBlocks {
     public static final Block MUSHROOM_PLANKS = registerBlock("mushroom_planks",
     new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
 
+    public static final Block MUSHROOM_SLAB = registerBlock("mushroom_slab",
+    new Block(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));
+
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(Cataclysm.MODID, name), block);

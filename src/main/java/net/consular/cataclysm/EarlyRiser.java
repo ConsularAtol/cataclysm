@@ -2,6 +2,7 @@ package net.consular.cataclysm;
 
 import com.chocohead.mm.api.ClassTinkerers;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.world.Difficulty;
 
 public class EarlyRiser implements Runnable {
 
@@ -16,5 +17,4 @@ public class EarlyRiser implements Runnable {
                 .addEnumSubclass("GLOVE", "net.consular.cataclysm.enchantment.target.GloveTarget")
                 .build();
     }
-
 }

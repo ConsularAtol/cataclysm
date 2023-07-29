@@ -1,7 +1,11 @@
-// 1.20.1	2023-07-27T16:38:17.2714345	Cataclysm/cataclysm
+// 1.20.1	2023-07-27T18:18:07.905399	Cataclysm/cataclysm
+53bbfdbd35ee662a64dc23d768a66e4dd1949dd0 data\cataclysm\worldgen\placed_feature\huge_purple_mushroom_placed.json
 bae84032db19b29d5cb04d3a11105420ed30c834 data\cataclysm\worldgen\placed_feature\enderite_ore_placed.json
 19ba20f2c3bf95839c6e26419d0226387429fecf data\cataclysm\worldgen\configured_feature\sapphire_ore.json
+ed234f4073c8983cda5a694d6b2f31acd3b3b6e6 data\cataclysm\worldgen\configured_feature\huge_green_mushroom.json
 d11eeda6bb905496109873b765851f507c43100a data\cataclysm\worldgen\configured_feature\ruby_ore.json
 4f526963eac155b0db065e1b8a266cc4af23d241 data\cataclysm\worldgen\placed_feature\ruby_ore_placed.json
 1c28e106be9b78f312920a86ab5f7ce4f28ed2d5 data\cataclysm\worldgen\configured_feature\enderite_ore.json
+378ac88fd6a39f793017feaef4b399531a7632d8 data\cataclysm\worldgen\configured_feature\huge_purple_mushroom.json
+a8091ce74e8ae202d11a58b0ac58c32c430085e8 data\cataclysm\worldgen\placed_feature\huge_green_mushroom_placed.json
 80354b1a0dcfc5008ef76c35d4d684cb821c8756 data\cataclysm\worldgen\placed_feature\sapphire_ore_placed.json

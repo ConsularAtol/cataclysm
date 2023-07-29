@@ -4,8 +4,10 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
 import net.consular.cataclysm.Cataclysm;
+import net.consular.cataclysm.mixin.BleedingHandler;
 import net.consular.cataclysm.registry.ModEffects;
 import net.consular.cataclysm.registry.ModEnchantments;
+import net.consular.cataclysm.util.BleedingEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -77,10 +79,7 @@ public class DaggerItem extends ToolItem implements Vanishable{
         else
             target.damage(attacker.getDamageSources().generic(), (float) (getDamageBonus(attacker) + attackDamage));
         if (cutting > 0){
-            if (target.hasStatusEffect(ModEffects.BLEEDING))
-                target.addStatusEffect(new StatusEffectInstance(ModEffects.BLEEDING, 200 - (cutting * 20), target.getStatusEffect(ModEffects.BLEEDING).getAmplifier() + 1));
-            else
-                target.addStatusEffect(new StatusEffectInstance(ModEffects.BLEEDING, 200 - (cutting * 20), 0));
+            ((BleedingEntity)target).startBleeding(cutting);
         }
         target.timeUntilRegen = 18 - quickStab;
         return true;

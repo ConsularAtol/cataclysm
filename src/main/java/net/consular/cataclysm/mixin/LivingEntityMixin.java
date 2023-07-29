@@ -11,7 +11,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import net.consular.cataclysm.enchantment.MagmaWalkerEnchantment;
 import net.consular.cataclysm.registry.ModEffects;
 import net.consular.cataclysm.registry.ModEnchantments;
+import net.consular.cataclysm.registry.ModGamerules;
 import net.consular.cataclysm.registry.ModItems;
+import net.consular.cataclysm.util.BleedingEntity;
+import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.FrostWalkerEnchantment;
@@ -21,12 +24,15 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.mob.PiglinBruteEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.potion.PotionUtil;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -103,6 +109,10 @@ public class LivingEntityMixin {
         HitResult result = ((LivingEntity)(Object)this).getWorld().raycast(
             new RaycastContext(selfPosition, entityPosition, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, ((LivingEntity)(Object)this))
         );
+        BlockPos blockPos = ((BlockHitResult)result).getBlockPos();
+        if(entity.getWorld().getBlockState(blockPos).getBlock() == Blocks.OAK_DOOR){
+            return true;
+        }
 
         return result.getType() == HitResult.Type.MISS;
     }
@@ -119,5 +129,13 @@ public class LivingEntityMixin {
         entity.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.PHASE_CHESTPLATE) &&
         entity.getEquippedStack(EquipmentSlot.LEGS).isOf(ModItems.PHASE_LEGGINGS) &&
         entity.getEquippedStack(EquipmentSlot.FEET).isOf(ModItems.PHASE_BOOTS);
+    }
+
+    @Inject(method = "onAttacking", at = @At("HEAD"))
+    public void onAttacking(Entity target, CallbackInfo ci) {
+        LivingEntity target2 = (LivingEntity)target;
+        if ((LivingEntity)(Object)this instanceof PiglinBruteEntity && ((MobEntity)(Object)this).getServer().getGameRules().getBoolean(ModGamerules.CATACLYSM_MODE)){
+            ((BleedingEntity)target2).startBleeding(5);
+        }
     }
 }
