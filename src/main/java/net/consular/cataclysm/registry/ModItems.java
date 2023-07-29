@@ -178,21 +178,21 @@ public class ModItems {
 
     public static final Item LUSH_BOOTS = registerItem("lush_boots", new ModArmorItem(ModArmorMaterials.LUSH, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
 
-    public static final Item CRIMSON_HELMET = registerItem("crimson_helmet", new DyeableModArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+    public static final Item CRIMSON_HELMET = registerItem("crimson_helmet", new ModArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
 
-    public static final Item CRIMSON_CHESTPLATE = registerItem("crimson_chestplate", new DyeableModArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+    public static final Item CRIMSON_CHESTPLATE = registerItem("crimson_chestplate", new ModArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
 
-    public static final Item CRIMSON_LEGGINGS = registerItem("crimson_leggings", new DyeableModArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+    public static final Item CRIMSON_LEGGINGS = registerItem("crimson_leggings", new ModArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
 
-    public static final Item CRIMSON_BOOTS = registerItem("crimson_boots", new DyeableModArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+    public static final Item CRIMSON_BOOTS = registerItem("crimson_boots", new ModArmorItem(ModArmorMaterials.CRIMSON, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
 
-    public static final Item CHORUS_HELMET = registerItem("chorus_helmet", new DyeableModArmorItem(ModArmorMaterials.CHORUS, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+    public static final Item CHORUS_HELMET = registerItem("chorus_helmet", new ModArmorItem(ModArmorMaterials.CHORUS, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
 
-    public static final Item CHORUS_CHESTPLATE = registerItem("chorus_chestplate", new DyeableModArmorItem(ModArmorMaterials.CHORUS, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+    public static final Item CHORUS_CHESTPLATE = registerItem("chorus_chestplate", new ModArmorItem(ModArmorMaterials.CHORUS, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
 
-    public static final Item CHORUS_LEGGINGS = registerItem("chorus_leggings", new DyeableModArmorItem(ModArmorMaterials.CHORUS, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+    public static final Item CHORUS_LEGGINGS = registerItem("chorus_leggings", new ModArmorItem(ModArmorMaterials.CHORUS, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
 
-    public static final Item CHORUS_BOOTS = registerItem("chorus_boots", new DyeableModArmorItem(ModArmorMaterials.CHORUS, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+    public static final Item CHORUS_BOOTS = registerItem("chorus_boots", new ModArmorItem(ModArmorMaterials.CHORUS, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
 
     public static final Item STINGER = registerItem("stinger", new Item(new Item.Settings()));
 
