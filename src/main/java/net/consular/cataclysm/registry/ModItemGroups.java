@@ -124,10 +124,12 @@ public class ModItemGroups {
             content.add(ModItems.GEYSER_TOME);
             content.add(ModItems.WIND_GUST_TOME);
             content.add(ModItems.MAGNESIS_TOME);
+            content.add(ModItems.REDSTONE_CLOUD_TOME);
             content.add(ModItems.SONIC_BOOM_SCROLL);
             content.add(ModItems.GEYSER_SCROLL);
             content.add(ModItems.WIND_GUST_SCROLL);
             content.add(ModItems.MAGNESIS_SCROLL);
+            content.add(ModItems.REDSTONE_CLOUD_SCROLL);
             content.add(ModItems.SAPPHIRE_HOOD);
             content.add(ModItems.SAPPHIRE_CLOAK);
             content.add(ModItems.SAPPHIRE_PANTS);

@@ -11,9 +11,12 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 public class BleedingHandler implements BleedingEntity{
     public void startBleeding(int amplifier){
         LivingEntity entity = (LivingEntity)(Object)this;
-        if (entity.hasStatusEffect(ModEffects.BLEEDING))
-                entity.addStatusEffect(new StatusEffectInstance(ModEffects.BLEEDING, 200 - (amplifier * 20), entity.getStatusEffect(ModEffects.BLEEDING).getAmplifier() + 1));
-            else
-                entity.addStatusEffect(new StatusEffectInstance(ModEffects.BLEEDING, 200 - (amplifier * 20), 0));
+        if (entity.hasStatusEffect(ModEffects.BLEEDING)){
+            entity.setInvulnerable(true);
+            entity.addStatusEffect(new StatusEffectInstance(ModEffects.BLEEDING, 200 - (amplifier * 20), entity.getStatusEffect(ModEffects.BLEEDING).getAmplifier() + 1));
+            entity.setInvulnerable(false);
+        }
+        else
+            entity.addStatusEffect(new StatusEffectInstance(ModEffects.BLEEDING, 200 - (amplifier * 20), 0));
     }
 }
