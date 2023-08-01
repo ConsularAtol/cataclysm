@@ -47,6 +47,11 @@ public class RedstoneCloudSpell implements Spell {
     }
 
     @Override
+    public int getCooldown() {
+        return 20;
+    }
+
+    @Override
     public String getId() {
         return "redstone_cloud";
     }

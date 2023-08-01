@@ -36,7 +36,7 @@ public class SpellTomeItem extends Item{
         ItemStack itemStack = player.getStackInHand(hand);
         MagicUser user = (MagicUser) player;
         if (user.getMana() >= spell.getManaCost() && spell.getId() != "blank"){
-            player.getItemCooldownManager().set(this, 10);
+            player.getItemCooldownManager().set(this, spell.getCooldown());
             if (!player.isCreative())
                 user.addMana(-spell.getManaCost());
             spell.cast(world, player, hand);

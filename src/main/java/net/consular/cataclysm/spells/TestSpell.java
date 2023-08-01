@@ -14,7 +14,7 @@ public class TestSpell implements Spell {
 
     @Override
     public void cast(World world, PlayerEntity player, Hand hand) {
-        MagicProjectileEntity boom = new MagicProjectileEntity(player, world, 2.1f, ParticleTypes.CAMPFIRE_COSY_SMOKE);
+        MagicProjectileEntity boom = new MagicProjectileEntity(player, world, 2.1f, ParticleTypes.CAMPFIRE_COSY_SMOKE, 1, 1, getId());
 		boom.setVelocity(player, player.getPitch(), player.getYaw(), player.getRoll(), 4.5F, 0F);
 		world.spawnEntity(boom);
         if (!world.isClient){
@@ -27,6 +27,11 @@ public class TestSpell implements Spell {
     @Override
     public int getManaCost() {
         return 2;
+    }
+
+    @Override
+    public int getCooldown() {
+        return 10;
     }
 
     @Override

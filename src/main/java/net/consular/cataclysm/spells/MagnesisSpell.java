@@ -39,6 +39,11 @@ public class MagnesisSpell implements Spell{
     }
 
     @Override
+    public int getCooldown() {
+        return 10;
+    }
+
+    @Override
     public String getId() {
         return "magnesis";
     }

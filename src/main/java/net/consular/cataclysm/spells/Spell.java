@@ -10,6 +10,8 @@ public interface Spell {
 
     public int getManaCost();
 
+    public int getCooldown();
+
     public String getId();
 
     public void tick();

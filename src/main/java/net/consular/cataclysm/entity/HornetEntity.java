@@ -50,7 +50,6 @@ public class HornetEntity extends HostileEntity implements GeoEntity, Flutterer,
 
     private static final TrackedData<Integer> STINGER_COOLDOWN = DataTracker.registerData(HornetEntity.class, TrackedDataHandlerRegistry.INTEGER);
 
-
     public HornetEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
         this.moveControl = new FlightMoveControl(this, 20, true);

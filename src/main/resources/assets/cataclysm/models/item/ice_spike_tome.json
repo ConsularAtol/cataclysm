@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "cataclysm:item/redstone_cloud_tome"
+    "layer0": "cataclysm:item/ice_spike_tome"
   }
 }
