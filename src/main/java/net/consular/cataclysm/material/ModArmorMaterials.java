@@ -121,7 +121,7 @@ public enum ModArmorMaterials implements ModArmorMaterial {
     }), 15, SoundEvents.BLOCK_WOOL_PLACE, 0F, 0F, 0F, 0F, 0.1F, 0F, 0F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{ModItems.SAPPHIRE});
     }),
-    QUARTZ("cloak", 8, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+    QUARTZ("quartz", 8, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
         map.put(ArmorItem.Type.BOOTS, 1);
         map.put(ArmorItem.Type.LEGGINGS, 1);
         map.put(ArmorItem.Type.CHESTPLATE, 2);
