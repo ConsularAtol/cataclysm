@@ -7,10 +7,12 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.YOffset;
+import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
+import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
 import java.util.List;
 
@@ -20,9 +22,12 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> ENDERITE_ORE_PLACED = registerKey("enderite_ore_placed");
     public static final RegistryKey<PlacedFeature> HUGE_GREEN_MUSHROOM_PLACED_KEY = registerKey("huge_green_mushroom_placed");
     public static final RegistryKey<PlacedFeature> HUGE_PURPLE_MUSHROOM_PLACED_KEY = registerKey("huge_purple_mushroom_placed");
+    public static final RegistryKey<PlacedFeature> QUICKSAND_PLACED = registerKey("quicksand");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
+        RegistryEntry.Reference<ConfiguredFeature<?, ?>> registryEntry9 = configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.QUICKSAND);
+        PlacedFeatures.register(context, QUICKSAND_PLACED, registryEntry9, SquarePlacementModifier.of(), PlacedFeatures.OCEAN_FLOOR_WG_HEIGHTMAP, BiomePlacementModifier.of());
 
         register(context, RUBY_ORE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.RUBY_ORE),
                 ModOrePlacement.modifiersWithCount(16, // Veins per chunk

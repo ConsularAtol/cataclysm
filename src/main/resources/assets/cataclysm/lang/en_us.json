@@ -1,6 +1,8 @@
 {
     "death.attack.bleeding": "%1$s bled out",
     "death.attack.bleeding.player": "%1$s had their blood spilled by %2$s",
+    "death.attack.quick_sand": "%1$s suffocated in quicksand",
+    "death.attack.quick_sand.player": "%1$s fell in quicksand trying to escape %2$s",
 
     "effect.cataclysm.drained": "Drained",
     "effect.cataclysm.greater_invisibility": "Greater Invisibility",
@@ -103,7 +105,6 @@
     "item.cataclysm.netherite_glove": "Netherite Glove",
     "item.cataclysm.enderite_glove": "Enderite Glove",
 
-
     "item.cataclysm.magic_mirror": "Magic Mirror",
     "item.cataclysm.enderite_scrap": "Enderite Scrap",
     "item.cataclysm.enderite_ingot": "Enderite Ingot",
@@ -113,6 +114,7 @@
     "item.cataclysm.sculk_heart": "Sculk Heart",
     "item.cataclysm.ruby": "Ruby",
     "item.cataclysm.sapphire": "Sapphire",
+    "item.cataclysm.quicksand_bucket": "Quicksand Bucket",
 
     "magic_mirror.fail": "Strangely, the mirror did not respond...",
 
@@ -142,6 +144,7 @@
     "block.cataclysm.stripped_mushroom_log": "Mushroom Log",
     "block.cataclysm.stripped_mushroom_wood": "Mushroom Wood",
     "block.cataclysm.mushroom_planks": "Mushroom Planks",
+    "block.cataclysm.quick_sand": "Quicksand",
 
     "trinkets.slot.offhand.accessory": "Accessory",
 

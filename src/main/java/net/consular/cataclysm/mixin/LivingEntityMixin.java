@@ -1,6 +1,7 @@
 package net.consular.cataclysm.mixin;
 
 import java.util.Collection;
+import java.util.UUID;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -21,6 +22,9 @@ import net.minecraft.enchantment.FrostWalkerEnchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttributeInstance;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -43,6 +47,8 @@ import net.minecraft.world.event.GameEvent;
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin {
     protected final Random random = Random.create();
+    private static final UUID QUICKSAND_SLOW_ID = UUID.fromString("13eaf8ff-7720-4956-b73a-7ced0c4b3ea7");
+
     
     @Inject(method = "onDamaged", at = @At("HEAD"))
     public void onDamaged(DamageSource damageSource, CallbackInfo cir){

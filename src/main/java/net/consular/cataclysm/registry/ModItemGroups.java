@@ -106,6 +106,7 @@ public class ModItemGroups {
             content.add(ModBlocks.MUSHROOM_WOOD);
             content.add(ModBlocks.STRIPPED_MUSHROOM_WOOD);
             content.add(ModBlocks.MUSHROOM_PLANKS);
+            content.add(ModItems.QUICKSAND_BUCKET);
         });
         ItemGroupEvents.modifyEntriesEvent(ACCESSORIES).register(content -> {
             content.add(ModItems.HEART_NECKLACE);

@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier;
 
 public class ModDamageSources {
     public static final RegistryKey<DamageType> BLEEDING = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier(Cataclysm.MODID, "bleeding"));
+    public static final RegistryKey<DamageType> QUICK_SAND = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier(Cataclysm.MODID, "quick_sand"));
 
     private static final Map<RegistryKey<DamageType>, DamageSource> damageSourceCache = new HashMap<>();
 

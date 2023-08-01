@@ -31,12 +31,14 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.PowderSnowBucketItem;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.SoundEvents;
 
 public class ModItems {
 
@@ -57,6 +59,8 @@ public class ModItems {
     public static final Item MONOCLE = registerItem("monocle", new MonocleItem(new Item.Settings().maxCount(1)));
 
     public static final Item LUCKY_HORSESHOE = registerItem("lucky_horseshoe", new LuckyHorseshoeItem(new Item.Settings().maxCount(1)));
+
+    public static final Item QUICKSAND_BUCKET = registerItem("quicksand_bucket", new PowderSnowBucketItem(ModBlocks.QUICK_SAND, SoundEvents.ITEM_BUCKET_EMPTY_POWDER_SNOW, new Item.Settings().maxCount(1)));
 
     public static final Item WOODEN_DAGGER = registerItem("wooden_dagger", new DaggerItem(ToolMaterials.WOOD, 2, -1.5f, new Item.Settings().maxCount(1)));
 
@@ -331,7 +335,7 @@ public class ModItems {
     public static final Item PHASE_LEGGINGS = registerItem("phase_leggings", new ModArmorItem(ModArmorMaterials.PHASE, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
 
     public static final Item PHASE_BOOTS = registerItem("phase_boots", new ModArmorItem(ModArmorMaterials.PHASE, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
-    
+
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, new Identifier(Cataclysm.MODID, name), item);
     }
