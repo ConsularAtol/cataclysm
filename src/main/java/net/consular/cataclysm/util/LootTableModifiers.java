@@ -18,6 +18,15 @@ public class LootTableModifiers {
         private static final Identifier DUNGEON_CHEST_ID
                 = new Identifier("minecraft", "chests/simple_dungeon");
 
+        private static final Identifier MINESHAFT_CHEST_ID
+                = new Identifier("minecraft", "chests/abandoned_mineshaft");
+
+        private static final Identifier SHIPWRECK_CHEST_ID
+                = new Identifier("minecraft", "chests/shipwreck_treasure");
+
+        private static final Identifier IGLOO_CHEST_ID
+                = new Identifier("minecraft", "chests/igloo_chest");
+
         private static final Identifier ANCIENT_CITY_CHEST_ID
                 = new Identifier("minecraft", "chests/ancient_city");
 
@@ -27,9 +36,12 @@ public class LootTableModifiers {
         private static final Identifier BAT_LOOT_ID
                 = new Identifier("minecraft", "entities/bat");
 
+        private static final Identifier EVOKER_LOOT_ID
+                = new Identifier("minecraft", "entities/evoker");
+
         public static void modifyLootTables() {
             LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-                if(DUNGEON_CHEST_ID.equals(id) || ANCIENT_CITY_CHEST_ID.equals(id) || END_CITY_ID.equals(id)) {
+                if(DUNGEON_CHEST_ID.equals(id) || ANCIENT_CITY_CHEST_ID.equals(id) || END_CITY_ID.equals(id) || MINESHAFT_CHEST_ID.equals(id)) {
                     LootPool.Builder poolBuilder = LootPool.builder()
                             .rolls(ConstantLootNumberProvider.create(1))
                             .conditionally(RandomChanceLootCondition.builder(0.1f)) // Drops 10% of the time
@@ -37,7 +49,7 @@ public class LootTableModifiers {
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }
-                if(DUNGEON_CHEST_ID.equals(id) || ANCIENT_CITY_CHEST_ID.equals(id) || END_CITY_ID.equals(id)) {
+                if(DUNGEON_CHEST_ID.equals(id) || ANCIENT_CITY_CHEST_ID.equals(id) || END_CITY_ID.equals(id) || MINESHAFT_CHEST_ID.equals(id)) {
                     LootPool.Builder poolBuilder = LootPool.builder()
                             .rolls(UniformLootNumberProvider.create(1, 5))
                             .conditionally(RandomChanceLootCondition.builder(0.4f)) // Drops 40% of the time
@@ -53,10 +65,18 @@ public class LootTableModifiers {
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }
+                if(MINESHAFT_CHEST_ID.equals(id)) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(UniformLootNumberProvider.create(1, 1))
+                            .conditionally(RandomChanceLootCondition.builder(0.10f)) // Drops 10% of the time
+                            .with(ItemEntry.builder(ModItems.REDSTONE_CLOUD_SCROLL))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
                 if(ANCIENT_CITY_CHEST_ID.equals(id)) {
                     LootPool.Builder poolBuilder = LootPool.builder()
                             .rolls(UniformLootNumberProvider.create(1, 1))
-                            .conditionally(RandomChanceLootCondition.builder(0.1f)) // Drops 5% of the time
+                            .conditionally(RandomChanceLootCondition.builder(0.1f)) // Drops 10% of the time
                             .with(ItemEntry.builder(ModItems.SCULK_UPGRADE_SMITHING_TEMPLATE))
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
@@ -80,9 +100,33 @@ public class LootTableModifiers {
                 if(BAT_LOOT_ID.equals(id)) {
                     LootPool.Builder poolBuilder = LootPool.builder()
                             .rolls(UniformLootNumberProvider.create(1, 1))
-                            .conditionally(RandomChanceLootCondition.builder(0.40f)) // Drops 40% of the time
+                            .conditionally(RandomChanceLootCondition.builder(0.20f)) // Drops 20% of the time
                             .with(ItemEntry.builder(ModItems.BAT_WING))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
+                if(EVOKER_LOOT_ID.equals(id)) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(UniformLootNumberProvider.create(1, 1))
+                            .conditionally(RandomChanceLootCondition.builder(0.40f)) // Drops 40% of the time
+                            .with(ItemEntry.builder(ModItems.VEXES_SCROLL))
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
+                if(SHIPWRECK_CHEST_ID.equals(id)) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(UniformLootNumberProvider.create(1, 1))
+                            .conditionally(RandomChanceLootCondition.builder(0.40f)) // Drops 40% of the time
+                            .with(ItemEntry.builder(ModItems.GEYSER_SCROLL))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
+                if(IGLOO_CHEST_ID.equals(id)) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(UniformLootNumberProvider.create(1, 1))
+                            .conditionally(RandomChanceLootCondition.builder(0.40f)) // Drops 40% of the time
+                            .with(ItemEntry.builder(ModItems.ICE_SPIKE_SCROLL))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }
                 if(END_CITY_ID.equals(id)) {
@@ -90,6 +134,14 @@ public class LootTableModifiers {
                             .rolls(UniformLootNumberProvider.create(1, 1))
                             .conditionally(RandomChanceLootCondition.builder(0.01f)) // Drops 1% of the time
                             .with(ItemEntry.builder(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
+                if(END_CITY_ID.equals(id)) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(UniformLootNumberProvider.create(1, 1))
+                            .conditionally(RandomChanceLootCondition.builder(0.10f)) // Drops 10% of the time
+                            .with(ItemEntry.builder(ModItems.LUCKY_HORSESHOE))
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }

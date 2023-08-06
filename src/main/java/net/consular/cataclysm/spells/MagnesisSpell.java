@@ -35,7 +35,7 @@ public class MagnesisSpell implements Spell{
 
     @Override
     public int getManaCost() {
-        return 0;
+        return 4;
     }
 
     @Override

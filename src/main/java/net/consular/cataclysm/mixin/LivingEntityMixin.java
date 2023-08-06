@@ -143,5 +143,8 @@ public class LivingEntityMixin {
         if ((LivingEntity)(Object)this instanceof PiglinBruteEntity && ((MobEntity)(Object)this).getServer().getGameRules().getBoolean(ModGamerules.CATACLYSM_MODE)){
             ((BleedingEntity)target2).startBleeding(5);
         }
+        if (EnchantmentHelper.getEquipmentLevel(ModEnchantments.CUTTING_EDGE, ((LivingEntity)(Object)this)) > 0){
+            ((BleedingEntity)target2).startBleeding(EnchantmentHelper.getEquipmentLevel(ModEnchantments.CUTTING_EDGE, ((LivingEntity)(Object)this)));
+        }
     }
 }

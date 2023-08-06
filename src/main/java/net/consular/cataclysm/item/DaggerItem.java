@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 
 import net.consular.cataclysm.Cataclysm;
-import net.consular.cataclysm.mixin.BleedingHandler;
 import net.consular.cataclysm.registry.ModEffects;
 import net.consular.cataclysm.registry.ModEnchantments;
 import net.consular.cataclysm.util.BleedingEntity;
