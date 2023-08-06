@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "WWW",
+      "W W",
+      "W W"
+    ],
+    "key": {
+      "W": {
+        "item": "minecraft:nether_wart_block"
+      }
+    },
+    "result": {
+      "item": "cataclysm:crimson_leggings"
+    }
+  }
+  

@@ -111,6 +111,9 @@
     "upgrade.cataclysm.enderite_upgrade": "Enderite Upgrade",
     "item.cataclysm.smithing_template.enderite_upgrade.applies_to": "Netherite Equipment",
     "item.cataclysm.smithing_template.enderite_upgrade.ingredients": "Enderite Ingot",
+    "upgrade.cataclysm.sculk_upgrade": "Sculk Upgrade",
+    "item.cataclysm.smithing_template.sculk_upgrade.applies_to": "Enderite Equipment",
+    "item.cataclysm.smithing_template.sculk_upgrade.ingredients": "Sculk Heart",
     "item.cataclysm.sculk_heart": "Sculk Heart",
     "item.cataclysm.ruby": "Ruby",
     "item.cataclysm.sapphire": "Sapphire",
@@ -141,8 +144,8 @@
     "block.cataclysm.mycelium_path": "Mycelium Path",
     "block.cataclysm.mushroom_log": "Mushroom Log",
     "block.cataclysm.mushroom_wood": "Mushroom Wood",
-    "block.cataclysm.stripped_mushroom_log": "Mushroom Log",
-    "block.cataclysm.stripped_mushroom_wood": "Mushroom Wood",
+    "block.cataclysm.stripped_mushroom_log": "Stripped Mushroom Log",
+    "block.cataclysm.stripped_mushroom_wood": "Stripped Mushroom Wood",
     "block.cataclysm.mushroom_planks": "Mushroom Planks",
     "block.cataclysm.quick_sand": "Quicksand",
 
@@ -168,5 +171,7 @@
     "subtitle.cataclysm.magic_mirror.use": "Magic Mirror used",
     "subtitle.cataclysm.armor.equip.studded_leather": "Studded leather equips",
 
-    "container.fletching": "Fletching"
+    "container.fletching": "Fletching",
+    "container.bewitching": "Bewitching",
+    "container.bewitching.cost": "Bewitching Cost: %s"
 }

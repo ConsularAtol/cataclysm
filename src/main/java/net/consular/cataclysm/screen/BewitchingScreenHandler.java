@@ -2,6 +2,7 @@ package net.consular.cataclysm.screen;
 
 import java.util.List;
 
+import net.consular.cataclysm.item.ScrollItem;
 import net.consular.cataclysm.recipe.BewitchingRecipe;
 import net.consular.cataclysm.registry.ModBlocks;
 import net.consular.cataclysm.registry.ModRecipeTypes;
@@ -42,7 +43,8 @@ public class BewitchingScreenHandler extends ForgingScreenHandler {
 
     @Override
     protected boolean canTakeOutput(PlayerEntity player, boolean present) {
-        return this.currentRecipe != null && this.currentRecipe.matches(this.input, this.world);
+        ScrollItem scroll = (ScrollItem)this.getSlot(1).getStack().getItem();
+        return player.experienceLevel >= scroll.getSpell().getManaCost();
     }
 
     @Override

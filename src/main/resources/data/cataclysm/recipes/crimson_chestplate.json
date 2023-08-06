@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "W W",
+      "WMW",
+      "WVW"
+    ],
+    "key": {
+      "W": {
+        "item": "minecraft:nether_wart_block"
+      },
+      "M": {
+        "item": "minecraft:crimson_fungus"
+      },
+      "V": {
+        "item": "minecraft:weeping_vines"
+      }
+    },
+    "result": {
+      "item": "cataclysm:crimson_chestplate"
+    }
+  }
+  

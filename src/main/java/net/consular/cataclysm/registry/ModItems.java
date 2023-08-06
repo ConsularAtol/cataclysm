@@ -120,7 +120,7 @@ public class ModItems {
 
     public static final Item ENDERITE_UPGRADE_SMITHING_TEMPLATE = registerItem("enderite_upgrade_smithing_template", (Item)ModSmithingTemplateItem.createEnderiteUpgrade());
 
-    public static final Item SCULK_UPGRADE_SMITHING_TEMPLATE = registerItem("sculk_upgrade_smithing_template", (Item)ModSmithingTemplateItem.createEnderiteUpgrade());
+    public static final Item SCULK_UPGRADE_SMITHING_TEMPLATE = registerItem("sculk_upgrade_smithing_template", (Item)ModSmithingTemplateItem.createSculkUpgrade());
 
     public static final Item MAGIC_MIRROR = registerItem("magic_mirror", new MagicMirrorItem(new Item.Settings().maxCount(1)));
 

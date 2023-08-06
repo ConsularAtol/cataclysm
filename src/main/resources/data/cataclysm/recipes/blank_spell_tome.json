@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:book"
+    },
+    {
+      "item": "cataclysm:sapphire"
+    }
+  ],
+  "result": {
+    "item": "cataclysm:blank_spell_tome"
+  }
+}

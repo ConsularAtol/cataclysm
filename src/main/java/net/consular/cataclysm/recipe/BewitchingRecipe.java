@@ -22,8 +22,8 @@ import net.minecraft.world.World;
 
 public class BewitchingRecipe
 implements Recipe<Inventory> {
-    final Ingredient base;
-    final Ingredient addition;
+    public final Ingredient base;
+    public final Ingredient addition;
     final ItemStack result;
     private final Identifier id;
 
@@ -60,6 +60,10 @@ implements Recipe<Inventory> {
 
     @Override
     public ItemStack getOutput(DynamicRegistryManager var2) {
+        return this.result;
+    }
+
+    public ItemStack getResultItem(DynamicRegistryManager var2) {
         return this.result;
     }
 

@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "W W",
+      "WMW",
+      "WVW"
+    ],
+    "key": {
+      "W": {
+        "item": "minecraft:warped_wart_block"
+      },
+      "M": {
+        "item": "minecraft:warped_fungus"
+      },
+      "V": {
+        "item": "minecraft:twisting_vines"
+      }
+    },
+    "result": {
+      "item": "cataclysm:warped_chestplate"
+    }
+  }
+  

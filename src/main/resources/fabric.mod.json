@@ -28,6 +28,9 @@
     ],
     "fabric-datagen": [
       "net.consular.cataclysm.CataclysmDataGenerator"
+    ],
+    "rei_client": [
+      "net.consular.cataclysm.compat.rei.CataclysmREI"
     ]
   },
   "mixins": [

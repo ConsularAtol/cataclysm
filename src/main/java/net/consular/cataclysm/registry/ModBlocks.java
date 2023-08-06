@@ -38,7 +38,7 @@ public class ModBlocks {
     public static final Block DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore",
     new ExperienceDroppingBlock(FabricBlockSettings.create().luminance(3).requiresTool().strength(4.5f, 3.0f).sounds(BlockSoundGroup.DEEPSLATE), UniformIntProvider.create(3, 7)));
 
-    public static final Block MOLTEN_MAGMA = registerBlock("molten_magma",
+    public static final Block MOLTEN_MAGMA = registerBlockWithoutItem("molten_magma",
     new MoltenMagmaBlock(FabricBlockSettings.copyOf(Blocks.MAGMA_BLOCK)));
 
     public static final Block RUBY_BLOCK = registerBlock("ruby_block", 
@@ -68,10 +68,10 @@ public class ModBlocks {
     public static final Block PURPLE_MUSHROOM = registerBlock("purple_mushroom",
     new MushroomPlantBlock(FabricBlockSettings.create().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS).luminance(state -> 1), ModConfiguredFeatures.HUGE_PURPLE_MUSHROOM));
 
-    public static final Block POTTED_GREEN_MUSHROOM = registerBlock("potted_green_mushroom", 
+    public static final Block POTTED_GREEN_MUSHROOM = registerBlockWithoutItem("potted_green_mushroom", 
     new FlowerPotBlock(GREEN_MUSHROOM, FabricBlockSettings.create().breakInstantly().nonOpaque()));
 
-    public static final Block POTTED_PURPLE_MUSHROOM = registerBlock("potted_purple_mushroom", 
+    public static final Block POTTED_PURPLE_MUSHROOM = registerBlockWithoutItem("potted_purple_mushroom", 
     new FlowerPotBlock(PURPLE_MUSHROOM, FabricBlockSettings.create().breakInstantly().nonOpaque()));
 
     public static final Block MYCELIUM_PATH = registerBlock("mycelium_path",
@@ -95,7 +95,7 @@ public class ModBlocks {
     public static final Block MUSHROOM_SLAB = registerBlock("mushroom_slab",
     new Block(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));
 
-    public static final Block QUICK_SAND = registerBlock("quick_sand",
+    public static final Block QUICK_SAND = registerBlockWithoutItem("quick_sand",
     new QuickSandBlock(FabricBlockSettings.create().mapColor(MapColor.WHITE).strength(0.25f).sounds(BlockSoundGroup.POWDER_SNOW).dynamicBounds().solidBlock(ModBlocks::never)));
 
     private static boolean never(BlockState state, BlockView world, BlockPos pos) {
@@ -104,6 +104,10 @@ public class ModBlocks {
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);
+        return Registry.register(Registries.BLOCK, new Identifier(Cataclysm.MODID, name), block);
+    }
+
+    private static Block registerBlockWithoutItem(String name, Block block){
         return Registry.register(Registries.BLOCK, new Identifier(Cataclysm.MODID, name), block);
     }
 
