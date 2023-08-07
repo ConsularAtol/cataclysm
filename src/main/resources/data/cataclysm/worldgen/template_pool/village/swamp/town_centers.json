@@ -1,0 +1,80 @@
+{
+    "fallback": "minecraft:empty",
+    "elements": [
+      {
+        "weight": 50,
+        "element": {
+          "element_type": "minecraft:legacy_single_pool_element",
+          "projection": "rigid",
+          "location": "cataclysm:village/swamp/town_centers/swamp_fountain_01",
+          "processors": "minecraft:mossify_20_percent"
+        }
+      },
+      {
+        "weight": 50,
+        "element": {
+          "element_type": "minecraft:legacy_single_pool_element",
+          "projection": "rigid",
+          "location": "cataclysm:village/swamp/town_centers/swamp_meeting_point_1",
+          "processors": "minecraft:mossify_20_percent"
+        }
+      },
+      {
+        "weight": 50,
+        "element": {
+          "element_type": "minecraft:legacy_single_pool_element",
+          "projection": "rigid",
+          "location": "cataclysm:village/swamp/town_centers/swamp_meeting_point_2",
+          "processors": {
+            "processors": []
+          }
+        }
+      },
+      {
+        "weight": 50,
+        "element": {
+          "element_type": "minecraft:legacy_single_pool_element",
+          "projection": "rigid",
+          "location": "cataclysm:village/swamp/town_centers/swamp_meeting_point_3",
+          "processors": "minecraft:mossify_70_percent"
+        }
+      },
+      {
+        "weight": 1,
+        "element": {
+          "element_type": "minecraft:legacy_single_pool_element",
+          "projection": "rigid",
+          "location": "cataclysm:village/swamp/zombie/town_centers/swamp_fountain_01",
+          "processors": "minecraft:zombie_plains"
+        }
+      },
+      {
+        "weight": 1,
+        "element": {
+          "element_type": "minecraft:legacy_single_pool_element",
+          "projection": "rigid",
+          "location": "cataclysm:village/swamp/zombie/town_centers/swamp_meeting_point_1",
+          "processors": "minecraft:zombie_plains"
+        }
+      },
+      {
+        "weight": 1,
+        "element": {
+          "element_type": "minecraft:legacy_single_pool_element",
+          "projection": "rigid",
+          "location": "cataclysm:village/swamp/zombie/town_centers/swamp_meeting_point_2",
+          "processors": "minecraft:zombie_plains"
+        }
+      },
+      {
+        "weight": 1,
+        "element": {
+          "element_type": "minecraft:legacy_single_pool_element",
+          "projection": "rigid",
+          "location": "cataclysm:village/swamp/zombie/town_centers/swamp_meeting_point_3",
+          "processors": "minecraft:zombie_plains"
+        }
+      }
+    ]
+  }
+  
