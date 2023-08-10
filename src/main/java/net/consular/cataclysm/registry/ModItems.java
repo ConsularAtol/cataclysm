@@ -22,6 +22,7 @@ import net.consular.cataclysm.item.MonocleItem;
 import net.consular.cataclysm.item.ScrollItem;
 import net.consular.cataclysm.item.SpellTomeItem;
 import net.consular.cataclysm.item.WandOfSparkingItem;
+import net.consular.cataclysm.item.WeightItem;
 import net.consular.cataclysm.material.ModArmorMaterials;
 import net.consular.cataclysm.material.ModToolMaterials;
 import net.consular.cataclysm.spells.*;
@@ -57,6 +58,8 @@ public class ModItems {
     public static final Item BRASS_KNUCKLES = registerItem("brass_knuckles", new BrassKnucklesItem(new Item.Settings().maxCount(1)));
 
     public static final Item MONOCLE = registerItem("monocle", new MonocleItem(new Item.Settings().maxCount(1)));
+
+    public static final Item WEIGHT = registerItem("weight", new WeightItem(new Item.Settings().maxCount(1)));
 
     public static final Item LUCKY_HORSESHOE = registerItem("lucky_horseshoe", new LuckyHorseshoeItem(new Item.Settings().maxCount(1)));
 

@@ -114,6 +114,7 @@ public class ModItemGroups {
             content.add(ModItems.MONOCLE);
             content.add(ModItems.LUCKY_HORSESHOE);
             content.add(ModItems.BEZOAR);
+            content.add(ModItems.WEIGHT);
         });
         ItemGroupEvents.modifyEntriesEvent(MAGIC).register(content -> {
             content.add(ModItems.WAND_OF_SPARKING);
