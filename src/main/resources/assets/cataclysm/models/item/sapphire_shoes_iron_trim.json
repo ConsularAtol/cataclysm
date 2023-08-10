@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "cataclysm:item/sapphire_shoes",
-    "layer1": "minecraft:trims/items/boots_trim_iron"
-  }
-}

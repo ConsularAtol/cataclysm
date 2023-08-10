@@ -42,7 +42,8 @@
     "fabric-api": "*",
     "minecraft": "~1.20",
     "java": ">=17",
-    "trinkets": "*"
+    "trinkets": "*",
+    "geckolib": "*"
   },
   "suggests": {
     "another-mod": "*"
