@@ -83,7 +83,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements MagicUse
 				setMana(getMana());
 
 			if(this.getWorld().getTime() >= lastCastTime + 20) {
-				int manaCooldown = (int) Math.round(20 * MagicHelper.getManaRegen((PlayerEntity) (Object) this));
+				int manaCooldown = (int) Math.round(20 / (MagicHelper.getManaRegen((PlayerEntity) (Object) this)));
 
 				if(manaCooldown != 0 && getMana() < getMaxMana() && this.getWorld().getTime() % manaCooldown == 0 && !this.hasStatusEffect(ModEffects.DRAINED))
 						addMana(1);
