@@ -21,6 +21,9 @@ public class VexesSpell implements Spell {
         }
         for (int i = 0; i < 3; i++){
             VexEntity vex = new VexEntity(EntityType.VEX, world);
+            if (player.getStackInHand(hand).hasCustomName()){
+                vex.setCustomName(player.getStackInHand(hand).getName());
+            }
             vex.equipStack(EquipmentSlot.MAINHAND, player.getStackInHand(targetHand));
             vex.setPosition(player.getPos());
             vex.setLifeTicks(1000);
