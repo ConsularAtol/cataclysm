@@ -126,7 +126,7 @@ public enum ModArmorMaterials implements ModArmorMaterial {
         map.put(ArmorItem.Type.LEGGINGS, 1);
         map.put(ArmorItem.Type.CHESTPLATE, 2);
         map.put(ArmorItem.Type.HELMET, 1);
-    }), 18, SoundEvents.BLOCK_WOOL_PLACE, 0F, 0F, 0F, 0F, 0.25F, 0F, 0F, () -> {
+    }), 18, SoundEvents.BLOCK_WOOL_PLACE, 0F, 0F, 0F, 0F, 0.4F, 0F, 0F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{Items.QUARTZ});
     }),
     AMETHYST("amethyst", 16, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
@@ -134,7 +134,7 @@ public enum ModArmorMaterials implements ModArmorMaterial {
         map.put(ArmorItem.Type.LEGGINGS, 1);
         map.put(ArmorItem.Type.CHESTPLATE, 2);
         map.put(ArmorItem.Type.HELMET, 1);
-    }), 22, SoundEvents.BLOCK_WOOL_PLACE, 0F, 0F, 0F, 0F, 0.4F, 0F, 0F, () -> {
+    }), 22, SoundEvents.BLOCK_WOOL_PLACE, 0F, 0F, 0F, 0F, 0.25F, 0F, 0F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{Items.AMETHYST_SHARD});
     }),
     ECHO("echo", 20, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
