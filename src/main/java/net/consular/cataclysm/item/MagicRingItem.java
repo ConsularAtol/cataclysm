@@ -12,15 +12,18 @@ import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.item.ItemStack;
 
-public class LapisRingItem extends TrinketItem{
+public class MagicRingItem extends TrinketItem{
 
-    public LapisRingItem(Settings settings) {
+    float amount;
+
+    public MagicRingItem(Settings settings, float amount) {
         super(settings);
+        this.amount = amount;
     }
 
     public Multimap<EntityAttribute, EntityAttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, UUID uuid) {
         var modifiers = super.getModifiers(stack, slot, entity, uuid);
-        modifiers.put(EntityAttributes.MANA_REGEN, new EntityAttributeModifier(uuid, "cataclysm:mana_regen", 0.1, EntityAttributeModifier.Operation.MULTIPLY_BASE));
+        modifiers.put(EntityAttributes.MANA_REGEN, new EntityAttributeModifier(uuid, "cataclysm:mana_regen", amount, EntityAttributeModifier.Operation.MULTIPLY_BASE));
         return modifiers;
     }
 }

@@ -113,7 +113,7 @@ public enum ModArmorMaterials implements ModArmorMaterial {
     }), 12, SoundEvents.BLOCK_CHORUS_FLOWER_GROW, 1F, 0F, 0F, 1F, 0F, 0F, 0F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{Items.CHORUS_FLOWER});
     }),
-    SAPPHIRE("cloak", 5, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+    SAPPHIRE("sapphire", 5, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
         map.put(ArmorItem.Type.BOOTS, 0);
         map.put(ArmorItem.Type.LEGGINGS, 1);
         map.put(ArmorItem.Type.CHESTPLATE, 2);

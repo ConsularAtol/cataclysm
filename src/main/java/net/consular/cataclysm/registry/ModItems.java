@@ -8,6 +8,7 @@ import net.consular.cataclysm.item.DyeableModArmorItem;
 import net.consular.cataclysm.item.EffectSwordItem;
 import net.consular.cataclysm.item.GloveItem;
 import net.consular.cataclysm.item.HeartNecklaceItem;
+import net.consular.cataclysm.item.MagicRingItem;
 import net.consular.cataclysm.item.LuckyHorseshoeItem;
 import net.consular.cataclysm.item.MagicMirrorItem;
 import net.consular.cataclysm.item.ManaPotionItem;
@@ -60,6 +61,10 @@ public class ModItems {
     public static final Item MONOCLE = registerItem("monocle", new MonocleItem(new Item.Settings().maxCount(1)));
 
     public static final Item WEIGHT = registerItem("weight", new WeightItem(new Item.Settings().maxCount(1)));
+
+    public static final Item LAPIS_RING = registerItem("lapis_ring", new MagicRingItem(new Item.Settings().maxCount(1), 0.1f));
+
+    public static final Item QUARTZ_RING = registerItem("quartz_ring", new MagicRingItem(new Item.Settings().maxCount(1), 0.2f));
 
     public static final Item LUCKY_HORSESHOE = registerItem("lucky_horseshoe", new LuckyHorseshoeItem(new Item.Settings().maxCount(1)));
 

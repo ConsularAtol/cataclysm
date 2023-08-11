@@ -9,6 +9,7 @@ import net.minecraft.registry.Registry;
 public class ModSounds {
 
     public static SoundEvent MAGIC_MIRROR_USE = registerSoundEvent("magic_mirror.use");
+    public static SoundEvent SNEAK_ATTACK = registerSoundEvent("sneak_attack");
     public static SoundEvent STUDDED_LEATHER_EQUIP = registerSoundEvent("armor.equip.studded_leather");
 
     private static SoundEvent registerSoundEvent(String name){

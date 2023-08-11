@@ -63,6 +63,11 @@ implements Recipe<Inventory> {
         return this.result;
     }
 
+    public ItemStack getAddition() {
+        ItemStack[] stacks = this.addition.getMatchingStacks();
+        return stacks[0];
+    }
+
     public ItemStack getResultItem(DynamicRegistryManager var2) {
         return this.result;
     }

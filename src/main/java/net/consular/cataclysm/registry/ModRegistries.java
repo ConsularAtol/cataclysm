@@ -32,6 +32,7 @@ public class ModRegistries {
         ModItemGroups.registerItemGroups();
         SneakAttackHandler.initialize();
         ModGamerules.registerGamerules();
+        ModParticles.registerParticles();
 
         registerAttributes();
         registerMobAttributes();

@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @Environment(EnvType.CLIENT)
 public class BewitchingTableDisplay extends BasicDisplay {
+    private BewitchingRecipe recipe;
 
     public BewitchingTableDisplay(BewitchingRecipe recipe) {
         this(
@@ -32,6 +33,7 @@ public class BewitchingTableDisplay extends BasicDisplay {
                 List.of(EntryIngredients.of(recipe.getResultItem(BasicDisplay.registryAccess()))),
                 Optional.ofNullable(recipe.getId())
         );
+        this.recipe = recipe;
     }
     
     public BewitchingTableDisplay(List<EntryIngredient> inputs, List<EntryIngredient> outputs, Optional<Identifier> location) {
@@ -45,5 +47,9 @@ public class BewitchingTableDisplay extends BasicDisplay {
     
     public static BasicDisplay.Serializer<BewitchingTableDisplay> serializer() {
         return BasicDisplay.Serializer.ofSimple(BewitchingTableDisplay::new);
+    }
+
+    public BewitchingRecipe getRecipe() {
+        return recipe;
     }
 }
