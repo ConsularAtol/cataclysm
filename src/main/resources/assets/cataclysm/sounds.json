@@ -15,5 +15,16 @@
             "cataclysm:armor/equip_studded_leather5",
             "cataclysm:armor/equip_studded_leather6"
         ]
+    },
+    "sneak_attack":{
+        "subtitle": "subtitle.cataclysm.sneak_attack",
+        "sounds":[
+            "cataclysm:sneak_attack_1",
+            "cataclysm:sneak_attack_2",
+            "cataclysm:sneak_attack_3",
+            "cataclysm:sneak_attack_4",
+            "cataclysm:sneak_attack_5",
+            "cataclysm:sneak_attack_6"
+        ]
     }
 }

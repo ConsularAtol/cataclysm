@@ -1,8 +1,5 @@
 package net.consular.cataclysm.mixin;
 
-import java.util.Collection;
-import java.util.UUID;
-
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.At;
@@ -14,25 +11,19 @@ import net.consular.cataclysm.registry.ModEffects;
 import net.consular.cataclysm.registry.ModEnchantments;
 import net.consular.cataclysm.registry.ModGamerules;
 import net.consular.cataclysm.registry.ModItems;
+import net.consular.cataclysm.registry.ModParticles;
+import net.consular.cataclysm.registry.ModSounds;
 import net.consular.cataclysm.util.BleedingEntity;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.enchantment.FrostWalkerEnchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttributeInstance;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.PiglinBruteEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.potion.PotionUtil;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -47,8 +38,6 @@ import net.minecraft.world.event.GameEvent;
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin {
     protected final Random random = Random.create();
-    private static final UUID QUICKSAND_SLOW_ID = UUID.fromString("13eaf8ff-7720-4956-b73a-7ced0c4b3ea7");
-
     
     @Inject(method = "onDamaged", at = @At("HEAD"))
     public void onDamaged(DamageSource damageSource, CallbackInfo cir){
@@ -67,13 +56,13 @@ public class LivingEntityMixin {
             entity.getWorld().playSound(null, d, e, f, soundEvent, SoundCategory.PLAYERS, 1.0f, 1.0f);
             entity.playSound(soundEvent, 1.0f, 1.0f);
         }
-        if (!canSee(damageSource.getAttacker())){
+        if (!canSee(damageSource.getAttacker()) && damageSource.getAttacker() instanceof LivingEntity){
             double d = this.random.nextGaussian() * 0.02;
             double e = this.random.nextGaussian() * 0.02;
             double f = this.random.nextGaussian() * 0.02;
             for(int i = 0; i < 10; i++)
-                entity.getWorld().addParticle(ParticleTypes.CRIT, entity.getParticleX(1.0), entity.getRandomBodyY(), entity.getParticleZ(1.0), d, e, f);
-            entity.getWorld().playSoundFromEntity((PlayerEntity)damageSource.getAttacker(), entity, SoundEvents.ENTITY_ARROW_HIT_PLAYER, SoundCategory.PLAYERS, 1f, 1f);
+                entity.getWorld().addParticle(ModParticles.SNEAK_ATTACK, entity.getParticleX(1.0), entity.getRandomBodyY(), entity.getParticleZ(1.0), d, e, f);
+            entity.getWorld().playSoundFromEntity((PlayerEntity)damageSource.getAttacker(), entity, ModSounds.SNEAK_ATTACK, SoundCategory.PLAYERS, 1f, 1f);
         }
     }
 

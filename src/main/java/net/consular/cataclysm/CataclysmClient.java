@@ -7,9 +7,11 @@ import net.consular.cataclysm.entity.render.ModArrowEntityRenderer;
 import net.consular.cataclysm.entity.render.ModFallingBlockEntityRenderer;
 import net.consular.cataclysm.entity.render.StingerRenderer;
 import net.consular.cataclysm.entity.render.WandOfSparkingEntityRenderer;
+import net.consular.cataclysm.particle.SneakAttackParticle;
 import net.consular.cataclysm.registry.ModBlocks;
 import net.consular.cataclysm.registry.ModEntities;
 import net.consular.cataclysm.registry.ModItems;
+import net.consular.cataclysm.registry.ModParticles;
 import net.consular.cataclysm.registry.ModScreenHandlers;
 import net.consular.cataclysm.screen.BewitchingScreen;
 import net.consular.cataclysm.screen.FletchingScreen;
@@ -17,6 +19,7 @@ import net.consular.cataclysm.util.EventHandler;
 import net.consular.cataclysm.util.ModModelPredicateProvider;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
@@ -40,6 +43,8 @@ public class CataclysmClient implements ClientModInitializer {
         ModModelPredicateProvider.registerModModels();
         HandledScreens.register(ModScreenHandlers.FLETCHING_SCREEN_HANDLER, FletchingScreen::new);
         HandledScreens.register(ModScreenHandlers.BEWITCHING_SCREEN_HANDLER, BewitchingScreen::new);
+
+        ParticleFactoryRegistry.getInstance().register(ModParticles.SNEAK_ATTACK, SneakAttackParticle.Factory::new);
 
 
         registerTippedArrow(ModItems.TIPPED_IRON_ARROW);

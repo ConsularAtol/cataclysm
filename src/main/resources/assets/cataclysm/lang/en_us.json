@@ -22,6 +22,8 @@
     "item.cataclysm.bat_wing": "Bat Wing",
     "item.cataclysm.lucky_horseshoe": "Lucky Horseshoe",
     "item.cataclysm.brass_knuckles": "Brass Knuckles",
+    "item.cataclysm.lapis_ring": "Lapis Ring",
+    "item.cataclysm.quartz_ring": "Quartz Ring",
 
     "spell.blank": "Blank",
     "spell.sonic_boom": "Sonic Boom",
@@ -39,7 +41,9 @@
     "item.cataclysm.diamond_dagger": "Diamond Dagger",
     "item.cataclysm.netherite_dagger": "Netherite Dagger",
     "item.cataclysm.enderite_dagger": "Enderite Dagger",
+    "item.cataclysm.sculk_dagger": "Sculk Dagger",
     "item.cataclysm.enderite_sword": "Enderite Sword",
+    "item.cataclysm.sculk_sword": "Sculk Sword",
     "item.cataclysm.spore_sword": "Spore Sword",
     "item.cataclysm.enderite_pickaxe": "Enderite Pickaxe",
     "item.cataclysm.enderite_axe": "Enderite Axe",
@@ -49,6 +53,14 @@
     "item.cataclysm.enderite_chestplate": "Enderite Chestplate",
     "item.cataclysm.enderite_leggings": "Enderite Leggings",
     "item.cataclysm.enderite_boots": "Enderite Boots",
+    "item.cataclysm.sculk_pickaxe": "Sculk Pickaxe",
+    "item.cataclysm.sculk_axe": "Sculk Axe",
+    "item.cataclysm.sculk_shovel": "Sculk Shovel",
+    "item.cataclysm.sculk_hoe": "Sculk Hoe",
+    "item.cataclysm.sculk_helmet": "Sculk Helmet",
+    "item.cataclysm.sculk_chestplate": "Sculk Chestplate",
+    "item.cataclysm.sculk_leggings": "Sculk Leggings",
+    "item.cataclysm.sculk_boots": "Sculk Boots",
     "item.cataclysm.studded_leather_helmet": "Studded Leather Helmet",
     "item.cataclysm.studded_leather_chestplate": "Studded Leather Chestplate",
     "item.cataclysm.studded_leather_leggings": "Studded Leather Leggings",
@@ -150,7 +162,7 @@
     "block.cataclysm.mushroom_planks": "Mushroom Planks",
     "block.cataclysm.quick_sand": "Quicksand",
 
-    "trinkets.slot.offhand.accessory": "Accessory",
+    "trinkets.slot.offhand.ring": "Offhand Ring",
 
     "entity.cataclysm.hornet": "Hornet",
     "entity.cataclysm.stinger": "Stinger",
@@ -170,6 +182,7 @@
     "enchantment.cataclysm.magma_walker": "Magma Walker",
 
     "subtitle.cataclysm.magic_mirror.use": "Magic Mirror used",
+    "subtitle.cataclysm.sneak_attack": "Sneak Attack hit",
     "subtitle.cataclysm.armor.equip.studded_leather": "Studded leather equips",
 
     "container.fletching": "Fletching",
