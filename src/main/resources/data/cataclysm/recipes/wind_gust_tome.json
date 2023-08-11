@@ -1,0 +1,12 @@
+{
+    "type": "cataclysm:bewitching",
+    "addition": {
+      "item": "cataclysm:wind_gust_scroll"
+    },
+    "base": {
+      "item": "cataclysm:blank_spell_tome"
+    },
+    "result": {
+      "item": "cataclysm:wind_gust_tome"
+    }
+  }

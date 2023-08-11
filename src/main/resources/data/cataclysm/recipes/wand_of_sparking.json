@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "cataclysm:ruby"
+    }
+  ],
+  "result": {
+    "item": "cataclysm:wand_of_sparking"
+  }
+}

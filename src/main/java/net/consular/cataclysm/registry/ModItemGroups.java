@@ -107,6 +107,7 @@ public class ModItemGroups {
             content.add(ModBlocks.STRIPPED_MUSHROOM_WOOD);
             content.add(ModBlocks.MUSHROOM_PLANKS);
             content.add(ModItems.QUICKSAND_BUCKET);
+            content.add(ModItems.AMETHYST_INGOT);
         });
         ItemGroupEvents.modifyEntriesEvent(ACCESSORIES).register(content -> {
             content.add(ModItems.HEART_NECKLACE);
@@ -115,7 +116,9 @@ public class ModItemGroups {
             content.add(ModItems.LUCKY_HORSESHOE);
             content.add(ModItems.BEZOAR);
             content.add(ModItems.WEIGHT);
+            content.add(ModItems.RING);
             content.add(ModItems.LAPIS_RING);
+            content.add(ModItems.AMETHYST_RING);
             content.add(ModItems.QUARTZ_RING);
         });
         ItemGroupEvents.modifyEntriesEvent(MAGIC).register(content -> {
@@ -197,6 +200,10 @@ public class ModItemGroups {
             content.add(ModItems.SHULK_CHESTPLATE);
             content.add(ModItems.SHULK_LEGGINGS);
             content.add(ModItems.SHULK_BOOTS);
+            content.add(ModItems.ANCIENT_HELMET);
+            content.add(ModItems.ANCIENT_CHESTPLATE);
+            content.add(ModItems.ANCIENT_LEGGINGS);
+            content.add(ModItems.ANCIENT_BOOTS);
         });
         ItemGroupEvents.modifyEntriesEvent(MONK).register(content -> {
             content.add(ModItems.LEATHER_GLOVE);

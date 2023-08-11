@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "X"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "X": {
+      "item": "cataclysm:ring"
+    }
+  },
+  "result": {
+    "item": "cataclysm:amethyst_ring"
+  }
+}

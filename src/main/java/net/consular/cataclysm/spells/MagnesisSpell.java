@@ -5,6 +5,7 @@ import java.util.List;
 
 import net.consular.cataclysm.entity.ModFallingBlockEntity;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -27,10 +28,12 @@ public class MagnesisSpell implements Spell{
             oldFallingBlocks.add(fallingBlock);
             fallingBlock.addVelocity(player.getRotationVector());
         }
-        fallingBlock = new ModFallingBlockEntity(world, pos.getX(), pos.getY(), pos.getY(), state);
-        fallingBlock.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
-        world.removeBlock(pos, true);
-        world.spawnEntity(fallingBlock);
+        if (state.getBlock().getHardness() > 0 && state.getBlock().getHardness() < 50 || state.getBlock() == Blocks.AIR){
+            fallingBlock = new ModFallingBlockEntity(world, pos.getX(), pos.getY(), pos.getY(), state);
+            fallingBlock.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+            world.removeBlock(pos, true);
+            world.spawnEntity(fallingBlock);
+        }
     }
 
     @Override

@@ -1,0 +1,12 @@
+{
+    "type": "cataclysm:bewitching",
+    "addition": {
+      "item": "cataclysm:magnesis_scroll"
+    },
+    "base": {
+      "item": "cataclysm:blank_spell_tome"
+    },
+    "result": {
+      "item": "cataclysm:magnesis_tome"
+    }
+  }

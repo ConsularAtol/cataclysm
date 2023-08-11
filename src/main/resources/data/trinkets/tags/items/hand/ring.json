@@ -1,7 +1,9 @@
 {
     "values": [
         "cataclysm:brass_knuckles",
+        "cataclysm:ring",
         "cataclysm:lapis_ring",
-        "cataclysm:quartz_ring"
+        "cataclysm:quartz_ring",
+        "cataclysm:amethyst_ring"
     ]
 }

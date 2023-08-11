@@ -62,9 +62,13 @@ public class ModItems {
 
     public static final Item WEIGHT = registerItem("weight", new WeightItem(new Item.Settings().maxCount(1)));
 
+    public static final Item RING = registerItem("ring", new MagicRingItem(new Item.Settings().maxCount(1), 0f));
+
     public static final Item LAPIS_RING = registerItem("lapis_ring", new MagicRingItem(new Item.Settings().maxCount(1), 0.1f));
 
-    public static final Item QUARTZ_RING = registerItem("quartz_ring", new MagicRingItem(new Item.Settings().maxCount(1), 0.2f));
+    public static final Item AMETHYST_RING = registerItem("amethyst_ring", new MagicRingItem(new Item.Settings().maxCount(1), 0.2f));
+
+    public static final Item QUARTZ_RING = registerItem("quartz_ring", new MagicRingItem(new Item.Settings().maxCount(1), 0.3f));
 
     public static final Item LUCKY_HORSESHOE = registerItem("lucky_horseshoe", new LuckyHorseshoeItem(new Item.Settings().maxCount(1)));
 
@@ -125,6 +129,8 @@ public class ModItems {
     public static final Item ENDERITE_SCRAP = registerItem("enderite_scrap", new Item(new Item.Settings()));
 
     public static final Item ENDERITE_INGOT = registerItem("enderite_ingot", new Item(new Item.Settings()));
+
+    public static final Item AMETHYST_INGOT = registerItem("amethyst_ingot", new Item(new Item.Settings()));
 
     public static final Item ENDERITE_UPGRADE_SMITHING_TEMPLATE = registerItem("enderite_upgrade_smithing_template", (Item)ModSmithingTemplateItem.createEnderiteUpgrade());
 
@@ -276,13 +282,13 @@ public class ModItems {
 
     public static final Item SHULK_BOOTS = registerItem("shulk_boots", new DyeableModArmorItem(ModArmorMaterials.SHULK, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
 
-    public static final Item ANCIENT_HELMET = registerItem("ancient_helmet", new DyeableModArmorItem(ModArmorMaterials.ANCIENT, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
+    public static final Item ANCIENT_HELMET = registerItem("ancient_helmet", new ModArmorItem(ModArmorMaterials.ANCIENT, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
 
-    public static final Item ANCIENT_CHESTPLATE = registerItem("ancient_chestplate", new DyeableModArmorItem(ModArmorMaterials.ANCIENT, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
+    public static final Item ANCIENT_CHESTPLATE = registerItem("ancient_chestplate", new ModArmorItem(ModArmorMaterials.ANCIENT, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxCount(1)));
 
-    public static final Item ANCIENT_LEGGINGS = registerItem("ancient_leggings", new DyeableModArmorItem(ModArmorMaterials.ANCIENT, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
+    public static final Item ANCIENT_LEGGINGS = registerItem("ancient_leggings", new ModArmorItem(ModArmorMaterials.ANCIENT, ArmorItem.Type.LEGGINGS, new Item.Settings().maxCount(1)));
 
-    public static final Item ANCIENT_BOOTS = registerItem("ancient_boots", new DyeableModArmorItem(ModArmorMaterials.ANCIENT, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
+    public static final Item ANCIENT_BOOTS = registerItem("ancient_boots", new ModArmorItem(ModArmorMaterials.ANCIENT, ArmorItem.Type.BOOTS, new Item.Settings().maxCount(1)));
     
     public static final Item WARPED_HELMET = registerItem("warped_helmet", new ModArmorItem(ModArmorMaterials.WARPED, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1)));
 

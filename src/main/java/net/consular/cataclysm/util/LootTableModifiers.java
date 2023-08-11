@@ -30,6 +30,9 @@ public class LootTableModifiers {
         private static final Identifier ANCIENT_CITY_CHEST_ID
                 = new Identifier("minecraft", "chests/ancient_city");
 
+        private static final Identifier STRONGHOLD_LIBRARY_CHEST_ID
+                = new Identifier("minecraft", "chests/stronghold_library");
+
         private static final Identifier WARDEN_LOOT_ID
                 = new Identifier("minecraft", "entities/warden");
 
@@ -65,11 +68,19 @@ public class LootTableModifiers {
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }
-                if(MINESHAFT_CHEST_ID.equals(id)) {
+                if(MINESHAFT_CHEST_ID.equals(id) || STRONGHOLD_LIBRARY_CHEST_ID.equals(id)) {
                     LootPool.Builder poolBuilder = LootPool.builder()
                             .rolls(UniformLootNumberProvider.create(1, 1))
                             .conditionally(RandomChanceLootCondition.builder(0.10f)) // Drops 10% of the time
                             .with(ItemEntry.builder(ModItems.REDSTONE_CLOUD_SCROLL))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
+                if(MINESHAFT_CHEST_ID.equals(id) || STRONGHOLD_LIBRARY_CHEST_ID.equals(id)) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(UniformLootNumberProvider.create(1, 1))
+                            .conditionally(RandomChanceLootCondition.builder(0.10f)) // Drops 10% of the time
+                            .with(ItemEntry.builder(ModItems.MAGNESIS_SCROLL))
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }
@@ -113,7 +124,7 @@ public class LootTableModifiers {
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }
-                if(SHIPWRECK_CHEST_ID.equals(id)) {
+                if(SHIPWRECK_CHEST_ID.equals(id) || STRONGHOLD_LIBRARY_CHEST_ID.equals(id)) {
                     LootPool.Builder poolBuilder = LootPool.builder()
                             .rolls(UniformLootNumberProvider.create(1, 1))
                             .conditionally(RandomChanceLootCondition.builder(0.40f)) // Drops 40% of the time
@@ -121,7 +132,7 @@ public class LootTableModifiers {
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }
-                if(IGLOO_CHEST_ID.equals(id)) {
+                if(IGLOO_CHEST_ID.equals(id) || STRONGHOLD_LIBRARY_CHEST_ID.equals(id)) {
                     LootPool.Builder poolBuilder = LootPool.builder()
                             .rolls(UniformLootNumberProvider.create(1, 1))
                             .conditionally(RandomChanceLootCondition.builder(0.40f)) // Drops 40% of the time

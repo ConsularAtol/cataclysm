@@ -42,7 +42,7 @@ public class RedstoneCloudSpell implements Spell {
 
     @Override
     public int getManaCost() {
-        return 10;
+        return 4;
     }
 
     @Override
