@@ -14,6 +14,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Targeter;
+import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -31,7 +32,7 @@ public abstract class MobEntityMixin extends LivingEntity implements Targeter, P
 
     @Inject(method = "canPickUpLoot", at = @At("RETURN"))
     public boolean canPickupLoot(CallbackInfoReturnable ci) {
-        return (((MobEntity)(Object)this).getServer().getGameRules().getBoolean(ModGamerules.CATACLYSM_MODE));
+        return (((MobEntity)(Object)this).getServer().getGameRules().getBoolean(ModGamerules.CATACLYSM_MODE) && ((MobEntity)(Object)this) instanceof HostileEntity);
     }
 
     @ModifyVariable(method = "setTarget", at = @At("HEAD"))
