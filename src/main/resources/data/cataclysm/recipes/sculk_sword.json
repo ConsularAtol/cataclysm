@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "cataclysm:sculk_heart"
+  },
+  "base": {
+    "item": "cataclysm:enderite_sword"
+  },
+  "result": {
+    "item": "cataclysm:sculk_sword"
+  },
+  "template": {
+    "item": "cataclysm:sculk_upgrade_smithing_template"
+  }
+}

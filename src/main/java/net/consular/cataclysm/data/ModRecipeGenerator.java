@@ -13,6 +13,6 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
-       // Why is this a thing I have to do, datapacks work fine
+        
     }
 }

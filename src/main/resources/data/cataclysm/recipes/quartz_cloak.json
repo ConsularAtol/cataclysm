@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    "WXW",
+    "WWW"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:quartz"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "result": {
+    "item": "cataclysm:quartz_cloak"
+  }
+}

@@ -47,9 +47,12 @@ public class BewitchingTableCategory implements DisplayCategory<BewitchingTableD
         Point origin = bounds.getLocation();
         Rectangle bgBounds = CataclysmREI.centeredIntoRecipeBase(origin, 120, 59);
         Point slotLoc = new Point(bgBounds.x + 110, bgBounds.y + 35);
-        ScrollItem scroll = (ScrollItem)display.getRecipe().getAddition().getItem();
-        int cost = scroll.getSpell().getManaCost();
-        WidgetWithBounds text = new TextWidget(slotLoc, Text.translatable("container.bewitching.cost", cost).formatted(Formatting.GREEN));
+        if (display.getRecipe().getAddition().getItem() instanceof ScrollItem) {
+            ScrollItem scroll = (ScrollItem)display.getRecipe().getAddition().getItem();
+            int cost = scroll.getSpell().getManaCost();
+            WidgetWithBounds text = new TextWidget(slotLoc, Text.translatable("container.bewitching.cost", cost).formatted(Formatting.GREEN));
+            widgets.add(text);
+        }
         widgets.add(Widgets.createRecipeBase(bounds));
         int offsetX = 5;
         widgets.add(Widgets.createArrow(new Point(startPoint.x + 27 + offsetX, startPoint.y + 4)));
@@ -57,7 +60,6 @@ public class BewitchingTableCategory implements DisplayCategory<BewitchingTableD
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 4 - 22 + offsetX, startPoint.y + 5)).entries(display.getInputEntries().get(0)).markInput());
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 4 + offsetX, startPoint.y + 5)).entries(display.getInputEntries().get(1)).markInput());
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 61 + offsetX, startPoint.y + 5)).entries(display.getOutputEntries().get(0)).disableBackground().markOutput());
-        widgets.add(text);
 
         return widgets;
     }

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WXW",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "cataclysm:sapphire"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "result": {
+    "item": "cataclysm:sapphire_hood"
+  }
+}

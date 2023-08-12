@@ -43,17 +43,23 @@ public class BewitchingScreenHandler extends ForgingScreenHandler {
 
     @Override
     protected boolean canTakeOutput(PlayerEntity player, boolean present) {
-        ScrollItem scroll = (ScrollItem)this.getSlot(1).getStack().getItem();
-        return player.experienceLevel >= scroll.getSpell().getManaCost();
+        if (this.getSlot(1).getStack().getItem() instanceof ScrollItem){
+            ScrollItem scroll = (ScrollItem)this.getSlot(1).getStack().getItem();
+            return player.experienceLevel >= scroll.getSpell().getManaCost();
+        } else
+            return true;
     }
 
     @Override
     protected void onTakeOutput(PlayerEntity player, ItemStack stack) {
+        if (this.getSlot(1).getStack().getItem() instanceof ScrollItem){
+            ScrollItem scroll = (ScrollItem)this.getSlot(1).getStack().getItem();
+            player.experienceLevel -= scroll.getSpell().getManaCost();
+        }
         stack.onCraft(player.getWorld(), player, stack.getCount());
         this.output.unlockLastRecipe(player, this.getInputStacks());
         this.decrementStack(0);
         this.decrementStack(1);
-        this.context.run((world, pos) -> world.syncWorldEvent(WorldEvents.SMITHING_TABLE_USED, (BlockPos)pos, 0));
     }
 
     private List<ItemStack> getInputStacks() {

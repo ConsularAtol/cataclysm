@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "cataclysm:sculk_heart"
+  },
+  "base": {
+    "item": "cataclysm:enderite_chestplate"
+  },
+  "result": {
+    "item": "cataclysm:sculk_chestplate"
+  },
+  "template": {
+    "item": "cataclysm:sculk_upgrade_smithing_template"
+  }
+}

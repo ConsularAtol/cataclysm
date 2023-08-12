@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "W W",
+      "W W"
+    ],
+    "key": {
+      "W": {
+        "item": "cataclysm:bat_wing"
+      }
+    },
+    "result": {
+      "item": "cataclysm:bat_boots"
+    }
+  }
+  

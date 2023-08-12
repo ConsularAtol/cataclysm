@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    "W W"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "result": {
+    "item": "cataclysm:amethyst_shoes"
+  }
+}

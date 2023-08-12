@@ -46,7 +46,7 @@ public class BewitchingScreen extends HandledScreen<BewitchingScreenHandler> {
     protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
         super.drawForeground(context, mouseX, mouseY);
         int i = 0;
-        if (this.handler.getSlot(1).getStack().getItem() != Items.AIR){
+        if (this.handler.getSlot(1).getStack().getItem() instanceof ScrollItem ){
             ScrollItem scroll = (ScrollItem)this.handler.getSlot(1).getStack().getItem();
             i = scroll.getSpell().getManaCost();
         }

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "tag": "minecraft:logs"
+    },
+    "S": {
+      "item": "cataclysm:sapphire"
+    }
+  },
+  "result": {
+    "item": "cataclysm:bewitching_table"
+  }
+}

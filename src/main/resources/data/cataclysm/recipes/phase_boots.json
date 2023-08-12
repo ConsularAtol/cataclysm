@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "P P",
+      "C C"
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:ender_pearl"
+      },
+      "C": {
+        "item": "minecraft:popped_chorus_fruit"
+      }
+    },
+    "result": {
+      "item": "cataclysm:phase_boots"
+    }
+  }
+  

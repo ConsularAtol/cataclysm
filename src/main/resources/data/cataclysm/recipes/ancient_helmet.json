@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "cataclysm:sculk_heart"
+  },
+  "base": {
+    "item": "cataclysm:shulk_helmet"
+  },
+  "result": {
+    "item": "cataclysm:ancient_helmet"
+  },
+  "template": {
+    "item": "cataclysm:sculk_upgrade_smithing_template"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "cataclysm:bewitching",
+  "addition": {
+    "item": "minecraft:echo_shard"
+  },
+  "base": {
+    "item": "cataclysm:quartz_pants"
+  },
+  "result": {
+    "item": "cataclysm:echo_pants"
+  }
+}
