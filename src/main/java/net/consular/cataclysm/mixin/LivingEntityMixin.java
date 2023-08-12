@@ -128,12 +128,15 @@ public class LivingEntityMixin {
 
     @Inject(method = "onAttacking", at = @At("HEAD"))
     public void onAttacking(Entity target, CallbackInfo ci) {
-        LivingEntity target2 = (LivingEntity)target;
-        if ((LivingEntity)(Object)this instanceof PiglinBruteEntity && ((MobEntity)(Object)this).getServer().getGameRules().getBoolean(ModGamerules.CATACLYSM_MODE)){
-            ((BleedingEntity)target2).startBleeding(5);
-        }
-        if (EnchantmentHelper.getEquipmentLevel(ModEnchantments.CUTTING_EDGE, ((LivingEntity)(Object)this)) > 0){
-            ((BleedingEntity)target2).startBleeding(EnchantmentHelper.getEquipmentLevel(ModEnchantments.CUTTING_EDGE, ((LivingEntity)(Object)this)));
+        LivingEntity target2;
+        if (target instanceof LivingEntity){
+            target2 = (LivingEntity)target;
+            if ((LivingEntity)(Object)this instanceof PiglinBruteEntity && ((MobEntity)(Object)this).getServer().getGameRules().getBoolean(ModGamerules.CATACLYSM_MODE)){
+                ((BleedingEntity)target2).startBleeding(5);
+            }
+            if (EnchantmentHelper.getEquipmentLevel(ModEnchantments.CUTTING_EDGE, ((LivingEntity)(Object)this)) > 0){
+                ((BleedingEntity)target2).startBleeding(EnchantmentHelper.getEquipmentLevel(ModEnchantments.CUTTING_EDGE, ((LivingEntity)(Object)this)));
+            }
         }
     }
 }

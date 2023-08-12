@@ -17,6 +17,7 @@ public class MagnesisSpell implements Spell{
     ModFallingBlockEntity fallingBlock;
     List<ModFallingBlockEntity> oldFallingBlocks = new ArrayList<>();
     PlayerEntity player;
+    boolean hasBlock = false;
 
     @Override
     public void cast(World world, PlayerEntity player, Hand hand) {
@@ -28,7 +29,7 @@ public class MagnesisSpell implements Spell{
             oldFallingBlocks.add(fallingBlock);
             fallingBlock.addVelocity(player.getRotationVector());
         }
-        if (state.getBlock().getHardness() > 0 && state.getBlock().getHardness() < 50 || state.getBlock() == Blocks.AIR){
+        if (state.getBlock().getHardness() >= 0 && state.getBlock().getHardness() < 50 || state.getBlock() == Blocks.AIR){
             fallingBlock = new ModFallingBlockEntity(world, pos.getX(), pos.getY(), pos.getY(), state);
             fallingBlock.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
             world.removeBlock(pos, true);
@@ -64,17 +65,21 @@ public class MagnesisSpell implements Spell{
     
     @Override
     public void tick() {
-        if (fallingBlock != null && player != null){
-            BlockHitResult hitResult = (BlockHitResult)player.raycast(4, 1, false);
-            BlockPos holdPos = hitResult.getBlockPos();
-            fallingBlock.setPos(holdPos.getX() + 0.5, holdPos.getY(), holdPos.getZ() + 0.5);
-            fallingBlock.setNoGravity(true);
-            if (oldFallingBlocks != null)
+        System.out.println(hasBlock);
+        if (oldFallingBlocks != null)
                 for (int i = 0; i < oldFallingBlocks.size(); i++){
                     if (oldFallingBlocks.get(i) != null)
                         oldFallingBlocks.get(i).setNoGravity(false);
                 }
+        if (fallingBlock != null && player != null && !fallingBlock.getBlockState().isAir()){
+            BlockHitResult hitResult = (BlockHitResult)player.raycast(4, 1, false);
+            BlockPos holdPos = hitResult.getBlockPos();
+            fallingBlock.setPos(holdPos.getX() + 0.5, holdPos.getY(), holdPos.getZ() + 0.5);
+            fallingBlock.setNoGravity(true);
+            hasBlock = true;
             fallingBlock.setVelocity(0, 0, 0);
+        } else{
+            hasBlock = false;
         }
     }
 }
